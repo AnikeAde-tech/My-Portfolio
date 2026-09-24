@@ -326,6 +326,8 @@
 
       this._px = 0; this._py = 0; this._in = false;
       this._onMove = (e) => {
+        // head tracking follows a mouse only; a finger scrolling past shouldn't steer her
+        if (e.pointerType && e.pointerType !== 'mouse') { this._in = false; this._px = 0; this._py = 0; return; }
         const hero = host.closest('.hero') || document.body;
         const r = hero.getBoundingClientRect();
         this._in = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;

@@ -31,11 +31,11 @@ body{margin:0;background:#F1EEE7;color:#141310;font-family:Newsreader,Georgia,se
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="motion.css">
-<script src="./motion.js?v=2" defer></script>
+<script src="./motion.js?v=3" defer></script>
 <style>
 .hero-tight .hero-meta{display:flex;flex-wrap:nowrap;gap:9px clamp(4px,.45vw,8px)}
 .hero-tight .hero-meta .chip{white-space:nowrap;padding:7px clamp(9px,.85vw,15px)}
-@media(min-width:768px) and (max-width:1023px){.hero-tight .hero-meta{flex-wrap:wrap;gap:9px 8px}}
+@media(min-width:900px) and (max-width:1023px){.hero-tight .hero-meta{flex-wrap:wrap;gap:9px 8px}}
 @keyframes avail-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.82)}}
 .hero-meta .chip.live::before{animation:avail-pulse 2.4s ease-in-out infinite}
 .hl-line{display:block;overflow:hidden}
@@ -52,7 +52,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
 .hero-tight + main > .section:first-child{padding-top:48px}
 .hero-copy{grid-column:1/9;min-width:0}
 .hero-fig{grid-column:9/13;position:relative;min-height:1px}
-.hero-figure{position:absolute;right:0;bottom:0;width:min(320px,100%);height:var(--fig-h,min(46vh,420px))}
+.hero-figure{position:absolute;right:0;bottom:0;width:min(320px,100%);height:var(--fig-h,min(46svh,420px))}
 .hero-ground{margin-inline:calc(50% - 50vw);width:100vw;max-width:100vw;height:1px;background:rgba(241,238,231,.3)}
 @media (max-width:1023px){
   .t-grid{grid-template-columns:minmax(0,1fr)!important}
@@ -71,17 +71,27 @@ body.loaded .hl-line > span{transform:translateY(0)}
 .bubble-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule-ink);border-radius:999px;padding:6px 12px;font-family:var(--mono);font-size:11.5px;color:var(--ink);text-decoration:none;background:transparent;cursor:pointer;transition:background .2s,transform .12s}
 .bubble-chip:hover{background:rgba(20,19,16,.06)}
 .bubble-chip:active{transform:scale(.94)}
-@media (max-width:760px){.hero-tight h1.display .hl-line > span{white-space:normal}}
 @media (max-width:1023px){
   .hero-tight h1.display{grid-column:1/-1}
   .hero-copy,.hero-fig{grid-column:1/-1}
   .hero-fig{display:flex;flex-direction:column;align-items:center;padding-top:0;margin-top:clamp(20px,4vw,32px)}
-  .hero-figure{position:relative;right:auto;bottom:auto;width:min(280px,70vw);height:min(50vh,420px);margin:0 auto}
+  .hero-figure{position:relative;right:auto;bottom:auto;width:min(280px,70vw);height:min(50svh,420px);margin:0 auto}
 }
-@media (max-width:767px){
+@media (max-width:899.98px){
   .hero-tight h1.display{font-size:clamp(40px,11vw,64px)}
   .hero-tight h1.display .hl-line > span{white-space:normal}
-  .hero-figure{height:min(42vh,360px);width:min(240px,64vw)}
+  .hero-figure{height:min(42svh,420px);width:min(240px,64vw)}
+}
+@media (max-width:767px){.hero-figure{height:min(42svh,360px)}}
+/* testimonials on narrow screens: heading, then the card stack, then controls */
+@media (max-width:1023px){
+  .t-side{display:contents}
+  .t-side > .section-head{order:1}
+  .t-stage-col{order:2}
+  .t-side > .t-count{order:3;margin:0 0 14px!important}
+  .t-side > .t-btns{order:4}
+  .t-side > .t-meta{order:5}
+  .t-stage{margin-bottom:40px!important}
 }
 .hero-fig,.hero-figure,.hero-grid{overflow:visible}
 @media (prefers-reduced-motion: reduce){.bubble{transition:opacity .01s linear!important}}
@@ -108,7 +118,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
     </div>
   </div>
 </nav>
-<header class="hero hero-tight" ref="{{ hero }}" style="position:relative;overflow:visible;isolation:isolate">
+<header class="hero hero-tight" ref="{{ hero }}" style="position:relative;overflow:visible;overflow-x:clip;isolation:isolate">
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.04;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>&quot;)"></div>
   <div class="hero-overlay" aria-hidden="false" style="position:absolute;inset:0;z-index:70;pointer-events:none;overflow:visible">
     <div class="bubble" ref="{{ bubble }}" role="status" aria-live="polite" style="position:absolute;top:0;left:0;width:max-content;max-width:300px;height:auto;opacity:0;transform:translate(-9999px,-9999px);transform-origin:0% 100%;pointer-events:none;transition:opacity .18s ease,transform .26s cubic-bezier(.22,1.3,.36,1)">
@@ -145,7 +155,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
     </div>
     <div class="hero-fig" ref="{{ figCell }}">
       <div class="hero-figure" ref="{{ stack }}">
-        <x-import component-from-global-scope="hero-character" from="./character.js?v=3" glb="character.glb" hint-size="100%,100%" ref="{{ figure }}" style="position:absolute;inset:0;z-index:2"></x-import>
+        <x-import component-from-global-scope="hero-character" from="./character.js?v=4" glb="character.glb" hint-size="100%,100%" ref="{{ figure }}" style="position:absolute;inset:0;z-index:2"></x-import>
         <button type="button" ref="{{ sayHi }}" aria-label="Say hi" style="position:absolute;inset:0;z-index:4;background:transparent;border:0;padding:0;cursor:pointer;border-radius:6px" style-focus-visible="outline:2px solid var(--marigold);outline-offset:6px"></button>
       </div>
     </div>
@@ -224,8 +234,8 @@ body.loaded .hl-line > span{transform:translateY(0)}
           <h2 style="margin:0">In their words</h2>
           <p class="tag" style="color:var(--sage);margin:10px 0 0">people I've worked with</p>
         </div>
-        <p class="tag" style="color:var(--sage);margin:0 0 20px"><span ref="{{ tCounter }}">01</span>&nbsp;/&nbsp;<span ref="{{ tTotal }}">05</span></p>
-        <div style="display:flex;gap:10px;margin:0 0 clamp(24px,3vw,34px)">
+        <p class="tag t-count" style="color:var(--sage);margin:0 0 20px"><span ref="{{ tCounter }}">01</span>&nbsp;/&nbsp;<span ref="{{ tTotal }}">05</span></p>
+        <div class="t-btns" style="display:flex;gap:10px;margin:0 0 clamp(24px,3vw,34px)">
           <button type="button" ref="{{ tPrevBtn }}" onClick="{{ tPrev }}" aria-label="Previous testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s" style-hover="background:var(--deep-2);border-color:var(--sage)" style-active="transform:scale(.92)">&larr;</button>
           <button type="button" ref="{{ tNextBtn }}" onClick="{{ tNext }}" aria-label="Next testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s" style-hover="background:var(--deep-2);border-color:var(--sage)" style-active="transform:scale(.92)">&rarr;</button>
         </div>
@@ -465,7 +475,7 @@ class Component extends DCLogic {
     this.tBusy = false;
     this.tFan = 0;
 
-    var depth = function(){ return (window.innerWidth <= 900) ? 2 : 3; };
+    var depth = function(){ return (document.documentElement.clientWidth <= 900) ? 2 : 3; };
 
     var slotFor = function(pos){
       var d = depth();
@@ -692,7 +702,7 @@ class Component extends DCLogic {
       var side = document.querySelector('.t-side');
       var col = document.querySelector('.t-stage-col');
       if(!g || !side || !col) return;
-      if(window.innerWidth <= 900){
+      if(document.documentElement.clientWidth <= 900){
         g.style.flexDirection = 'column';
         side.style.flex = '1 1 auto';
         side.style.maxWidth = 'none';
@@ -715,6 +725,11 @@ class Component extends DCLogic {
 
   bootLayout(){
     var self = this;
+    // small-viewport height (svh): stable while mobile browser bars show/hide
+    var probe = document.createElement('div');
+    probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none';
+    document.body.appendChild(probe);
+    this.svh = function(){ return probe.offsetHeight || window.innerHeight; };
     // the character stands in the open space beside the short second headline
     // line: its head starts at that line's top, its feet on the chips hairline.
     this.layout = function(){
@@ -722,12 +737,13 @@ class Component extends DCLogic {
       var fig = self.stack.current;
       var lines = document.querySelectorAll('.hero-tight h1.display .hl-line');
       if(!grid || !fig || lines.length < 2) return;
-      self.narrow = window.innerWidth < 1024;
+      var vw = document.documentElement.clientWidth;
+      self.narrow = vw < 1024;
       if(self.narrow){
-        var mob = window.innerWidth < 768;
-        var nh = Math.round(Math.min(window.innerHeight * (mob ? 0.42 : 0.5), mob ? 360 : 420));
+        var mob = vw < 768;
+        var nh = Math.round(Math.min(self.svh() * (vw < 900 ? 0.42 : 0.5), mob ? 360 : 420));
         fig.style.height = nh + 'px';
-        fig.style.width = Math.round(Math.min(window.innerWidth - 40, nh * 0.5)) + 'px';
+        fig.style.width = Math.round(Math.min(vw - 40, nh * 0.5)) + 'px';
         fig.style.setProperty('--fig-h', nh + 'px');
         return;
       }
@@ -735,7 +751,7 @@ class Component extends DCLogic {
       var top = lines[0].getBoundingClientRect().top;
       var bottom = grid.getBoundingClientRect().bottom;
       var want = Math.round(bottom - top);
-      var cap = Math.round(window.innerHeight * 0.72);
+      var cap = Math.round(self.svh() * 0.72);
       var h = Math.max(320, Math.min(want, cap));
       // stay inside the column: she is ~0.46 body-heights wide
       var cell = fig.parentElement.getBoundingClientRect().width;
@@ -841,13 +857,16 @@ class Component extends DCLogic {
 
     this.placeBubble = function(){
       if(!headPt) return;
-      var M = 16, GAP_Y = 12, GAP_X = 16;
+      // clientWidth, not innerWidth: on phones innerWidth grows with any
+      // overflow, which let the bubble widen the page and then itself
+      var VW = document.documentElement.clientWidth, VH = self.svh ? self.svh() : window.innerHeight;
+      var mobile = VW < 768;
+      var M = mobile ? 20 : 16, GAP_Y = 12, GAP_X = 16;
       var hero = document.querySelector('.hero');
       if(!hero) return;
       var hL = headPt.heroLeft, hT = headPt.heroTop;
-      var mobile = window.innerWidth < 768;
 
-      if(mobile){ bub.style.width = (window.innerWidth - M * 2) + 'px'; bub.style.maxWidth = 'none'; }
+      if(mobile){ bub.style.width = (VW - M * 2) + 'px'; bub.style.maxWidth = 'none'; }
       else { bub.style.width = 'max-content'; bub.style.maxWidth = '300px'; }
       var bw = bub.offsetWidth, bh = bub.offsetHeight;
       if(!bw || !bh) return;
@@ -855,11 +874,15 @@ class Component extends DCLogic {
       var x, y;
       if(mobile){
         tailSide = 'centre';
-        x = (window.innerWidth - bw) / 2 - hL;
+        x = (VW - bw) / 2 - hL;
+      } else if(VW < 900){
+        // single-column hero: centred over her head, tail straight down
+        tailSide = 'centre';
+        x = headPt.x - bw / 2;
       } else {
         tailSide = 'left';
         x = headPt.x + GAP_X;
-        if(hL + x + bw > window.innerWidth - M){
+        if(hL + x + bw > VW - M){
           x = headPt.x - GAP_X - bw;      // no room to the right: flip above-left
           tailSide = 'right';
         }
@@ -873,8 +896,8 @@ class Component extends DCLogic {
       var nav = document.querySelector('.nav');
       var navB = nav ? nav.getBoundingClientRect().bottom : 0;
       var minY = Math.max(M, navB + 8) - hT;
-      y = Math.max(minY, Math.min(y, window.innerHeight - M - bh - hT));
-      x = Math.max(M - hL, Math.min(x, window.innerWidth - M - bw - hL));
+      y = Math.max(minY, Math.min(y, VH - M - bh - hT));
+      x = Math.max(M - hL, Math.min(x, VW - M - bw - hL));
 
       if(!isFinite(x) || !isFinite(y)) return;   // keep the last valid position
       bx = Math.round(x); by = Math.round(y);
@@ -1065,7 +1088,7 @@ class Component extends DCLogic {
     }
 
     var hero = this.hero.current;
-    var wide = function(){ return window.innerWidth > 1100 && !self.narrow; };
+    var wide = function(){ return document.documentElement.clientWidth > 1100 && !self.narrow; };
 
     if(hero && !reduce){
       this.onMove = function(e){
