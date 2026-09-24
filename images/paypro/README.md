@@ -1,29 +1,20 @@
 # PayPro images
 
-Drop these files into this folder with exactly these names. Pages already point here;
-until a file exists its slot shows the styled placeholder, never a broken image.
+All WebP, at most 1600px wide, original aspect ratio kept. Every frame on the
+site is 16:10 and screens are fitted inside it (never cropped), so any shape
+works; keep `width`/`height` in `paypro.html` matching the file.
 
-## Required
-
-| File | Size | Used for | Should show (matches the page's alt text) |
+| File | Size | Where | Shows |
 | --- | --- | --- | --- |
-| `cover.webp` | 1600×1000 | Work card (homepage + work index) and the case study lead image | Three phone screens from the send flow: recipient details, an amount screen showing a two hundred pound send with the fee and the amount the recipient will receive, and fingerprint confirmation. |
-| `shot-1.webp` | 1600×1000 | Figure after block 02 | Three card screens: physical card with its benefits, an empty no-cards state, and an active virtual card with top up, details, freeze and settings. |
-| `shot-2.webp` | 1600×1000 | Figure after block 03 | Three phone screens from the invoicing flow: an invoice list with paid, waiting, overdue and draft states, the create invoice form, and a finished invoice ready to share. |
+| `send.webp` | 1600×1200 | Lead image, work card | Send flow: recipient details, amount with fee and 'recipient will receive', PIN and fingerprint confirm |
+| `accounts.webp` | 923×2000 | After block 02 | Select Account sheet: NGN, USD, GBP, CAD balances |
+| `invoices.webp` | 1600×1200 | After block 03 | Invoice list with Paid, Waiting, Overdue, Draft; create form; invoice ready to share |
+| `home.webp` | 923×2000 | Carousel 1 | Home: NGN balance, actions, Quick Send, recent transactions |
+| `cards.webp` | 1600×1200 | Carousel 2 | Card tab: physical card, empty state, virtual card with controls |
+| `onboard-1.webp` | 923×2000 | Carousel 3 | Onboarding 1: Get Paid Globally, Anytime, Anywhere |
+| `onboard-2.webp` | 923×2000 | Carousel 4 | Onboarding 2: Protected Transaction, shield |
+| `onboard-3.webp` | 923×2000 | Carousel 5 | Onboarding 3: Instant Payment Request |
+| `home-hidden.webp` | 923×2000 | Carousel 6 | Home with the balance masked |
 
-## Optional
-
-More screens the page already has slots for (carousel frames and extra figures).
-Same size, 1600×1000 (16:10); anything missing stays a placeholder.
-
-| File | Should show |
-| --- | --- |
-| `home.webp` | The home screen showing a naira balance, add, send, request and more actions, quick send contacts and recent transactions. |
-| `hidden.webp` | The same home screen with the balance masked behind asterisks and an eye icon to reveal it. |
-| `accounts.webp` | The home screen with an account selector sheet open, listing naira, US dollar, pound and Canadian dollar balances. |
-| `onboard-1.webp` | Onboarding screen one: Get Paid Globally, Anytime, Anywhere. |
-| `onboard-2.webp` | Onboarding screen two: Protected Transaction, your transactions are always protected. |
-| `onboard-3.webp` | Onboarding screen three: Instant Payment Request, effortless billing for faster payment. |
-
-Export as WebP at 1600×1000 (16:10). The images are cropped to 16:10 with `object-fit: cover`,
-so keep the important part of the screen away from the edges.
+To replace one, keep the filename and update its `width`/`height` if the
+aspect ratio changes.
