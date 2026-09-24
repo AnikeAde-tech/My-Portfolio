@@ -164,7 +164,7 @@
     if (nav) {
       const hero = document.querySelector('.hero');
       const past = hero ? y > hero.offsetTop + hero.offsetHeight - nav.offsetHeight : y > 400;
-      const menuOpen = document.body.getAttribute('data-menu') === 'open';
+      const menuOpen = document.body.hasAttribute('data-menu');
       if (!menuOpen && past && y > lastY + 2) nav.classList.add('nav-hidden');
       else if (y < lastY - 2 || !past) nav.classList.remove('nav-hidden');
     }

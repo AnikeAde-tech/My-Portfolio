@@ -1,96 +1,186 @@
-// Mobile nav menu — builds a full-screen menu from the page's own nav links.
-// Loaded on every page; does nothing above 767px except keep the menu closed.
+// Mobile nav menu (below 900px): a two-hairline button in the nav opens a
+// full-screen overlay. Loaded from each page's <head>, so it works whether or
+// not the page runtime has booted; the nav itself paints later, so the button
+// is (re)attached whenever a .nav-in appears.
 (function () {
-  function init() {
-    const nav = document.querySelector('.nav');
-    const navIn = nav && nav.querySelector('.nav-in');
-    const links = nav && nav.querySelector('.nav-links');
-    if (!nav || !navIn || !links || document.querySelector('.menu')) return;
+  if (window.__navMenu) return;
+  window.__navMenu = true;
 
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'nav-toggle';
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-    toggle.innerHTML = '<span>menu</span><span class="bars" aria-hidden="true"><i></i><i></i></span>';
-    navIn.appendChild(toggle);
+  const MQ = window.matchMedia('(max-width: 899.98px)');
+  const EMAIL = 'olorunsolavictoria902@gmail.com';
+  let toggle = null, menu = null, closeBtn = null;
+  let isOpen = false, pushed = false, pendingNav = null, savedY = 0, prevRestoration = null;
 
-    const menu = document.createElement('div');
-    menu.className = 'menu';
-    menu.setAttribute('data-open', 'false');
-    menu.setAttribute('role', 'dialog');
-    menu.setAttribute('aria-modal', 'true');
-    menu.setAttribute('aria-label', 'Site menu');
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
-    const name = nav.querySelector('.nav-name');
-    const anchors = Array.from(links.querySelectorAll('a'));
-    const isStatus = (a) => /r[ée]sum[ée]|cv/i.test(a.textContent || '');
-    const pages = anchors.filter((a) => !isStatus(a));
-    const extras = anchors.filter(isStatus);
-    const status = links.querySelector('.nav-dot') ? links.querySelector('.nav-dot').parentElement : null;
-
-    menu.innerHTML =
-      '<div class="menu-top">' +
-      '<span class="nav-name">' + (name ? name.textContent : '') + '</span>' +
-      '<button type="button" class="menu-close" aria-label="Close menu">close &times;</button>' +
-      '</div>' +
-      '<ul class="menu-list">' +
-      pages.map((a) => '<li><a href="' + a.getAttribute('href') + '"' +
-        (a.getAttribute('aria-current') ? ' aria-current="page"' : '') + '>' +
-        a.textContent.trim() + '</a></li>').join('') +
-      '</ul>' +
-      '<div class="menu-foot">' +
-      (status ? '<span class="tag" style="color:var(--marigold)">' + status.textContent.trim() + '</span>' : '') +
-      extras.map((a) => '<a class="tag" href="' + a.getAttribute('href') + '"' +
-        (a.target ? ' target="' + a.target + '" rel="noopener"' : '') + '>' +
-        a.textContent.trim() + '</a>').join('') +
-      '</div>';
-    document.body.appendChild(menu);
-
-    const closeBtn = menu.querySelector('.menu-close');
-    let lastFocus = null;
-
-    const focusables = () => Array.from(
-      menu.querySelectorAll('a[href], button:not([disabled])')
-    ).filter((el) => el.offsetParent !== null);
-
-    function open() {
-      lastFocus = document.activeElement;
-      menu.setAttribute('data-open', 'true');
-      toggle.setAttribute('aria-expanded', 'true');
-      document.body.setAttribute('data-menu', 'open');
-      const f = focusables();
-      if (f.length) f[0].focus();
-      document.addEventListener('keydown', onKey, true);
-    }
-
-    function close() {
-      menu.setAttribute('data-open', 'false');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.removeAttribute('data-menu');
-      document.removeEventListener('keydown', onKey, true);
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
-
-    function onKey(e) {
-      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
-      if (e.key !== 'Tab') return;
-      const f = focusables();
-      if (!f.length) return;
-      const first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-
-    toggle.addEventListener('click', () => (menu.getAttribute('data-open') === 'true' ? close() : open()));
-    closeBtn.addEventListener('click', close);
-    menu.querySelectorAll('.menu-list a').forEach((a) => a.addEventListener('click', close));
-    window.addEventListener('resize', () => { if (window.innerWidth >= 768) close(); });
+  function makeToggle() {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'nav-toggle';
+    b.setAttribute('aria-expanded', 'false');
+    b.setAttribute('aria-controls', 'site-menu');
+    b.setAttribute('aria-label', 'Open menu');
+    b.innerHTML = '<span class="hl" aria-hidden="true"></span><span class="hl" aria-hidden="true"></span>';
+    b.addEventListener('click', () => (isOpen ? close() : open()));
+    return b;
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  function buildMenu(nav) {
+    const links = Array.from(nav.querySelectorAll('.nav-links a'));
+    const name = nav.querySelector('.nav-name');
+    const mail = document.querySelector('a[href^="mailto:"]');
+    const email = mail ? mail.getAttribute('href').replace(/^mailto:/, '') : EMAIL;
+    const m = document.createElement('div');
+    m.className = 'menu';
+    m.id = 'site-menu';
+    m.hidden = true;
+    m.setAttribute('data-open', 'false');
+    m.setAttribute('role', 'dialog');
+    m.setAttribute('aria-modal', 'true');
+    m.setAttribute('aria-label', 'Site menu');
+    m.innerHTML =
+      '<div class="menu-top">' +
+        '<span class="nav-name">' + esc(name ? name.textContent : 'Victoria Olorunsola') + '</span>' +
+        '<button type="button" class="nav-toggle menu-x" aria-label="Close menu">' +
+          '<span class="hl" aria-hidden="true"></span><span class="hl" aria-hidden="true"></span></button>' +
+      '</div>' +
+      '<nav class="menu-body" aria-label="Main">' +
+        '<ul class="menu-list">' +
+        links.map((a, i) => {
+          const ext = a.target === '_blank';
+          return '<li style="--i:' + (i + 1) + '"><a href="' + esc(a.getAttribute('href')) + '"' +
+            (a.getAttribute('aria-current') ? ' aria-current="page"' : '') +
+            (ext ? ' target="_blank" rel="noopener"' : '') + '>' +
+            esc(a.textContent.trim()) + (ext ? '<span class="menu-ext" aria-hidden="true"> ↗</span>' : '') +
+            '</a></li>';
+        }).join('') +
+        '</ul>' +
+        '<div class="menu-foot" style="--i:' + (links.length + 1) + '">' +
+          '<span class="tag menu-status"><span class="nav-dot" aria-hidden="true"></span>open to work</span>' +
+          '<a class="menu-mail" href="mailto:' + esc(email) + '">' + esc(email) + '</a>' +
+        '</div>' +
+      '</nav>';
+    document.body.appendChild(m);
+    closeBtn = m.querySelector('.menu-x');
+    closeBtn.addEventListener('click', () => close());
+    m.querySelectorAll('.menu-list a').forEach((a) => {
+      if (a.target === '_blank') return; // résumé: the PDF viewer below closes the menu
+      a.addEventListener('click', (e) => {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        const href = a.href;
+        if (pushed) {
+          // drop the menu's history entry first, then navigate from the real one
+          pendingNav = href;
+          pushed = false;
+          close({ restoreFocus: false, back: false });
+          history.back();
+          setTimeout(() => { if (pendingNav) { const h = pendingNav; pendingNav = null; location.assign(h); } }, 500);
+        } else {
+          close({ restoreFocus: false });
+          location.assign(href);
+        }
+      });
+    });
+    m.addEventListener('keydown', onKey);
+    return m;
+  }
 
+  function focusables() {
+    return Array.from(menu.querySelectorAll('a[href], button:not([disabled])'));
+  }
+
+  function onKey(e) {
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+    if (e.key !== 'Tab') return;
+    const f = focusables();
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (!menu.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  // Tab from outside (e.g. focus lost to the body) is pulled back in
+  document.addEventListener('keydown', (e) => { if (isOpen && !menu.contains(e.target)) onKey(e); }, true);
+  document.addEventListener('focusin', (e) => { if (isOpen && !menu.contains(e.target)) closeBtn.focus({ preventScroll: true }); });
+
+  function lockScroll() {
+    savedY = window.scrollY;
+    const b = document.body.style;
+    b.position = 'fixed'; b.top = -savedY + 'px'; b.left = '0'; b.right = '0'; b.width = '100%';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function unlockScroll() {
+    const b = document.body.style;
+    b.position = ''; b.top = ''; b.left = ''; b.right = ''; b.width = '';
+    document.documentElement.style.overflow = '';
+    const html = document.documentElement, prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo(0, savedY);
+    html.style.scrollBehavior = prev;
+  }
+
+  function open() {
+    if (isOpen || !menu) return;
+    isOpen = true;
+    // Push the menu's history entry before locking scroll, and stop the
+    // browser restoring scroll when that entry is popped: we restore it.
+    try {
+      if ('scrollRestoration' in history) { prevRestoration = history.scrollRestoration; history.scrollRestoration = 'manual'; }
+      history.pushState({ navMenu: true }, ''); pushed = true;
+    } catch (err) { pushed = false; }
+    document.body.setAttribute('data-menu', 'open');
+    lockScroll();
+    const root = document.getElementById('dc-root');
+    if (root) root.inert = true;
+    menu.hidden = false;
+    void menu.offsetWidth; // let the entrance transition run from the closed state
+    menu.setAttribute('data-open', 'true');
+    if (toggle) { toggle.setAttribute('aria-expanded', 'true'); toggle.setAttribute('aria-label', 'Close menu'); }
+    requestAnimationFrame(() => closeBtn.focus({ preventScroll: true }));
+  }
+
+  function close(opts) {
+    opts = opts || {};
+    if (!isOpen) return;
+    isOpen = false;
+    menu.setAttribute('data-open', 'false');
+    const root = document.getElementById('dc-root');
+    if (root) root.inert = false;
+    unlockScroll();
+    // keep the flag briefly so motion.js doesn't read the restore as a scroll-down and hide the nav
+    setTimeout(() => { if (!isOpen) document.body.removeAttribute('data-menu'); }, 200);
+    if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open menu'); }
+    setTimeout(() => { if (!isOpen) menu.hidden = true; }, 320);
+    if (opts.back !== false && pushed) { pushed = false; history.back(); }
+    if (opts.restoreFocus !== false && toggle) toggle.focus({ preventScroll: true });
+  }
+  window.__navMenuClose = () => close();
+
+  window.addEventListener('popstate', () => {
+    if (pendingNav) { const h = pendingNav; pendingNav = null; location.assign(h); return; }
+    if (isOpen) { pushed = false; close({ back: false }); }
+    if (prevRestoration) { const r = prevRestoration; prevRestoration = null; setTimeout(() => { history.scrollRestoration = r; }, 0); }
+  });
+  const onMQ = () => { if (!MQ.matches && isOpen) close(); };
+  if (MQ.addEventListener) MQ.addEventListener('change', onMQ); else MQ.addListener(onMQ);
+
+  function ensure() {
+    const nav = document.querySelector('.nav');
+    const navIn = nav && nav.querySelector('.nav-in');
+    if (!navIn || !nav.querySelector('.nav-links')) return;
+    if (!menu) menu = buildMenu(nav);
+    if (!toggle) toggle = makeToggle();
+    if (toggle.parentNode !== navIn) navIn.appendChild(toggle);
+  }
+  new MutationObserver(ensure).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ensure);
+  else ensure();
+})();
+
+(function () {
+  if (window.__pdfViewer) return;
+  window.__pdfViewer = true;
   // PDF links: open in an in-page viewer. The file is fetched with the page's
   // own access and drawn with pdf.js, so nothing depends on the browser being
   // allowed to open a new tab or its built-in PDF viewer.
@@ -169,9 +259,7 @@
     if (!a || (viewer && viewer.contains(a)) || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
     e.stopPropagation();
+    if (window.__navMenuClose) window.__navMenuClose();
     openViewer(a.getAttribute('href'), 'victoria olorunsola \u2014 r\u00e9sum\u00e9');
   }, true);
-  // DC pages paint progressively: retry once the nav has streamed in
-  let tries = 0;
-  const t = setInterval(() => { if (document.querySelector('.menu') || ++tries > 20) clearInterval(t); else init(); }, 300);
 })();
