@@ -15,11 +15,14 @@ Vercel serves the repository root as-is (`vercel.json`: clean URLs, no trailing 
 
 ## How changes go live
 
-Vercel deploys `main`. Commits authored by Claude and pushed straight to `main` have not been
-deploying; merges you make on GitHub have. So:
+Vercel deploys `main`. Changes are pushed straight to `main`, and the push deploys.
 
-1. Changes are made on a working branch, never pushed straight to `main`.
-2. Each change is opened as a pull request into `main`.
-3. Merge it on GitHub with **Create a merge commit**. Not squash, not rebase: those keep the
+If a push doesn't reach the live site (a new file 404s there although it's on `main`), check
+Vercel → Deployments for that commit. Direct pushes of Claude-authored commits have been skipped
+there before, while merges made on GitHub by the repo owner deployed. The fallback when that
+happens:
+
+1. The change is opened as a pull request into `main`.
+2. Merge it on GitHub with **Create a merge commit**, not squash or rebase. Those keep the
    original author on the commit that lands on `main`. The merge commit is authored by you, and
-   the deploy of it includes everything before it on `main`.
+   its deploy includes everything before it on `main`.
