@@ -1,19 +1,13 @@
 # Nerdbug images
 
-Drop these files into this folder with exactly these names. Pages already point here;
-until a file exists its slot shows the styled placeholder, never a broken image.
+All WebP, at most 1600px wide, original aspect ratio kept. Every frame on the
+site is 16:10 and screens are fitted inside it (never cropped), so any shape
+works; keep `width`/`height` in `nerdbug.html` matching the file.
 
-## Required
-
-| File | Size | Used for | Should show (matches the page's alt text) |
+| File | Size | Where | Shows |
 | --- | --- | --- | --- |
-| `cover.webp` | 1600×1000 | Work card (homepage + work index) and the case study lead image | The Nerdbug button sheet: block, large and small sizes across primary, secondary, outline and transparent styles, each with default, hover and disabled states, shown in light and dark themes side by side. |
-| `shot-1.webp` | 1600×1000 | Figure after block 02 | A component audit board: screens from three recent client projects with every repeated component (buttons, date pickers, tables, empty states) circled and tallied. |
-| `shot-2.webp` | 1600×1000 | Figure after block 03 | The Nerdbug popover sheet: confirmation, error, input and media variants on phone frames, each shown in light and dark themes. |
+| `buttons.webp` | 1600×1470 | Lead image, work card, work card | Button variant sheet: 4 emphasis levels × 3 sizes × 3 states × icon positions, light and dark |
+| `dialogs.webp` | 1600×1224 | After block 03 | Dialog set: 4 jobs × 3 media treatments, light and dark |
 
-> `shot-1.webp` is a new slot. Its alt text and caption describe a component audit
-> board (decision 01). If you use a different screen, update the `alt` and caption
-> after block 02 in `nerdbug.html`.
-
-Export as WebP at 1600×1000 (16:10). The images are cropped to 16:10 with `object-fit: cover`,
-so keep the important part of the screen away from the edges.
+To replace one, keep the filename and update its `width`/`height` if the
+aspect ratio changes.
