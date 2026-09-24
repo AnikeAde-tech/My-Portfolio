@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>html{background:#0E2A22}body{margin:0;background:#F1EEE7;color:#141310}x-dc{display:block}</style>
 <style>@view-transition{navigation:auto}</style>
-<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q);addEventListener('pagereveal',function(e){var v=e.viewTransition;if(v){window.__vtFinished=v.finished.then(function(){window.__vtFinished=null},function(){window.__vtFinished=null})}})})();</script>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
@@ -22,12 +22,12 @@
   .glow-counter{animation:none;opacity:.075;transform:translate(-2%,2%)}
 }
 </style>
+<style>.st-d4ab01:hover{background:var(--deep)!important;color:var(--chalk)!important;border-color:var(--deep)!important}</style>
+<script src="/page.js" defer></script>
 <script src="/site.js" defer></script>
 <script src="/nav-menu.js" defer></script>
-<script src="/support.js"></script>
 </head>
-<body>
-<x-dc>
+<body class="loaded">
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nav">
   <div class="nav-in">
@@ -146,16 +146,16 @@
   </div>
 
   <div class="wrap">
-    <section aria-roledescription="carousel" aria-label="More PayPro screens" style="margin:0 0 clamp(52px,6vw,84px)">
+    <section data-carousel aria-roledescription="carousel" aria-label="More PayPro screens" style="margin:0 0 clamp(52px,6vw,84px)">
       <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
-        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;6</p>
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span data-ref="counter">1</span>&nbsp;/&nbsp;6</p>
         <div style="display:flex;gap:10px">
-          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
-          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+          <button class="st-d4ab01" type="button" data-on-click="prev" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s">&larr;</button>
+          <button class="st-d4ab01" type="button" data-on-click="next" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s">&rarr;</button>
         </div>
       </div>
       <div style="overflow:hidden">
-        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+        <div data-ref="track" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
             <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
               <img src="/public/images/paypro/home.webp" alt="The home screen showing a naira balance, add, send, request and more actions, quick send contacts and recent transactions." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
@@ -194,13 +194,13 @@
           </figure>
         </div>
       </div>
-      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
-        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
-        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
-        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
-        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
-        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
-        <button type="button" onClick="{{ go5 }}" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      <div data-ref="dots" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" data-on-click="go0" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" data-on-click="go1" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" data-on-click="go2" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" data-on-click="go3" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" data-on-click="go4" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" data-on-click="go5" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
       </div>
     </section>
   </div>
@@ -267,104 +267,5 @@
     </div>
   </div>
 </footer>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  constructor(p){
-    super(p);
-    this.i = 0;
-    this.n = 6;
-    this.track = React.createRef();
-    this.dots = React.createRef();
-    this.counter = React.createRef();
-  }
-  slide(k){
-    this.i = (k + this.n) % this.n;
-    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
-    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
-    if(this.dots.current){
-      Array.prototype.forEach.call(this.dots.current.children, (b, j)=>{
-        var bar = b.firstElementChild;
-        if(bar) bar.style.background = j === this.i ? 'var(--deep)' : 'var(--rule-ink)';
-        b.setAttribute('aria-current', j === this.i ? 'true' : 'false');
-      });
-    }
-  }
-  renderVals(){
-    return {
-      track: this.track,
-      dots: this.dots,
-      counter: this.counter,
-      prev: () => this.slide(this.i - 1),
-      next: () => this.slide(this.i + 1),
-      go0: () => this.slide(0),
-      go1: () => this.slide(1),
-      go2: () => this.slide(2),
-      go3: () => this.slide(3),
-      go4: () => this.slide(4),
-      go5: () => this.slide(5)
-    };
-  }
-  componentDidMount(){ this.boot(); this.bootGlow(); }
-  componentDidUpdate(){ this.reveal(); }
-  bootGlow(){
-    var hero = document.querySelector('.hero');
-    if(!hero || !('IntersectionObserver' in window)) return;
-    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
-    this.glowIo = new IntersectionObserver((es)=>{
-      es.forEach((e)=>{
-        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
-      });
-    },{threshold:0});
-    this.glowIo.observe(hero);
-  }
-  boot(){
-    document.body.classList.add('loaded');
-    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(this.reduce || !('IntersectionObserver' in window)) return;
-    this.io = new IntersectionObserver((entries)=>{
-      entries.forEach((e)=>{ if(e.isIntersecting) this.show(e.target); });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-    this.onScroll = () => this.check();
-    window.addEventListener('scroll', this.onScroll, {passive:true});
-    window.addEventListener('resize', this.onScroll);
-    this.reveal();
-    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
-  }
-  show(el){
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-    if(this.io) this.io.unobserve(el);
-  }
-  check(){
-    var h = window.innerHeight || 0;
-    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
-      if(el.style.opacity === '1') return;
-      var r = el.getBoundingClientRect();
-      if(r.top < h * 0.92) this.show(el);
-    });
-  }
-  reveal(){
-    if(!this.io) return;
-    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
-    document.querySelectorAll(sel).forEach((el)=>{
-      if(el.dataset.revealBound) return;
-      el.dataset.revealBound = '1';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
-      this.io.observe(el);
-    });
-    this.check();
-    requestAnimationFrame(()=>this.check());
-  }
-  componentWillUnmount(){
-    if(this.io) this.io.disconnect();
-    if(this.glowIo) this.glowIo.disconnect();
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onScroll);
-  }
-}
-</script>
 </body>
 </html>
