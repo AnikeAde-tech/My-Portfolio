@@ -1,6 +1,7 @@
 # Firmly images
 
-All WebP, 1600px wide, original aspect ratio kept. Referenced from `/firmly`
+All WebP, 1600px wide, original aspect ratio kept (frames are 16:10; screens
+are fitted inside, never cropped). Referenced from `/firmly`
 (and `marketing.webp` from the work cards on `/` and `/work`).
 
 | File | Size | Where | Shows |
@@ -15,6 +16,5 @@ All WebP, 1600px wide, original aspect ratio kept. Referenced from `/firmly`
 | `identity.webp` | 1600×1138 | Carousel 5 | Onboarding: firm or solo |
 | `dashboard.webp` | 1600×1138 | Carousel 6 | Firm overview dashboard |
 
-To replace one, keep the filename. If the new image has a different aspect
-ratio, update its `width`/`height` in `firmly.html` (and the inline
-`aspect-ratio` on its frame).
+To replace one, keep the filename and update its `width`/`height` in
+`firmly.html` if the aspect ratio changes.

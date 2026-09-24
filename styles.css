@@ -199,7 +199,7 @@ a{color:inherit}
 @media(max-width:767px){.row-cost{margin-top:15px}}
 
 /* ---------- case study ---------- */
-.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border-block:1px solid var(--rule)}
+.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border-block:1px solid var(--rule);margin:0}
 @media(max-width:1023px){.cs-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .cs-meta div{background:var(--deep);padding:20px 20px 22px}
 .cs-meta div:first-child{padding-left:0}
@@ -362,7 +362,9 @@ body{font-size:clamp(16px,1.05vw,19px)}
 img[data-ph]{opacity:0;transition:opacity .45s ease}
 img[data-ph][data-loaded]{opacity:1}
 .ph{position:relative;display:block;aspect-ratio:16/10;border-radius:4px;overflow:hidden;background:rgba(14,42,34,.05);border:1px solid rgba(14,42,34,.16)}
-.ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0}
+/* every frame is 16:10; screens of any shape fit inside it (never cropped),
+   centred on the frame tint, so pages and carousel slides keep one height */
+.ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0}
 .ph:has(> img[data-loaded]){border-color:transparent}
 .ph-dark{border-color:transparent}
 .ph-bleed{border-radius:0;border-inline:0}
