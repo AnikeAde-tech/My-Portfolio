@@ -16,7 +16,7 @@ body{margin:0;background:#F1EEE7;color:#141310;font-family:Newsreader,Georgia,se
 @media(max-width:1023px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 <style>@view-transition{navigation:auto}</style>
-<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q);addEventListener('pagereveal',function(e){var v=e.viewTransition;if(v){window.__vtFinished=v.finished.then(function(){window.__vtFinished=null},function(){window.__vtFinished=null})}})})();</script>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
@@ -91,12 +91,14 @@ body.loaded .hl-line > span{transform:translateY(0)}
   .hl-line > span{transform:none;transition:none}
 }
 </style>
+<style>.st-157a6b:focus-visible{outline:2px solid var(--marigold)!important;outline-offset:6px!important}.st-c0383f:hover{background:var(--deep-2)!important;border-color:var(--sage)!important}.st-b417f5:active{transform:scale(.92)!important}</style>
+<script src="/page.js" defer></script>
+<script src="/character.js?v=5" defer></script>
+<script src="/home.js" defer></script>
 <script src="/site.js" defer></script>
 <script src="/nav-menu.js" defer></script>
-<script src="/support.js"></script>
 </head>
-<body>
-<x-dc>
+<body class="loaded">
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nav">
   <div class="nav-in">
@@ -114,30 +116,30 @@ body.loaded .hl-line > span{transform:translateY(0)}
     </div>
   </div>
 </nav>
-<header class="hero hero-tight" ref="{{ hero }}" style="position:relative;overflow:visible;overflow-x:clip;isolation:isolate">
+<header class="hero hero-tight" data-ref="hero" style="position:relative;overflow:visible;overflow-x:clip;isolation:isolate">
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.04;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>&quot;)"></div>
   <div class="hero-overlay" aria-hidden="false" style="position:absolute;inset:0;z-index:70;pointer-events:none;overflow:visible">
-    <div class="bubble" ref="{{ bubble }}" role="status" aria-live="polite" style="position:absolute;top:0;left:0;width:max-content;max-width:300px;height:auto;opacity:0;transform:translate(-9999px,-9999px);transform-origin:0% 100%;pointer-events:none;transition:opacity .18s ease,transform .26s cubic-bezier(.22,1.3,.36,1)">
-      <svg ref="{{ bubbleSvg }}" aria-hidden="true" viewBox="0 0 300 150" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 2px 5px rgba(5,19,14,.4)) drop-shadow(0 22px 46px rgba(5,19,14,.28))"><path ref="{{ bubblePath }}" d="" fill="#F1EEE7"></path></svg>
+    <div class="bubble" data-ref="bubble" role="status" aria-live="polite" style="position:absolute;top:0;left:0;width:max-content;max-width:300px;height:auto;opacity:0;transform:translate(-9999px,-9999px);transform-origin:0% 100%;pointer-events:none;transition:opacity .18s ease,transform .26s cubic-bezier(.22,1.3,.36,1)">
+      <svg data-ref="bubbleSvg" aria-hidden="true" viewBox="0 0 300 150" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 2px 5px rgba(5,19,14,.4)) drop-shadow(0 22px 46px rgba(5,19,14,.28))"><path data-ref="bubblePath" d="" fill="#F1EEE7"></path></svg>
       <div style="position:relative;padding:13px 16px 12px">
         <div style="display:flex;align-items:center;gap:8px">
           <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:var(--marigold);flex:0 0 auto"></span>
           <span class="tag" style="color:var(--ink)">victoria</span>
           <span class="tag" aria-hidden="true" style="color:rgba(20,19,16,.38)">&middot;</span>
-          <span class="tag" ref="{{ bubbleTime }}" data-lagos-clock style="color:rgba(20,19,16,.45)">--:--</span>
+          <span class="tag" data-ref="bubbleTime" data-lagos-clock style="color:rgba(20,19,16,.45)">--:--</span>
         </div>
         <div aria-hidden="true" style="height:1px;background:rgba(20,19,16,.14);margin:10px 0 11px"></div>
-        <p ref="{{ bubbleText }}" style="margin:0;font-family:var(--body);font-weight:400;font-size:19px;line-height:1.42;color:var(--ink);min-height:27px"></p>
+        <p data-ref="bubbleText" style="margin:0;font-family:var(--body);font-weight:400;font-size:19px;line-height:1.42;color:var(--ink);min-height:27px"></p>
         <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:12px">
-          <span ref="{{ bubbleChip }}"></span>
-          <span class="tag" ref="{{ bubbleCount }}" style="color:rgba(20,19,16,.35);white-space:nowrap">1 / 8</span>
+          <span data-ref="bubbleChip"></span>
+          <span class="tag" data-ref="bubbleCount" style="color:rgba(20,19,16,.35);white-space:nowrap">1 / 8</span>
         </div>
       </div>
     </div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-   <p class="tag hero-eyebrow rise">product designer &nbsp;&middot;&nbsp; lagos &nbsp;&middot;&nbsp; <span ref="{{ clock }}" data-lagos-clock>--:--</span> WAT &nbsp;&middot;&nbsp; remote worldwide</p>
-   <div class="hero-grid" ref="{{ ground }}">
+   <p class="tag hero-eyebrow rise">product designer &nbsp;&middot;&nbsp; lagos &nbsp;&middot;&nbsp; <span data-ref="clock" data-lagos-clock>--:--</span> WAT &nbsp;&middot;&nbsp; remote worldwide</p>
+   <div class="hero-grid" data-ref="ground">
     <h1 class="display rise"><span class="hl-line"><span>Trust is the hardest</span></span> <span class="hl-line"><span>thing to <span class="lift">design.</span></span></span></h1>
     <div class="hero-copy">
     <p class="hero-sub rise">Four years designing marketplaces, fintech and service platforms for people who have every reason to be sceptical of the app, the payment, and the stranger on the other side of it.</p>
@@ -149,10 +151,10 @@ body.loaded .hl-line > span{transform:translateY(0)}
       <span class="chip tag">0&rarr;1 &amp; redesign</span>
     </div>
     </div>
-    <div class="hero-fig" ref="{{ figCell }}">
-      <div class="hero-figure" ref="{{ stack }}">
-        <x-import component-from-global-scope="hero-character" from="./character.js?v=4" glb="character.glb" hint-size="100%,100%" ref="{{ figure }}" style="position:absolute;inset:0;z-index:2"></x-import>
-        <button type="button" ref="{{ sayHi }}" aria-label="Say hi" style="position:absolute;inset:0;z-index:4;background:transparent;border:0;padding:0;cursor:pointer;border-radius:6px" style-focus-visible="outline:2px solid var(--marigold);outline-offset:6px"></button>
+    <div class="hero-fig" data-ref="figCell">
+      <div class="hero-figure" data-ref="stack">
+        <hero-character glb="/character.glb" data-ref="figure" style="position:absolute;inset:0;z-index:2"></hero-character>
+        <button class="st-157a6b" type="button" data-ref="sayHi" aria-label="Say hi" style="position:absolute;inset:0;z-index:4;background:transparent;border:0;padding:0;cursor:pointer;border-radius:6px"></button>
       </div>
     </div>
    </div>
@@ -221,7 +223,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
   </div>
 </section>
 
-<section class="section dark" aria-roledescription="carousel" aria-label="Testimonials" ref="{{ tSection }}" tabindex="-1" style="outline:none">
+<section class="section dark" aria-roledescription="carousel" aria-label="Testimonials" data-ref="tSection" tabindex="-1" style="outline:none">
   <div class="wrap">
     <div class="t-grid" style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(32px,5vw,72px) clamp(16px,2vw,28px);align-items:flex-start">
       <div class="t-side" style="grid-column:1/5;min-width:0">
@@ -230,23 +232,23 @@ body.loaded .hl-line > span{transform:translateY(0)}
           <h2 style="margin:0">In their words</h2>
           <p class="tag" style="color:var(--sage);margin:10px 0 0">people I've worked with</p>
         </div>
-        <p class="tag t-count" style="color:var(--sage);margin:0 0 20px"><span ref="{{ tCounter }}">01</span>&nbsp;/&nbsp;<span ref="{{ tTotal }}">05</span></p>
+        <p class="tag t-count" style="color:var(--sage);margin:0 0 20px"><span data-ref="tCounter">01</span>&nbsp;/&nbsp;<span data-ref="tTotal">05</span></p>
         <div class="t-btns" style="display:flex;gap:10px;margin:0 0 clamp(24px,3vw,34px)">
-          <button type="button" ref="{{ tPrevBtn }}" onClick="{{ tPrev }}" aria-label="Previous testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s" style-hover="background:var(--deep-2);border-color:var(--sage)" style-active="transform:scale(.92)">&larr;</button>
-          <button type="button" ref="{{ tNextBtn }}" onClick="{{ tNext }}" aria-label="Next testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s" style-hover="background:var(--deep-2);border-color:var(--sage)" style-active="transform:scale(.92)">&rarr;</button>
+          <button class="st-c0383f st-b417f5" type="button" data-ref="tPrevBtn" data-on-click="tPrev" aria-label="Previous testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s">&larr;</button>
+          <button class="st-c0383f st-b417f5" type="button" data-ref="tNextBtn" data-on-click="tNext" aria-label="Next testimonial" style="width:46px;height:46px;border:1px solid var(--rule);background:transparent;border-radius:999px;color:var(--chalk);font-family:var(--mono);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s,transform .12s">&rarr;</button>
         </div>
         <div class="t-meta" style="overflow:hidden">
-          <div ref="{{ tMeta }}" style="transition:transform .5s cubic-bezier(.2,.7,.3,1),opacity .4s ease">
-            <p ref="{{ tName }}" style="font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:19px;color:var(--chalk);margin:0">Elizabeth Nana</p>
-            <p ref="{{ tRole }}" class="tag" style="color:var(--sage);margin:8px 0 0">Product manager</p>
+          <div data-ref="tMeta" style="transition:transform .5s cubic-bezier(.2,.7,.3,1),opacity .4s ease">
+            <p data-ref="tName" style="font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:19px;color:var(--chalk);margin:0">Elizabeth Nana</p>
+            <p data-ref="tRole" class="tag" style="color:var(--sage);margin:8px 0 0">Product manager</p>
           </div>
         </div>
       </div>
 
       <div class="t-stage-col" style="grid-column:5/13;min-width:0">
-        <div class="t-stage" ref="{{ tStage }}" style="position:relative;width:100%;max-width:860px;height:clamp(340px,32vw,480px);margin-bottom:56px">
+        <div class="t-stage" data-ref="tStage" style="position:relative;width:100%;max-width:860px;height:clamp(340px,32vw,480px);margin-bottom:56px">
 
-          <article class="t-card" ref="{{ c0 }}" data-rot="-3.5" data-x="-6" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
+          <article class="t-card" data-ref="c0" data-rot="-3.5" data-x="-6" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
             <div class="t-body" style="transition:opacity .35s ease">
               <span aria-hidden="true" style="display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,5vw,72px);line-height:.6;color:var(--marigold);margin-bottom:18px">&ldquo;</span>
               <p style="font-family:var(--body);font-weight:300;font-size:clamp(19px,1.8vw,27px);line-height:1.45;color:var(--ink);margin:0">A quote from Elizabeth is on its way.</p>
@@ -263,7 +265,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
             <div class="t-veil" aria-hidden="true" style="position:absolute;inset:0;border-radius:4px;background:#0E2A22;opacity:0;pointer-events:none;transition:opacity .5s ease"></div>
           </article>
 
-          <article class="t-card" ref="{{ c1 }}" data-rot="2" data-x="8" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
+          <article class="t-card" data-ref="c1" data-rot="2" data-x="8" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
             <div class="t-body" style="transition:opacity .35s ease">
               <span aria-hidden="true" style="display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,5vw,72px);line-height:.6;color:var(--marigold);margin-bottom:18px">&ldquo;</span>
               <p style="font-family:var(--body);font-weight:300;font-size:clamp(19px,1.8vw,27px);line-height:1.45;color:var(--ink);margin:0">A quote from Oludare is on its way.</p>
@@ -280,7 +282,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
             <div class="t-veil" aria-hidden="true" style="position:absolute;inset:0;border-radius:4px;background:#0E2A22;opacity:0;pointer-events:none;transition:opacity .5s ease"></div>
           </article>
 
-          <article class="t-card" ref="{{ c2 }}" data-rot="-1" data-x="-2" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
+          <article class="t-card" data-ref="c2" data-rot="-1" data-x="-2" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
             <div class="t-body" style="transition:opacity .35s ease">
               <span aria-hidden="true" style="display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,5vw,72px);line-height:.6;color:var(--marigold);margin-bottom:18px">&ldquo;</span>
               <p style="font-family:var(--body);font-weight:300;font-size:clamp(19px,1.8vw,27px);line-height:1.45;color:var(--ink);margin:0">A quote from Simi is on its way.</p>
@@ -297,7 +299,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
             <div class="t-veil" aria-hidden="true" style="position:absolute;inset:0;border-radius:4px;background:#0E2A22;opacity:0;pointer-events:none;transition:opacity .5s ease"></div>
           </article>
 
-          <article class="t-card" ref="{{ c3 }}" data-rot="3.5" data-x="4" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
+          <article class="t-card" data-ref="c3" data-rot="3.5" data-x="4" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
             <div class="t-body" style="transition:opacity .35s ease">
               <span aria-hidden="true" style="display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,5vw,72px);line-height:.6;color:var(--marigold);margin-bottom:18px">&ldquo;</span>
               <p style="font-family:var(--body);font-weight:300;font-size:clamp(19px,1.8vw,27px);line-height:1.45;color:var(--ink);margin:0">A quote from Christopher is on its way.</p>
@@ -314,7 +316,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
             <div class="t-veil" aria-hidden="true" style="position:absolute;inset:0;border-radius:4px;background:#0E2A22;opacity:0;pointer-events:none;transition:opacity .5s ease"></div>
           </article>
 
-          <article class="t-card" ref="{{ c4 }}" data-rot="-2" data-x="6" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
+          <article class="t-card" data-ref="c4" data-rot="-2" data-x="6" style="position:absolute;inset:0;background:var(--chalk);border-radius:4px;padding:clamp(28px,3.4vw,46px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 50%;will-change:transform;touch-action:pan-y">
             <div class="t-body" style="transition:opacity .35s ease">
               <span aria-hidden="true" style="display:block;font-family:var(--display);font-weight:800;font-size:clamp(48px,5vw,72px);line-height:.6;color:var(--marigold);margin-bottom:18px">&ldquo;</span>
               <p style="font-family:var(--body);font-weight:300;font-size:clamp(19px,1.8vw,27px);line-height:1.45;color:var(--ink);margin:0">A quote from Adaobi is on its way.</p>
@@ -334,7 +336,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
         </div>
       </div>
     </div>
-    <p ref="{{ tLive }}" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Testimonial 1 of 5</p>
+    <p data-ref="tLive" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Testimonial 1 of 5</p>
   </div>
 </section>
 
@@ -397,852 +399,5 @@ body.loaded .hl-line > span{transform:translateY(0)}
     </div>
   </div>
 </footer>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  constructor(p){
-    super(p);
-    this.hero = React.createRef();
-    this.stack = React.createRef();
-    this.clock = React.createRef();
-    this.s0 = React.createRef();
-    this.s1 = React.createRef();
-    this.s2 = React.createRef();
-    this.s3 = React.createRef();
-    this.s4 = React.createRef();
-    this.s5 = React.createRef();
-    this.bubble = React.createRef();
-    this.bubbleText = React.createRef();
-    this.figure = React.createRef();
-    this.sayHi = React.createRef();
-    this.figCell = React.createRef();
-    this.bubbleSvg = React.createRef();
-    this.bubblePath = React.createRef();
-    this.bubbleTime = React.createRef();
-    this.bubbleChip = React.createRef();
-    this.bubbleCount = React.createRef();
-    this.ground = React.createRef();
-    this.tSection = React.createRef();
-    this.tStage = React.createRef();
-    this.tCounter = React.createRef();
-    this.tTotal = React.createRef();
-    this.tMeta = React.createRef();
-    this.tName = React.createRef();
-    this.tRole = React.createRef();
-    this.tProj = React.createRef();
-    this.tLive = React.createRef();
-    this.tPrevBtn = React.createRef();
-    this.tNextBtn = React.createRef();
-    this.c0 = React.createRef();
-    this.c1 = React.createRef();
-    this.c2 = React.createRef();
-    this.c3 = React.createRef();
-    this.c4 = React.createRef();
-  }
-
-  bootCards(){
-    var self = this;
-    var cards = [this.c0,this.c1,this.c2,this.c3,this.c4].map(function(r){ return r.current; }).filter(Boolean);
-    if(!cards.length) return;
-    var stage = this.tStage.current;
-    var n = cards.length;
-    this.tN = n;
-    if(this.tTotal.current) this.tTotal.current.textContent = ('0' + n).slice(-2);
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    this.tReduce = reduce;
-
-    if(n < 3){
-      var grid = document.querySelector('.t-stage');
-      if(grid){
-        grid.style.aspectRatio = 'auto';
-        grid.style.display = 'flex';
-        grid.style.gap = '20px';
-        cards.forEach(function(c){ c.style.position = 'relative'; c.style.inset = 'auto'; c.style.flex = '1 1 0'; c.style.transform = 'none'; });
-      }
-      return;
-    }
-
-    cards.forEach(function(c){ if(c.getAnimations) c.getAnimations().forEach(function(a){ a.cancel(); }); });
-    var P = cards.map(function(c){
-      return { el: c, rot: parseFloat(c.dataset.rot) || 0, x: parseFloat(c.dataset.x) || 0 };
-    });
-    var order = cards.map(function(_, i){ return i; });
-    this.tOrder = order;
-    this.tBusy = false;
-    this.tFan = 0;
-
-    var depth = function(){ return (document.documentElement.clientWidth <= 900) ? 2 : 3; };
-
-    var slotFor = function(pos){
-      var d = depth();
-      if(pos > d) return null;
-      return { y: pos * 14, s: 1 - pos * 0.05, veil: pos === 0 ? 0 : (pos === 1 ? .15 : (pos === 2 ? .30 : .45)) };
-    };
-
-    var apply = function(animate){
-      order.forEach(function(idx, pos){
-        var p = P[idx];
-        var sl = slotFor(pos);
-        var hidden = !sl;
-        var use = sl || slotFor(depth());
-        var fan = (pos > 0 && self.tFan) ? pos * 5 : 0;
-        var fanR = (pos > 0 && self.tFan) ? (p.rot > 0 ? pos * 1.1 : -pos * 1.1) : 0;
-        p.el.style.transition = animate ? 'transform .58s cubic-bezier(.22,1.12,.36,1)' : 'none';
-        p.el.style.transitionDelay = animate ? (pos * 0.04) + 's' : '0s';
-        p.el.style.zIndex = String(100 - pos);
-        p.el.style.transform = 'translate(' + (p.x + fan) + 'px,' + use.y + 'px) rotate(' + (p.rot + fanR) + 'deg) scale(' + use.s + ')';
-        p.el.style.opacity = hidden ? '0' : '1';
-        p.el.style.pointerEvents = pos === 0 ? 'auto' : 'none';
-        var veil = p.el.querySelector('.t-veil');
-        if(veil) veil.style.opacity = String(use.veil);
-        var body = p.el.querySelector('.t-body');
-        var foot = p.el.querySelector('.t-foot');
-        [body, foot].forEach(function(b){ if(b) b.style.opacity = pos === 0 ? '1' : '0'; });
-        p.el.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
-        p.el.querySelectorAll('a').forEach(function(a){ a.tabIndex = pos === 0 ? 0 : -1; });
-      });
-      self.syncMeta();
-    };
-    this.tApply = apply;
-
-    this.syncMeta = function(){
-      var front = P[order[0]].el;
-      var nm = front.querySelector('.t-foot div > span:not([aria-hidden]) > span');
-      var meta = self.tMeta.current;
-      if(self.tCounter.current) self.tCounter.current.textContent = ('0' + (order[0] + 1)).slice(-2);
-      var who = front.querySelectorAll('.t-foot div > span:not([aria-hidden]) > span');
-      var nmT = who[0] ? who[0].textContent.trim() : '', rlT = who[1] ? who[1].textContent.trim() : '';
-      if(self.tName.current) self.tName.current.textContent = nmT;
-      if(self.tRole.current) self.tRole.current.textContent = rlT;
-      if(self.tLive.current) self.tLive.current.textContent = 'Testimonial ' + (order[0] + 1) + ' of ' + n + ', ' + nmT + ', ' + rlT;
-      if(meta && !reduce){
-        meta.style.transition = 'none';
-        meta.style.transform = 'translateY(14px)';
-        meta.style.opacity = '0';
-        requestAnimationFrame(function(){
-          meta.style.transition = 'transform .5s cubic-bezier(.2,.7,.3,1),opacity .4s ease';
-          meta.style.transform = 'translateY(0)';
-          meta.style.opacity = '1';
-        });
-      }
-    };
-
-    apply(false);
-
-    this.advance = function(dir){
-      if(self.tBusy) return;
-      self.tBusy = true;
-      if(reduce){
-        var front0 = P[order[0]].el;
-        front0.style.transition = 'opacity .15s ease';
-        if(dir > 0) order.push(order.shift()); else order.unshift(order.pop());
-        apply(false);
-        setTimeout(function(){ self.tBusy = false; }, 160);
-        return;
-      }
-      var w = stage ? stage.getBoundingClientRect().width : 500;
-      var throwX = w * 1.12 * dir;
-      if(dir > 0){
-        var idx = order[0];
-        var p = P[idx];
-        var el = p.el;
-        var d = depth();
-        var end = slotFor(d);
-        el.style.transition = 'none';
-        el.style.zIndex = '200';
-        var body = el.querySelector('.t-body'), foot = el.querySelector('.t-foot'), veil = el.querySelector('.t-veil');
-        [body, foot].forEach(function(b){ if(b) b.style.opacity = '0'; });
-        el.style.transform = 'translate(' + p.x + 'px,0px) rotate(' + p.rot + 'deg) scale(1)';
-        void el.offsetWidth;
-        el.style.transition = 'transform .12s cubic-bezier(.3,0,.2,1)';
-        el.style.transform = 'translate(' + p.x + 'px,-10px) rotate(' + p.rot + 'deg) scale(1.03)';
-        setTimeout(function(){
-          void el.offsetWidth;
-          el.style.transition = 'transform .26s cubic-bezier(.45,0,.55,1)';
-          el.style.transform = 'translate(' + (p.x + throwX) + 'px,-4px) rotate(' + (p.rot + 8) + 'deg) scale(1)';
-        }, 120);
-        setTimeout(function(){
-          void el.offsetWidth;
-          el.style.zIndex = '1';
-          if(veil) veil.style.opacity = String(end.veil);
-          el.style.transition = 'transform .32s cubic-bezier(.22,1.08,.36,1)';
-          el.style.transform = 'translate(' + p.x + 'px,' + end.y + 'px) rotate(' + p.rot + 'deg) scale(' + end.s + ')';
-        }, 386);
-        var anim = { set onfinish(f){ setTimeout(f, 714); } };
-        order.push(order.shift());
-        order.forEach(function(oi, pos){
-          if(oi === idx) return;
-          var q = P[oi];
-          var sl = slotFor(pos) || slotFor(d);
-          q.el.style.transition = 'transform .58s cubic-bezier(.22,1.12,.36,1)';
-          q.el.style.transitionDelay = (pos * 0.04) + 's';
-          q.el.style.zIndex = String(100 - pos);
-          q.el.style.transform = 'translate(' + q.x + 'px,' + sl.y + 'px) rotate(' + q.rot + 'deg) scale(' + sl.s + ')';
-          q.el.style.opacity = slotFor(pos) ? '1' : '0';
-          var v = q.el.querySelector('.t-veil');
-          if(v) v.style.opacity = String(sl.veil);
-        });
-        anim.onfinish = function(){
-          el.style.transition = 'none';
-          apply(false);
-          self.tBusy = false;
-        };
-        setTimeout(function(){ self.syncMeta(); }, 560);
-      } else {
-        var lastPos = order.length - 1;
-        var bidx = order[lastPos];
-        var bp = P[bidx];
-        var bel = bp.el;
-        var dd = depth();
-        var from = slotFor(Math.min(lastPos, dd));
-        bel.style.transition = 'none';
-        bel.style.zIndex = '200';
-        bel.style.opacity = '1';
-        var bb = bel.querySelector('.t-body'), bf = bel.querySelector('.t-foot'), bv = bel.querySelector('.t-veil');
-        [bb, bf].forEach(function(b){ if(b) b.style.opacity = '0'; });
-        bel.style.transform = 'translate(' + bp.x + 'px,' + from.y + 'px) rotate(' + bp.rot + 'deg) scale(' + from.s + ')';
-        void bel.offsetWidth;
-        bel.style.transition = 'transform .35s cubic-bezier(.3,0,.2,1)';
-        bel.style.transform = 'translate(' + (bp.x - w * 1.12) + 'px,-4px) rotate(' + (bp.rot - 8) + 'deg) scale(1)';
-        setTimeout(function(){
-          void bel.offsetWidth;
-          bel.style.transition = 'transform .35s cubic-bezier(.22,1.08,.36,1)';
-          bel.style.transform = 'translate(' + bp.x + 'px,0px) rotate(' + bp.rot + 'deg) scale(1)';
-        }, 356);
-        var banim = { set onfinish(f){ setTimeout(f, 714); } };
-        if(bv) bv.style.opacity = '0';
-        order.unshift(order.pop());
-        order.forEach(function(oi, pos){
-          if(oi === bidx) return;
-          var q = P[oi];
-          var sl = slotFor(pos) || slotFor(dd);
-          q.el.style.transition = 'transform .58s cubic-bezier(.22,1.12,.36,1)';
-          q.el.style.transitionDelay = (pos * 0.04) + 's';
-          q.el.style.zIndex = String(100 - pos);
-          q.el.style.transform = 'translate(' + q.x + 'px,' + sl.y + 'px) rotate(' + q.rot + 'deg) scale(' + sl.s + ')';
-          q.el.style.opacity = slotFor(pos) ? '1' : '0';
-          var v = q.el.querySelector('.t-veil');
-          if(v) v.style.opacity = String(sl.veil);
-        });
-        banim.onfinish = function(){
-          bel.style.transition = 'none';
-          apply(false);
-          self.tBusy = false;
-        };
-        setTimeout(function(){ self.syncMeta(); }, 560);
-      }
-    };
-
-    if(stage && !reduce){
-      stage.addEventListener('pointerenter', function(){ self.tFan = 1; if(!self.tBusy) apply(true); });
-      stage.addEventListener('pointerleave', function(){ self.tFan = 0; if(!self.tBusy) apply(true); });
-    }
-
-    cards.forEach(function(el, i){
-      var sx = 0, dragging = false, id = null, t0 = 0, last = 0;
-      el.addEventListener('pointerdown', function(e){
-        if(reduce || self.tBusy) return;
-        if(order[0] !== i) return;
-        if(e.target.closest('a')) { /* still allow drag detection */ }
-        id = e.pointerId; sx = e.clientX; t0 = Date.now(); last = 0; dragging = false;
-      });
-      el.addEventListener('pointermove', function(e){
-        if(id === null || e.pointerId !== id) return;
-        var dx = e.clientX - sx;
-        if(!dragging && Math.abs(dx) > 6){
-          dragging = true;
-          self.tDrag = true;
-          try{ el.setPointerCapture(id); }catch(err){}
-          el.style.transition = 'none';
-        }
-        if(dragging){
-          last = dx;
-          var p = P[i];
-          var rot = Math.max(-12, Math.min(12, dx / 18));
-          el.style.transform = 'translate(' + (p.x + dx) + 'px,0px) rotate(' + (p.rot + rot) + 'deg) scale(1)';
-        }
-      });
-      var release = function(e){
-        if(id === null) return;
-        id = null;
-        if(!dragging) return;
-        dragging = false;
-        var w = stage.getBoundingClientRect().width;
-        var dt = Math.max(1, Date.now() - t0);
-        var v = Math.abs(last) / dt;
-        setTimeout(function(){ self.tDrag = false; }, 0);
-        if(Math.abs(last) > w * 0.3 || v > 0.7){
-          el.style.transition = 'none';
-          self.advance(last > 0 ? 1 : -1);
-        } else {
-          el.style.transition = 'transform .5s cubic-bezier(.22,1.12,.36,1)';
-          var p = P[i];
-          el.style.transform = 'translate(' + p.x + 'px,0px) rotate(' + p.rot + 'deg) scale(1)';
-        }
-      };
-      el.addEventListener('pointerup', release);
-      el.addEventListener('pointercancel', release);
-      el.addEventListener('click', function(e){ if(self.tDrag) e.preventDefault(); }, true);
-    });
-
-    var sec = this.tSection.current;
-    if(sec){
-      sec.addEventListener('keydown', function(e){
-        if(e.key === 'ArrowRight'){ e.preventDefault(); self.advance(1); }
-        if(e.key === 'ArrowLeft'){ e.preventDefault(); self.advance(-1); }
-      });
-    }
-
-    this.tLayout = function(){
-      var g = document.querySelector('.t-grid');
-      var side = document.querySelector('.t-side');
-      var col = document.querySelector('.t-stage-col');
-      if(!g || !side || !col) return;
-      if(document.documentElement.clientWidth <= 900){
-        g.style.flexDirection = 'column';
-        side.style.flex = '1 1 auto';
-        side.style.maxWidth = 'none';
-        side.style.width = '100%';
-        col.style.width = '100%';
-        col.style.order = '2';
-      } else {
-        g.style.flexDirection = 'row';
-        side.style.flex = '0 0 35%';
-        side.style.maxWidth = '35%';
-        col.style.order = '';
-      }
-      if(!self.tBusy) apply(false);
-    };
-    this.tLayout();
-    this.onTResize = function(){ self.tLayout(); };
-    window.addEventListener('resize', this.onTResize);
-  }
-  componentDidMount(){ this.boot(); this.bootClock(); this.bootLayout(); this.bootCards(); this.bootChat(); }
-
-  bootLayout(){
-    var self = this;
-    // small-viewport height (svh): stable while mobile browser bars show/hide
-    var probe = document.createElement('div');
-    probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none';
-    document.body.appendChild(probe);
-    this.svh = function(){ return probe.offsetHeight || window.innerHeight; };
-    // the character stands in the open space beside the short second headline
-    // line: its head starts at that line's top, its feet on the chips hairline.
-    this.layout = function(){
-      var grid = document.querySelector('.hero-grid');
-      var fig = self.stack.current;
-      var lines = document.querySelectorAll('.hero-tight h1.display .hl-line');
-      if(!grid || !fig || lines.length < 2) return;
-      var vw = document.documentElement.clientWidth;
-      self.narrow = vw < 1024;
-      if(self.narrow){
-        var mob = vw < 768;
-        var nh = Math.round(Math.min(self.svh() * (vw < 900 ? 0.42 : 0.5), mob ? 360 : 420));
-        fig.style.height = nh + 'px';
-        fig.style.width = Math.round(Math.min(vw - 40, nh * 0.5)) + 'px';
-        fig.style.setProperty('--fig-h', nh + 'px');
-        return;
-      }
-      // head level with the top of the FIRST headline line, feet on the ground line
-      var top = lines[0].getBoundingClientRect().top;
-      var bottom = grid.getBoundingClientRect().bottom;
-      var want = Math.round(bottom - top);
-      var cap = Math.round(self.svh() * 0.72);
-      var h = Math.max(320, Math.min(want, cap));
-      // stay inside the column: she is ~0.46 body-heights wide
-      var cell = fig.parentElement.getBoundingClientRect().width;
-      if (cell > 0 && h * 0.5 > cell) h = Math.max(320, Math.floor(cell / 0.5));
-      fig.style.height = h + 'px';
-      fig.style.width = Math.round(Math.min(cell || h * 0.5, h * 0.5)) + 'px';
-      fig.style.setProperty('--fig-h', h + 'px');
-    };
-    this.layout();
-    setTimeout(this.layout, 400);
-    this.onResize = function(){
-      self.layout();
-      if(self.sizeBubble) self.sizeBubble();
-      var ch = document.querySelector('hero-character');
-      if(ch && ch._report) ch._report();
-      if(self.placeBubble) self.placeBubble();
-    };
-    window.addEventListener('resize', this.onResize);
-  }
-  componentDidUpdate(){ this.reveal(); }
-
-  bootClock(){
-    // Look the clock elements up on every paint rather than holding refs from
-    // mount: DC pages paint progressively, so on a slow network the spans may
-    // not exist yet when this runs (which left them on "--:--" in production).
-    var self = this;
-    var fmt = null;
-    try{ fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Lagos',hour:'2-digit',minute:'2-digit',hour12:false}); }catch(e){}
-    this.lagosNow = function(){
-      if(fmt) return fmt.format(new Date());
-      // no tz data: Lagos is UTC+1 all year
-      var d = new Date(Date.now() + 3600000);
-      return ('0' + d.getUTCHours()).slice(-2) + ':' + ('0' + d.getUTCMinutes()).slice(-2);
-    };
-    this.paintClock = function(){
-      var els = document.querySelectorAll('[data-lagos-clock]');
-      var t = self.lagosNow();
-      for(var i = 0; i < els.length; i++) if(els[i].textContent !== t) els[i].textContent = t;
-      return els.length;
-    };
-    var tries = 0;
-    var first = function(){
-      if(self.paintClock() >= 2 || ++tries > 100) return;
-      self.clockRetry = setTimeout(first, 100);
-    };
-    first();
-    this.clockTimer = setInterval(this.paintClock, 5000);
-  }
-
-  bootChat(){
-    var self = this;
-    var bub = this.bubble.current, txt = this.bubbleText.current, btn = this.sayHi.current;
-    var chipSlot = this.bubbleChip.current, count = this.bubbleCount.current;
-    var timeEl = this.bubbleTime.current, pathEl = this.bubblePath.current, svg = this.bubbleSvg.current;
-    if(!bub || !txt || !btn || !chipSlot || !pathEl || !svg){ setTimeout(function(){ self.bootChat(); }, 250); return; }
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    var lagos = function(){ return self.lagosNow ? self.lagosNow() : '--:--'; };
-
-    var LINES = [
-      { seg:[["Hi, I'm Victoria. ",0],["The work's just below.",1]], react:'wave',
-        chip:{label:'see the work \u2193', href:'#main', scroll:true} },
-      { seg:[["It's {T} in Lagos. ",0],["Good time to talk?",1]], react:'nod',
-        chip:{label:'email me \u2197', href:'mailto:olorunsolavictoria902@gmail.com'} },
-      { seg:[["Ask me why ",0],["the conflict check has no override.",1]], react:'tilt',
-        chip:{label:'read the case study \u2192', href:'/firmly'} },
-      { seg:[["I design for people who've ",0],["been let down before.",1]], react:'nod' },
-      { seg:[["Five products, one question:",1],[" why would anyone trust this?",0]], react:'shrug' },
-      { seg:[["Currently open to ",0],["remote roles.",1],[" Anywhere.",0]], react:'wave',
-        chip:{label:'view r\u00e9sum\u00e9 \u2197', href:'victoria-olorunsola-cv.pdf', blank:true} },
-      { seg:[["The decisions page",1],[" is where I'm most honest.",0]], react:'tilt',
-        chip:{label:'open decisions \u2192', href:'/decisions'} },
-      { seg:[["Still here? ",0],["The case studies are better than my jokes.",1]], react:'nod' }
-    ];
-    var LAST = { seg:[["Okay, you like me. ",0],["My email's at the bottom.",1]], react:'nod' };
-
-    // card + tail drawn as one path, sized in real pixels so the corners never distort
-    var tailSide = 'left';   // 'left' | 'right' | 'centre'
-    this.sizeBubble = function(){
-      var w = Math.round(bub.clientWidth), h = Math.round(bub.clientHeight), r = 14;
-      if(!w || !h) return;
-      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-      var tx = tailSide === 'left' ? 30 : (tailSide === 'right' ? w - 30 : Math.round(w / 2));
-      var dx = tailSide === 'left' ? -18 : (tailSide === 'right' ? 18 : 0);
-      pathEl.setAttribute('d',
-        'M' + r + ',0 H' + (w - r) + ' A' + r + ',' + r + ' 0 0 1 ' + w + ',' + r +
-        ' V' + (h - r) + ' A' + r + ',' + r + ' 0 0 1 ' + (w - r) + ',' + h +
-        ' H' + (tx + 22) +
-        ' C' + (tx + 14) + ',' + h + ' ' + (tx + 10 + dx * 0.4) + ',' + (h + 8) + ' ' + (tx + dx) + ',' + (h + 22) +
-        ' C' + (tx + dx * 0.25) + ',' + (h + 7) + ' ' + (tx - 10) + ',' + h + ' ' + (tx - 22) + ',' + h +
-        ' H' + r + ' A' + r + ',' + r + ' 0 0 1 0,' + (h - r) +
-        ' V' + r + ' A' + r + ',' + r + ' 0 0 1 ' + r + ',0 Z');
-    };
-    if(window.ResizeObserver){ new ResizeObserver(function(){ self.sizeBubble(); self.placeBubble(); }).observe(bub); }
-
-    // anchored to the crown of her head, in hero-relative pixels
-    var headPt = null, bx = -9999, by = -9999, bScale = 0.85, bRot = 0;
-    var applyT = function(){
-      bub.style.transformOrigin = tailSide === 'right' ? '100% 100%' : (tailSide === 'centre' ? '50% 100%' : '0% 100%');
-      bub.style.transform = 'translate(' + bx + 'px,' + by + 'px) scale(' + bScale + ') rotate(' + bRot + 'deg)';
-    };
-    this.applyBubbleT = applyT;
-
-    this.placeBubble = function(){
-      if(!headPt) return;
-      // clientWidth, not innerWidth: on phones innerWidth grows with any
-      // overflow, which let the bubble widen the page and then itself
-      var VW = document.documentElement.clientWidth, VH = self.svh ? self.svh() : window.innerHeight;
-      var mobile = VW < 768;
-      var M = mobile ? 20 : 16, GAP_Y = 12, GAP_X = 16;
-      var hero = document.querySelector('.hero');
-      if(!hero) return;
-      var hL = headPt.heroLeft, hT = headPt.heroTop;
-
-      if(mobile){ bub.style.width = (VW - M * 2) + 'px'; bub.style.maxWidth = 'none'; }
-      else { bub.style.width = 'max-content'; bub.style.maxWidth = '300px'; }
-      var bw = bub.offsetWidth, bh = bub.offsetHeight;
-      if(!bw || !bh) return;
-
-      var x, y;
-      if(mobile){
-        tailSide = 'centre';
-        x = (VW - bw) / 2 - hL;
-      } else if(VW < 900){
-        // single-column hero: centred over her head, tail straight down
-        tailSide = 'centre';
-        x = headPt.x - bw / 2;
-      } else {
-        tailSide = 'left';
-        x = headPt.x + GAP_X;
-        if(hL + x + bw > VW - M){
-          x = headPt.x - GAP_X - bw;      // no room to the right: flip above-left
-          tailSide = 'right';
-        }
-      }
-      y = headPt.y - GAP_Y - bh;
-
-      // never below her shoulders or the ground line
-      var maxY = Math.min(headPt.shoulderY, headPt.groundY) - bh;
-      if(y > maxY) y = maxY;
-      // keep clear of the nav, and inside the viewport with a 16px margin
-      var nav = document.querySelector('.nav');
-      var navB = nav ? nav.getBoundingClientRect().bottom : 0;
-      var minY = Math.max(M, navB + 8) - hT;
-      y = Math.max(minY, Math.min(y, VH - M - bh - hT));
-      x = Math.max(M - hL, Math.min(x, VW - M - bw - hL));
-
-      if(!isFinite(x) || !isFinite(y)) return;   // keep the last valid position
-      bx = Math.round(x); by = Math.round(y);
-      self.sizeBubble();
-      applyT();
-    };
-    var attach = function(){
-      var ch0 = document.querySelector('hero-character');
-      if(!ch0){ setTimeout(attach, 300); return; }
-      ch0.onHead = function(p){ headPt = p; self.placeBubble(); };
-      if(ch0._report) ch0._report();
-    };
-    attach();
-    window.addEventListener('scroll', function(){ self.placeBubble(); }, { passive: true });
-
-    var timers = [];
-    var clearT = function(){ timers.forEach(clearTimeout); timers = []; };
-
-    var renderWords = function(line){
-      txt.innerHTML = '';
-      var spans = [];
-      line.seg.forEach(function(s){
-        var host = s[1] ? document.createElement('em') : txt;
-        s[0].replace('{T}', lagos()).split(/(\s+)/).forEach(function(tok){
-          if(!tok) return;
-          if(/^\s+$/.test(tok)){ host.appendChild(document.createTextNode(tok)); return; }
-          var el = document.createElement('span');
-          el.className = 'w';
-          el.textContent = tok;
-          host.appendChild(el);
-          spans.push(el);
-        });
-        if(s[1]) txt.appendChild(host);
-      });
-      if(reduce){ spans.forEach(function(el){ el.classList.add('on'); }); self.sizeBubble(); return; }
-      spans.forEach(function(el, n){
-        timers.push(setTimeout(function(){
-          el.classList.add('on');
-          if(n === spans.length - 1) self.sizeBubble();
-        }, n * 25));
-      });
-    };
-
-    var i = Math.floor(Math.random() * LINES.length), shown = 0, hideT = null, lastShown = -1;
-
-    var show = function(){
-      if(hideT){ clearTimeout(hideT); hideT = null; }
-      clearT();
-      var line, n;
-      if(shown >= LINES.length){ if(lastShown === 1) return; line = LAST; n = LINES.length; lastShown = 1; }
-      else { line = LINES[i % LINES.length]; n = (i % LINES.length) + 1; i++; }
-      shown++;
-      if(self.paintClock) self.paintClock();
-      if(count) count.textContent = n + ' / ' + LINES.length;
-
-      chipSlot.innerHTML = '';
-      if(line.chip){
-        var a = document.createElement('a');
-        a.className = 'bubble-chip';
-        a.textContent = line.chip.label;
-        a.href = line.chip.href;
-        if(line.chip.blank){ a.target = '_blank'; a.rel = 'noopener'; }
-        if(line.chip.scroll){
-          a.addEventListener('click', function(e){
-            e.preventDefault();
-            var m = document.getElementById('main');
-            if(m) window.scrollTo({ top: m.getBoundingClientRect().top + window.pageYOffset - 70, behavior: reduce ? 'auto' : 'smooth' });
-          });
-        }
-        chipSlot.appendChild(a);
-      }
-
-      if(reduce){ renderWords(line); }
-      else {
-        txt.innerHTML = '<span class="bubble-dots" aria-hidden="true"><span></span><span></span><span></span></span>';
-        timers.push(setTimeout(function(){ renderWords(line); }, 400));
-      }
-
-      bub.style.pointerEvents = 'auto';
-      bub.style.opacity = '1';
-      bScale = 1; bRot = 0; applyT();
-      if(!reduce) timers.push(setTimeout(function(){ bRot = -1.5; applyT(); }, 300));
-      self.sizeBubble();
-      self.placeBubble();
-      var ch = document.querySelector('hero-character') || document.querySelector('hero-avatar');
-      if(ch && ch.play) ch.play(line.react);
-    };
-
-    var hide = function(){
-      if(hideT) clearTimeout(hideT);
-      hideT = setTimeout(function(){
-        bub.style.opacity = '0';
-        bub.style.pointerEvents = 'none';
-        if(!reduce){ bScale = 0.85; bRot = 0; applyT(); }
-      }, 400);
-    };
-    var keep = function(){ if(hideT){ clearTimeout(hideT); hideT = null; } };
-
-    btn.addEventListener('pointerenter', show);
-    btn.addEventListener('pointerleave', hide);
-    btn.addEventListener('focus', show);
-    btn.addEventListener('blur', hide);
-    btn.addEventListener('click', show);
-    bub.addEventListener('pointerenter', keep);
-    bub.addEventListener('pointerleave', hide);
-
-    this.sizeBubble();
-  }
-
-  bootStack(){
-    var refs = [this.s0,this.s1,this.s2,this.s3,this.s4,this.s5];
-    var els = refs.map(function(r){ return r.current; });
-    if(els.some(function(e){ return !e; })) return;
-    var names = ['homemade','firmly','anywork','paypro','nextvibe'];
-    els.forEach(function(el,i){ if(i < 5) el.style.viewTransitionName = 'cover-' + names[i]; });
-
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var rest = [-1.4, 0.9, -0.7, 1.2, -1.1, 0];
-    var P = els.map(function(el,i){
-      return {
-        el: el,
-        h: parseFloat(el.dataset.h) || 40,
-        y: reduce ? 0 : -60 - i * 6, vy: 0, ty: 0,
-        r: reduce ? rest[i] : rest[i] + (i % 2 ? 7 : -7), vr: 0, tr: rest[i],
-        lean: 0, vlean: 0, tlean: 0,
-        lift: 0, vlift: 0, tlift: 0,
-        dx: 0, vdx: 0, tdx: 0,
-        dy: 0, vdy: 0, tdy: 0,
-        active: reduce ? true : false
-      };
-    });
-    this.P = P;
-    this.running = false;
-    this.pointerIn = false;
-
-    var self = this;
-    var step = function(p, key, vkey, tkey, k, c){
-      var d = p[tkey] - p[key];
-      p[vkey] = (p[vkey] + d * k * 0.016) * (1 - c * 0.016);
-      p[key] += p[vkey] * 0.016;
-      return Math.abs(d) > 0.02 || Math.abs(p[vkey]) > 0.02;
-    };
-
-    var render = function(){
-      var cum = 0;
-      for(var i = 0; i < P.length; i++){
-        var p = P[i];
-        var x = p.lean * cum * 0.0175 + p.dx;
-        var yy = p.y + p.lift + p.dy;
-        p.el.style.transform = 'translate3d(' + x.toFixed(2) + 'px,' + yy.toFixed(2) + 'px,0) rotate(' + (p.r + p.lean).toFixed(2) + 'deg)';
-        cum += p.h;
-      }
-    };
-
-    var tick = function(){
-      var moving = false;
-      for(var i = 0; i < P.length; i++){
-        var p = P[i];
-        if(!p.active){ moving = true; continue; }
-        if(step(p,'y','vy','ty',170,18)) moving = true;
-        if(step(p,'r','vr','tr',170,18)) moving = true;
-        if(step(p,'lean','vlean','tlean', 120 - i * 12, 16)) moving = true;
-        if(step(p,'lift','vlift','tlift',260,24)) moving = true;
-        if(step(p,'dx','vdx','tdx',190,20)) moving = true;
-        if(step(p,'dy','vdy','tdy',190,20)) moving = true;
-      }
-      render();
-      if(moving || self.pointerIn || self.dragging){ self.raf = requestAnimationFrame(tick); }
-      else { self.running = false; }
-    };
-    this.kick = function(){
-      if(self.running) return;
-      self.running = true;
-      self.raf = requestAnimationFrame(tick);
-    };
-
-    render();
-
-    if(!reduce){
-      P.forEach(function(p,i){
-        setTimeout(function(){
-          p.active = true;
-          if(i === 5){ p.vy = 0; }
-          self.kick();
-        }, 240 + i * 110 + (i === 5 ? 250 : 0));
-      });
-      this.kick();
-    }
-
-    var hero = this.hero.current;
-    var wide = function(){ return document.documentElement.clientWidth > 1100 && !self.narrow; };
-
-    if(hero && !reduce){
-      this.onMove = function(e){
-        if(!wide() || self.dragging) return;
-        var r = hero.getBoundingClientRect();
-        var cx = r.left + r.width * 0.78;
-        var d = Math.max(-1, Math.min(1, (e.clientX - cx) / (r.width * 0.5)));
-        self.pointerIn = true;
-        for(var i = 0; i < P.length; i++) P[i].tlean = d * 3;
-        self.kick();
-      };
-      this.onLeave = function(){
-        self.pointerIn = false;
-        for(var i = 0; i < P.length; i++) P[i].tlean = 0;
-        self.kick();
-      };
-      hero.addEventListener('pointermove', this.onMove);
-      hero.addEventListener('pointerleave', this.onLeave);
-    }
-
-    var setLift = function(idx, on){
-      for(var i = idx; i < P.length; i++) P[i].tlift = on ? -6 : 0;
-      self.kick();
-    };
-
-    els.forEach(function(el, i){
-      if(i > 4) return;
-      var hue = el.dataset.hue;
-      var body = el.querySelector('.stack-body');
-      var over = function(){
-        if(body) body.style.background = 'linear-gradient(to bottom,rgba(241,238,231,.10),rgba(241,238,231,0)),' + hue;
-        setLift(i, true);
-      };
-      var out = function(){
-        if(body) body.style.background = 'linear-gradient(to bottom,rgba(241,238,231,.07),rgba(241,238,231,0)),color-mix(in oklab,' + hue + ' 78%,#0E2A22)';
-        setLift(i, false);
-      };
-      el.addEventListener('pointerenter', over);
-      el.addEventListener('pointerleave', out);
-      el.addEventListener('focus', over);
-      el.addEventListener('blur', out);
-
-      var sx = 0, sy = 0, moved = false, id = null;
-      el.addEventListener('pointerdown', function(e){
-        if(reduce) return;
-        id = e.pointerId; sx = e.clientX; sy = e.clientY; moved = false;
-      });
-      el.addEventListener('pointermove', function(e){
-        if(id === null || e.pointerId !== id) return;
-        var ddx = e.clientX - sx, ddy = e.clientY - sy;
-        if(!moved && Math.hypot(ddx, ddy) > 6){
-          moved = true;
-          self.dragging = true;
-          try{ el.setPointerCapture(id); }catch(err){}
-          for(var j = i + 1; j < P.length; j++) P[j].tdy = P[i].h;
-        }
-        if(moved){
-          P[i].tdx = ddx * 0.9;
-          P[i].tdy = ddy * 0.9;
-          self.kick();
-        }
-      });
-      var end = function(e){
-        if(id === null) return;
-        id = null;
-        if(moved){
-          if(e) { e.preventDefault(); }
-          P[i].tdx = 0; P[i].tdy = 0;
-          for(var j = i + 1; j < P.length; j++) P[j].tdy = 0;
-          self.dragging = false;
-          self.kick();
-        }
-        moved = false;
-      };
-      el.addEventListener('pointerup', end);
-      el.addEventListener('pointercancel', end);
-      el.addEventListener('click', function(e){
-        if(self.dragging || moved){ e.preventDefault(); }
-      });
-    });
-  }
-  boot(){
-    document.body.classList.add('loaded');
-    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(this.reduce || !('IntersectionObserver' in window)) return;
-    this.io = new IntersectionObserver((entries)=>{
-      entries.forEach((e)=>{
-        if(e.isIntersecting){
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'none';
-          this.io.unobserve(e.target);
-        }
-      });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-    this.onScroll = () => this.check();
-    window.addEventListener('scroll', this.onScroll, {passive:true});
-    window.addEventListener('resize', this.onScroll);
-    this.reveal();
-    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
-  }
-  show(el){
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-    if(this.io) this.io.unobserve(el);
-  }
-  check(){
-    var h = window.innerHeight || 0;
-    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
-      if(el.style.opacity === '1') return;
-      var r = el.getBoundingClientRect();
-      if(r.top < h * 0.92) this.show(el);
-    });
-  }
-  reveal(){
-    if(!this.io) return;
-    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
-    document.querySelectorAll(sel).forEach((el)=>{
-      if(el.dataset.revealBound) return;
-      el.dataset.revealBound = '1';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
-      this.io.observe(el);
-    });
-    this.check();
-    requestAnimationFrame(()=>this.check());
-  }
-  componentWillUnmount(){
-    if(this.io) this.io.disconnect();
-    if(this.clockTimer) clearInterval(this.clockTimer);
-    if(this.clockRetry) clearTimeout(this.clockRetry);
-    if(this.bubbleClock) clearInterval(this.bubbleClock);
-    if(this.onResize) window.removeEventListener('resize', this.onResize);
-    if(this.onTResize) window.removeEventListener('resize', this.onTResize);
-    if(this.raf) cancelAnimationFrame(this.raf);
-    if(this.hero.current && this.onMove){
-      this.hero.current.removeEventListener('pointermove', this.onMove);
-      this.hero.current.removeEventListener('pointerleave', this.onLeave);
-    }
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onScroll);
-  }
-  renderVals(){
-    return {
-      hero: this.hero, stack: this.stack, clock: this.clock,
-      s0: this.s0, s1: this.s1, s2: this.s2, s3: this.s3, s4: this.s4, s5: this.s5,
-      bubble: this.bubble, bubbleText: this.bubbleText, figure: this.figure, ground: this.ground, sayHi: this.sayHi, figCell: this.figCell,
-      bubbleSvg: this.bubbleSvg, bubblePath: this.bubblePath, bubbleTime: this.bubbleTime,
-      bubbleChip: this.bubbleChip, bubbleCount: this.bubbleCount,
-      tSection: this.tSection, tStage: this.tStage, tCounter: this.tCounter, tTotal: this.tTotal,
-      tMeta: this.tMeta, tName: this.tName, tRole: this.tRole, tProj: this.tProj, tLive: this.tLive,
-      tPrevBtn: this.tPrevBtn, tNextBtn: this.tNextBtn,
-      c0: this.c0, c1: this.c1, c2: this.c2, c3: this.c3, c4: this.c4,
-      tNext: () => { if(this.advance) this.advance(1); },
-      tPrev: () => { if(this.advance) this.advance(-1); }
-    };
-  }
-}
-</script>
 </body>
 </html>
