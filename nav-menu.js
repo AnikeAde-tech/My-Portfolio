@@ -131,8 +131,8 @@
     } catch (err) { pushed = false; }
     document.body.setAttribute('data-menu', 'open');
     lockScroll();
-    const root = document.getElementById('dc-root');
-    if (root) root.inert = true;
+    // everything but the menu is inert while it is open
+    Array.from(document.body.children).forEach((el) => { if (el !== menu && el.tagName !== 'SCRIPT') el.inert = true; });
     menu.hidden = false;
     void menu.offsetWidth; // let the entrance transition run from the closed state
     menu.setAttribute('data-open', 'true');
@@ -145,8 +145,7 @@
     if (!isOpen) return;
     isOpen = false;
     menu.setAttribute('data-open', 'false');
-    const root = document.getElementById('dc-root');
-    if (root) root.inert = false;
+    Array.from(document.body.children).forEach((el) => { if (el !== menu) el.inert = false; });
     unlockScroll();
     // keep the flag briefly so motion.js doesn't read the restore as a scroll-down and hide the nav
     setTimeout(() => { if (!isOpen) document.body.removeAttribute('data-menu'); }, 200);
@@ -166,8 +165,7 @@
   if (MQ.addEventListener) MQ.addEventListener('change', onMQ); else MQ.addListener(onMQ);
 
   function ensure() {
-    // the live nav, not the static template's (the runtime re-reads that as source)
-    const nav = Array.from(document.querySelectorAll('.nav')).find((n) => !n.closest('x-dc'));
+    const nav = document.querySelector('.nav');
     const navIn = nav && nav.querySelector('.nav-in');
     if (!navIn || !nav.querySelector('.nav-links')) return;
     if (!menu) menu = buildMenu(nav);

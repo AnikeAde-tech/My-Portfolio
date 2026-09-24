@@ -6,16 +6,12 @@
     if (img.naturalWidth > 0) { img.removeAttribute('data-missing'); img.setAttribute('data-loaded', ''); }
     else { img.removeAttribute('data-loaded'); img.setAttribute('data-missing', ''); }
   }
-  // The static <x-dc> template is the page's first paint, and the runtime
-  // re-reads it as its source when it boots, so nothing here may modify it.
-  var raw = function (el) { return !!(el.closest && el.closest('x-dc')); };
-  document.addEventListener('load', function (e) { var t = e.target; if (t && t.tagName === 'IMG' && !raw(t)) settle(t); }, true);
-  document.addEventListener('error', function (e) { var t = e.target; if (t && t.tagName === 'IMG' && !raw(t)) settle(t); }, true);
-  // React can build an image off-document, so its load event may never reach
-  // the document-level listeners above: also listen on each image directly,
-  // and re-check once it has decoded.
+  document.addEventListener('load', function (e) { var t = e.target; if (t && t.tagName === 'IMG') settle(t); }, true);
+  document.addEventListener('error', function (e) { var t = e.target; if (t && t.tagName === 'IMG') settle(t); }, true);
+  // also listen on each image directly and re-check once it has decoded, in
+  // case a load event fired before this script was running
   function watch(img) {
-    if (!img.hasAttribute('data-ph') || img.closest('x-dc')) return;
+    if (!img.hasAttribute('data-ph')) return;
     settle(img);
     if (img.__phWatched) return;
     img.__phWatched = true;

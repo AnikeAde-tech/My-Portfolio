@@ -38,8 +38,6 @@
       const fromList = !from || from === 'home' || from === 'work';
       const hero = document.querySelector('.hero');
       if (!hero || !fromList || !document.querySelector('.cs-body, .cs-meta')) return;
-      // named from <html> (motion.css), not inline on the hero: the hero here
-      // is still the static template, which the runtime re-reads as source
       root.style.setProperty('--vt-hero', 'cover-' + here);
       root.setAttribute('data-vt-hero', '');
       root.classList.add('vt-morph');
@@ -118,8 +116,7 @@
 
   const watch = (el) => { if (seen.has(el)) return false; seen.add(el); if (io) io.observe(el); return true; };
 
-  const live = (el) => !el.closest('x-dc');
-  const all = (sel) => Array.from(document.querySelectorAll(sel)).filter(live);
+  const all = (sel) => Array.from(document.querySelectorAll(sel));
   const scan = () => {
     if (reduce) return;
     all('.section-head, .cs-block h2, .contact h2, .ledger-intro + h2').forEach((el) => {
