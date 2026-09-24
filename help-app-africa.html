@@ -5,19 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>html{background:#0E2A22}body{margin:0;background:#F1EEE7;color:#141310}x-dc{display:block}</style>
 <style>@view-transition{navigation:auto}</style>
-<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q);addEventListener('pagereveal',function(e){var v=e.viewTransition;if(v){window.__vtFinished=v.finished.then(function(){window.__vtFinished=null},function(){window.__vtFinished=null})}})})();</script>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
 <link rel="stylesheet" href="/styles.css">
 <link rel="stylesheet" href="/motion.css">
 <script src="/motion.js?v=3" defer></script>
+<script src="/page.js" defer></script>
 <script src="/site.js" defer></script>
 <script src="/nav-menu.js" defer></script>
-<script src="/support.js"></script>
 </head>
-<body>
-<x-dc>
+<body class="loaded">
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nav">
   <div class="nav-in">
@@ -188,64 +187,5 @@
     </div>
   </div>
 </footer>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  componentDidMount(){ this.boot(); }
-  componentDidUpdate(){ this.reveal(); }
-  boot(){
-    document.body.classList.add('loaded');
-    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(this.reduce || !('IntersectionObserver' in window)) return;
-    this.io = new IntersectionObserver((entries)=>{
-      entries.forEach((e)=>{
-        if(e.isIntersecting){
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'none';
-          this.io.unobserve(e.target);
-        }
-      });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-    this.onScroll = () => this.check();
-    window.addEventListener('scroll', this.onScroll, {passive:true});
-    window.addEventListener('resize', this.onScroll);
-    this.reveal();
-    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
-  }
-  show(el){
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-    if(this.io) this.io.unobserve(el);
-  }
-  check(){
-    var h = window.innerHeight || 0;
-    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
-      if(el.style.opacity === '1') return;
-      var r = el.getBoundingClientRect();
-      if(r.top < h * 0.92) this.show(el);
-    });
-  }
-  reveal(){
-    if(!this.io) return;
-    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
-    document.querySelectorAll(sel).forEach((el)=>{
-      if(el.dataset.revealBound) return;
-      el.dataset.revealBound = '1';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
-      this.io.observe(el);
-    });
-    this.check();
-    requestAnimationFrame(()=>this.check());
-  }
-  componentWillUnmount(){
-    if(this.io) this.io.disconnect();
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onScroll);
-  }
-  renderVals(){ return {}; }
-}
-</script>
 </body>
 </html>
