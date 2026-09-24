@@ -28,27 +28,8 @@
         }
       });
     });
-    window.addEventListener('pagereveal', (e) => {
-      if (e.viewTransition) {
-        const vt = e.viewTransition;
-        ['ready', 'updateCallbackDone', 'finished'].forEach((k) => { if (vt[k]) vt[k].catch(() => {}); });
-      }
-      if (!e.viewTransition || !here) return;
-      const from = navigation.activation && navigation.activation.from && slugOf(navigation.activation.from.url);
-      const fromList = !from || from === 'home' || from === 'work';
-      const hero = document.querySelector('.hero');
-      if (!hero || !fromList || !document.querySelector('.cs-body, .cs-meta')) return;
-      root.style.setProperty('--vt-hero', 'cover-' + here);
-      root.setAttribute('data-vt-hero', '');
-      root.classList.add('vt-morph');
-      const vt = e.viewTransition;
-      ['ready', 'updateCallbackDone'].forEach((k) => { if (vt[k]) vt[k].catch(() => {}); });
-      vt.finished.catch(() => {}).finally(() => {
-        root.removeAttribute('data-vt-hero');
-        root.style.removeProperty('--vt-hero');
-        setTimeout(() => root.classList.remove('vt-morph'), 1000);
-      });
-    });
+    // the incoming half (naming the case-study hero) is an inline <head>
+    // script on every page, so it runs before the first frame
   }
 
   // ---- reveals ----
