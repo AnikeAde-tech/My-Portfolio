@@ -1,30 +1,21 @@
 # HomeMade images
 
-Drop these files into this folder with exactly these names. Pages already point here;
-until a file exists its slot shows the styled placeholder, never a broken image.
+All WebP, at most 1600px wide, original aspect ratio kept. Every frame on the
+site is 16:10 and screens are fitted inside it (never cropped), so any shape
+works; keep `width`/`height` in `homemade.html` matching the file.
 
-## Required
-
-| File | Size | Used for | Should show (matches the page's alt text) |
+| File | Size | Where | Shows |
 | --- | --- | --- | --- |
-| `cover.webp` | 1600×1000 | Work card (homepage + work index) and the case study lead image | Two HomeMade phone screens side by side: the seller home for Ama's Craft showing earnings and recent orders, and the buyer home showing categories and hot deals. |
-| `shot-1.webp` | 1600×1000 | Figure after block 02 | Three HomeMade rider app screens: the home view with today's earnings and an active delivery, a new delivery request with pickup and drop-off, and the enroute map with an eight minute ETA. |
-| `shot-2.webp` | 1600×1000 | Figure after block 03 | The HomeMade vendor portal product page for Handwoven Adire Fabric, showing retail price, wholesale price and a ten unit minimum order side by side. |
+| `product-pricing.webp` | 1600×1200 | Lead image | Vendor portal product page: retail ₦15,000, wholesale ₦12,000, minimum order 10 units |
+| `rider.webp` | 1600×1200 | After block 02 | Rider app: home, new delivery request, enroute to pickup |
+| `track.webp` | 1600×1200 | After block 03 | Buyer app Track Order: named dispatcher with a Call button, tracking history |
+| `apps.webp` | 1600×1200 | Carousel 1 | Unified app: seller home (Ama's Craft) and buyer home |
+| `admin.webp` | 1600×1200 | Carousel 2 | Admin portal dashboard: pending actions, recent activity, platform health |
+| `vendor.webp` | 1600×1200 | Carousel 3 | Vendor portal dashboard: latest orders, order summary |
+| `onboarding.webp` | 1600×1200 | Carousel 4 | Buyer onboarding: Shop Smart, Shop Local Everyday |
+| `marketing.webp` | 1600×1067 | Carousel 5, work card | Marketing site hero: Connect. Shop. Thrive. |
+| `rider-angled.webp` | 1600×1200 | Carousel 6 | Rider app, angled: the same three screens |
+| `track-modes.webp` | 1600×1200 | Carousel 7 | Track Order in light and dark mode |
 
-## Optional
-
-More screens the page already has slots for (carousel frames and extra figures).
-Same size, 1600×1000 (16:10); anything missing stays a placeholder.
-
-| File | Should show |
-| --- | --- |
-| `track.webp` | The HomeMade buyer's Track Order screen, showing In Transit status, the named dispatcher with a call button, and a tracking history of order placed, processing and out for delivery. |
-| `admin.webp` | The HomeMade admin portal dashboard, showing revenue, active orders, recent activity and a pending actions queue. |
-| `vendor.webp` | The HomeMade vendor portal dashboard for Ama's Crafts, showing products, orders, customers, revenue and an order summary breakdown. |
-| `rider-angled.webp` | Three HomeMade rider app screens shown at an angle: home, a new delivery request, and the enroute map. |
-| `onboarding.webp` | The HomeMade mobile onboarding screen: Shop Smart, Shop Local Everyday, with create an account and login. |
-| `marketing.webp` | The HomeMade marketing site hero: Connect. Shop. Thrive. From Local to Global, with buyer and seller photography. |
-| `track-modes.webp` | The HomeMade Track Order screen shown in light and dark mode side by side. |
-
-Export as WebP at 1600×1000 (16:10). The images are cropped to 16:10 with `object-fit: cover`,
-so keep the important part of the screen away from the edges.
+To replace one, keep the filename and update its `width`/`height` if the
+aspect ratio changes.
