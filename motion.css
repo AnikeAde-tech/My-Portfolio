@@ -1,0 +1,106 @@
+/* Motion system. Transform and opacity only; every reveal fires once. */
+:root{
+  --dur-instant:120ms;--dur-fast:200ms;--dur-base:320ms;--dur-slow:600ms;--dur-page:450ms;
+  --ease-out:cubic-bezier(.2,.7,.3,1);--ease-in-out:cubic-bezier(.65,0,.35,1);
+}
+
+/* ---------- page transitions ---------- */
+@view-transition{navigation:auto}
+.nav{view-transition-name:site-nav}
+::view-transition-group(site-nav),::view-transition-old(site-nav),::view-transition-new(site-nav){animation:none}
+::view-transition-old(root){animation:vt-out var(--dur-fast) var(--ease-in-out) both}
+::view-transition-new(root){animation:vt-in var(--dur-page) var(--ease-out) both}
+::view-transition-group(.cover){animation-duration:500ms;animation-timing-function:var(--ease-in-out)}
+::view-transition-old(.cover),::view-transition-new(.cover){animation-duration:500ms;animation-timing-function:var(--ease-in-out);height:100%;object-fit:cover}
+.vt-morph .hero .wrap > *{animation:vt-text var(--dur-base) var(--ease-out) 600ms both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-8px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(12px)}}
+@keyframes vt-text{from{opacity:0}}
+@keyframes vt-fade-out{to{opacity:0}}
+@keyframes vt-fade-in{from{opacity:0}}
+
+/* ---------- press, hover, focus ---------- */
+a,button,summary,[role="button"],.chip,.link,.teaser,.craft-tile,.cover,.bubble-chip{transition-property:transform,opacity,background-size,background-position,color,background-color,border-color;transition-duration:var(--dur-fast);transition-timing-function:var(--ease-out)}
+a:active,button:active,summary:active,[role="button"]:active,.bubble-chip:active{transform:scale(.97);transition-duration:var(--dur-instant)}
+
+:focus-visible{animation:focus-in var(--dur-fast) var(--ease-out)}
+@keyframes focus-in{from{outline-offset:0}}
+
+/* text links in prose: underline draws left→right, retracts to the right */
+.read a,.cs-block p a,.cs-block li a,.about-body a,.signoff a,.ledger-intro a,.gap-note a,.row a,.decision-card a,.facts a{
+  text-decoration:none;
+  background-image:linear-gradient(currentColor,currentColor),linear-gradient(var(--marigold),var(--marigold));
+  background-size:100% 1px,0% 1.5px;background-position:0 100%,100% 100%;background-repeat:no-repeat;padding-bottom:1px}
+.read a:hover,.cs-block p a:hover,.cs-block li a:hover,.about-body a:hover,.signoff a:hover,.ledger-intro a:hover,.gap-note a:hover,.row a:hover,.decision-card a:hover,.facts a:hover,
+.read a:focus-visible,.cs-block p a:focus-visible,.cs-block li a:focus-visible,.about-body a:focus-visible,.signoff a:focus-visible,.ledger-intro a:focus-visible,.gap-note a:focus-visible,.row a:focus-visible,.decision-card a:focus-visible,.facts a:focus-visible{
+  background-size:100% 1px,100% 1.5px;background-position:0 100%,0 100%}
+
+/* work rows */
+.cover{transition-duration:var(--dur-base)}
+.cover::after{opacity:.75;transition:opacity var(--dur-base) var(--ease-out);background:radial-gradient(circle at 30% 30%,rgba(232,163,23,.29),transparent 68%)}
+.work-item:hover .cover::after,.work-item:focus-within .cover::after{opacity:1}
+.work-item:focus-within .cover{transform:translateY(-4px)}
+.work-item:focus-within .work-path{color:var(--ink)}
+.work-item:focus-within .work-lede a{background-size:100% 2px}
+.work-path{transition:color var(--dur-fast) var(--ease-out)}
+
+/* next project */
+.nextup strong{transition:color var(--dur-fast) var(--ease-out)}
+.nextup strong::after{content:"→";display:inline-block;margin-left:.28em;opacity:0;transform:translateX(-8px);transition:opacity var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out)}
+.nextup a:hover strong::after,.nextup a:focus-visible strong::after{opacity:1;transform:none}
+
+/* contact cells: fill rises from the bottom edge */
+.link{position:relative;overflow:hidden;isolation:isolate}
+.link:hover,.link:focus-visible{background:var(--deep)}
+.link::before{content:"";position:absolute;inset:0;background:var(--deep-2);transform:scaleY(0);transform-origin:50% 100%;transition:transform var(--dur-base) var(--ease-out);z-index:-1}
+.link:hover::before,.link:focus-visible::before{transform:scaleY(1)}
+
+/* résumé ↗ */
+.ext::after{display:inline-block;transition:transform var(--dur-fast) var(--ease-out)}
+.ext:hover::after,.ext:focus-visible::after{transform:translate(2px,-2px)}
+
+/* ---------- scroll reveals (only once motion.js has run) ---------- */
+.mo .rv-word{display:inline-block;opacity:0;transform:translateY(16px);transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+.mo .in .rv-word{opacity:1;transform:none}
+
+.mo .section-head{border-bottom-color:transparent;position:relative}
+.mo .section-head::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--rule-ink);transform:scaleX(0);transform-origin:0 50%;transition:transform var(--dur-slow) var(--ease-out)}
+.mo .dark .section-head::after,.mo .section.dark .section-head::after{background:var(--rule)}
+.mo .section-head.in::after{transform:scaleX(1)}
+
+.mo .decision-card.rv{opacity:0;transform:translateY(16px);transition:opacity var(--dur-base) var(--ease-out),transform var(--dur-base) var(--ease-out)}
+.mo .decision-card.rv .cost{opacity:0;transition:opacity var(--dur-base) var(--ease-out);transition-delay:inherit}
+.mo .decision-card.in{opacity:1;transform:none}
+.mo .decision-card.in .cost{opacity:1}
+
+.mo .outcomes li.rv{opacity:0;transition:opacity var(--dur-base) var(--ease-out)}
+.mo .outcomes li.in{opacity:1}
+.outcomes .n{font-variant-numeric:tabular-nums}
+
+.mo .pull.rv{border-left-color:transparent;position:relative;color:transparent;transition:color var(--dur-base) var(--ease-out) var(--dur-slow)}
+.mo .pull.rv::before{content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--marigold);transform:scaleY(0);transform-origin:50% 0;transition:transform var(--dur-slow) var(--ease-out)}
+.mo .pull.in{color:inherit}
+.mo .pull.in::before{transform:scaleY(1)}
+
+.mo .img-rv{opacity:0;transform:scale(.98);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+.mo .img-rv.in{opacity:1;transform:none}
+
+/* ---------- nav hide + reading progress ---------- */
+.nav{transition:transform var(--dur-base) var(--ease-out)}
+.nav.nav-hidden{transform:translateY(-100%)}
+.read-progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:61;pointer-events:none;transition:transform var(--dur-base) var(--ease-out)}
+.read-progress i{display:block;height:100%;background:var(--marigold);transform:scaleX(0);transform-origin:0 50%}
+
+/* ---------- reduced motion: colour and press stay, movement goes ---------- */
+@media (prefers-reduced-motion: reduce){
+  ::view-transition-old(root){animation:vt-fade-out 150ms linear both}
+  ::view-transition-new(root){animation:vt-fade-in 150ms linear both}
+  ::view-transition-group(.cover),::view-transition-old(.cover),::view-transition-new(.cover){animation-duration:150ms}
+  .vt-morph .hero .wrap > *{animation:none}
+  :focus-visible{animation:none}
+  .nav,.nav.nav-hidden{transform:none}
+  .work-item:hover .cover,.work-item:focus-within .cover{transform:none}
+  .nextup strong::after{transform:none}
+  .ext:hover::after,.ext:focus-visible::after{transform:none}
+  .link::before{transition:none}
+}

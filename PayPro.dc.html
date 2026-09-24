@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<style>
+@keyframes glow-bloom{from{opacity:.10;transform:scale(1)}to{opacity:.16;transform:scale(1.08)}}
+@keyframes glow-counter{from{opacity:.05;transform:translate(0,0)}to{opacity:.10;transform:translate(-4%,4%)}}
+@keyframes glow-arrive{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .glow-field{animation:none}
+  .glow-bloom{animation:none;opacity:.13;transform:scale(1.04)}
+  .glow-counter{animation:none;opacity:.075;transform:translate(-2%,2%)}
+}
+</style>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="--project-glow:#6C5CE0;position:relative;overflow:hidden;isolation:isolate">
+  <div class="glow-field" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;animation:glow-arrive 1.6s ease-out both">
+    <div class="glow-bloom" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(60px);will-change:transform,opacity;animation:glow-bloom 34s ease-in-out infinite alternate"></div>
+    <div class="glow-counter" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(70px);will-change:transform,opacity;animation:glow-counter 47s ease-in-out infinite alternate"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">paypro &nbsp;&middot;&nbsp; 4-week engagement &nbsp;&middot;&nbsp; design handoff</p>
+    <h1 class="display rise">I designed a cross-border payment app for African freelancers around the only number that matters: what actually lands in your account.</h1>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Product designer</dd></div>
+      <div><dt class="tag">scope</dt><dd>Mobile app, freelancer and client sides</dd></div>
+      <div><dt class="tag">team</dt><dd>Founder, engineering</dd></div>
+      <div><dt class="tag">timeline</dt><dd>4-week engagement, wireframes to handoff</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/pp-send.webp" alt="Three phone screens from the send flow: recipient details, an amount screen showing a two hundred pound send with the fee and the amount the recipient will receive, and fingerprint confirmation." style="width:100%;border-radius:4px" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The amount entered, the fee, and what the recipient actually receives, on the same screen at the same moment.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>Paid in dollars, living in naira</h2>
+      <p>A designer in Lagos invoices a client in Berlin for $500. Three things then happen that nobody designed on purpose: the money takes a week, the exchange rate moves while it travels, and a series of fees come off it in places the freelancer can't see. What arrives is a naira figure that has no obvious relationship to the number on the invoice.</p>
+      <p>PayPro exists for that gap: multi-currency payments, invoicing, escrow and withdrawals for African freelancers working with clients abroad. Two sides, two different fears. The freelancer has done work and not been paid before. The client is sending money across a border to someone they've never met, in a market they've been warned about.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Thirteen features and one actual job</h2>
+      <p>The brief listed thirteen: multi-currency, instant transfers, invoicing, payment requests, escrow, recurring billing, expense tracking, reporting, fraud protection, late payment protection, scheduling, referrals, withdrawals. All reasonable. Built with equal weight, three products.</p>
+      <p>Underneath all of it sat one job. A freelancer opens this app to answer a single question, and it is never &ldquo;how are my expenses categorised.&rdquo;</p>
+      <div class="pull">Am I going to get paid, and how much of it is actually mine?</div>
+      <p>Everything else on the roadmap had to earn its place by serving that question or get out of its way. In four weeks, that ordering was the design work, not the screens.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/pp-card.png" alt="Three card screens: physical card with its benefits, an empty no-cards state, and an active virtual card with top up, details, freeze and settings." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Cards, including the empty state, designed alongside the populated one rather than after it.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Four calls about money you can't fully promise</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>Show the number that will land, not the number on the invoice</h4>
+        <p>The flattering design shows $500 in large type. The honest one shows what hits the freelancer's bank account after conversion and fees, in naira, with the invoice amount as secondary.</p>
+        <p>This is the whole trust proposition in one screen. A fintech product in this market gets exactly one chance: if the first payout is smaller than the app implied, the user assumes they've been quietly skimmed and they tell everyone they know. I designed the payout view to lead with the guaranteed figure and show the deductions as a readable breakdown rather than a fine-print total.</p>
+        <div class="cost"><em>what it cost</em>Every headline number in the product is smaller and less exciting than a competitor's. Growth teams hate this. It's the correct trade: the number that builds trust is the one that turns out to be true.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>Make escrow visible to the person it reassures</h4>
+        <p>Escrow is usually designed around release: milestones, conditions, approval. That framing serves the client, who wants control over when money leaves.</p>
+        <p>But the freelancer's fear isn't about release timing. It's whether the money exists at all. So I surfaced funding as the primary state on the freelancer's side, the client has committed these funds, they are held, they are real, before any work begins. The client keeps the release control they need. The freelancer gets the reassurance they actually came for.</p>
+        <div class="cost"><em>what it cost</em>More friction for the client, who now has to part with money earlier and can see the freelancer watching it. Some clients will find that uncomfortable. That discomfort is the product working.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>The platform chases the money, not the freelancer</h4>
+        <p>Late payment tooling normally hands the freelancer a button to send a reminder or apply a fee. Almost nobody presses it. Chasing a client for money risks the relationship, and freelancers routinely absorb a late payment rather than seem difficult.</p>
+        <p>I designed the reminders and late fees as automatic platform behaviour agreed at invoice time, not as an action the freelancer takes. The system sends it. Nobody has to be the person who sent it.</p>
+        <div class="cost"><em>what it cost</em>Less control over a delicate relationship, and a real risk when the automation fires on a client the freelancer would have given grace to. It needed a clear override, but the default had to be automatic, because a feature people are too uncomfortable to use is not a feature.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 04</span>
+        <h4>Trust signalled by clarity, not by padlocks</h4>
+        <p>The brief asked the design to convey professionalism, trust and financial security. The reflex in African fintech is to reach for security iconography: shields, padlocks, encryption badges, bank logos.</p>
+        <p>That reads as protesting too much. I signalled trust structurally instead: every fee named, every conversion rate shown at the moment it applies, every transaction state given a plain-language explanation of what happens next and when. No security theatre anywhere in the interface.</p>
+        <div class="cost"><em>what it cost</em>A quieter, less reassuring-looking product at first glance, and a harder pitch to stakeholders who wanted visible trust markers. Restraint is difficult to defend in a review and obvious in use.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/pp-invoice.png" alt="Three phone screens from the invoicing flow: an invoice list with paid, waiting, overdue and draft states, the create invoice form, and a finished invoice ready to share." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Invoice states carried in the list. Overdue is visible to the freelancer without them having to be the one who raises it.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <section aria-roledescription="carousel" aria-label="More PayPro screens" style="margin:0 0 clamp(52px,6vw,84px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;6</p>
+        <div style="display:flex;gap:10px">
+          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
+          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-home.png" alt="The home screen showing a naira balance, add, send, request and more actions, quick send contacts and recent transactions." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Home. Balance, the four things you can do with it, and what happened recently.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-hidden.png" alt="The same home screen with the balance masked behind asterisks and an eye icon to reveal it." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Balance hidden. A small thing that matters when you check your money in public.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-accounts.png" alt="The home screen with an account selector sheet open, listing naira, US dollar, pound and Canadian dollar balances." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Four currencies held separately. The freelancer earns in one and lives in another, so the app never blends them into a single figure.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-onboard-1.png" alt="Onboarding screen one: Get Paid Globally, Anytime, Anywhere." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Onboarding, first of four. The promise stated plainly, with a language switch already present.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-onboard-2.png" alt="Onboarding screen two: Protected Transaction, your transactions are always protected." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The one place a shield earns its keep: onboarding, where the claim is made and then never repeated in the product.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/pp-onboard-3.png" alt="Onboarding screen three: Instant Payment Request, effortless billing for faster payment." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Billing introduced as a way to get paid faster, not as an accounting feature.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go5 }}" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what shipped</span>
+      <h2>A four-week engagement, delivered</h2>
+      <p>This was a scoped design engagement ending at handoff. It didn't launch on my watch, so there are no adoption numbers and I won't invent any.</p>
+      <ul class="outcomes">
+        <li><span class="n">13</span><span class="d">Features in the brief, reduced to one spine: get paid, and know what you're getting.</span></li>
+        <li><span class="n">2</span><span class="d">Sides of the product designed in parallel, freelancer and client, with opposite anxieties about the same transaction.</span></li>
+        <li><span class="n">4</span><span class="d">Weeks from brainstorm to handoff, including wireframes, interactive prototypes, user testing and a style guide.</span></li>
+        <li><span class="n">1</span><span class="d">Style guide covering typography, colour, iconography and component behaviour for the development team.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>Four weeks was enough to design the product and not enough to test the part that mattered most. I user-tested the invoicing and escrow flows and never put the payout breakdown in front of a freelancer receiving real money, which is the exact screen the whole trust argument rests on. I'd have cut testing time from somewhere else.</p>
+      <p>I also designed the client side second and it shows. The freelancer flows are considered; the client's funding and approval screens are competent and generic. In a two-sided product the weaker side sets the ceiling, and I gave it the leftover week.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="HomeMade.dc.html">
+      <span class="tag">next project</span>
+      <strong>HomeMade, powering Nigeria's home-grown marketplace</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.i = 0;
+    this.n = 6;
+    this.track = React.createRef();
+    this.dots = React.createRef();
+    this.counter = React.createRef();
+  }
+  slide(k){
+    this.i = (k + this.n) % this.n;
+    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
+    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
+    if(this.dots.current){
+      Array.prototype.forEach.call(this.dots.current.children, (b, j)=>{
+        var bar = b.firstElementChild;
+        if(bar) bar.style.background = j === this.i ? 'var(--deep)' : 'var(--rule-ink)';
+        b.setAttribute('aria-current', j === this.i ? 'true' : 'false');
+      });
+    }
+  }
+  renderVals(){
+    return {
+      track: this.track,
+      dots: this.dots,
+      counter: this.counter,
+      prev: () => this.slide(this.i - 1),
+      next: () => this.slide(this.i + 1),
+      go0: () => this.slide(0),
+      go1: () => this.slide(1),
+      go2: () => this.slide(2),
+      go3: () => this.slide(3),
+      go4: () => this.slide(4),
+      go5: () => this.slide(5)
+    };
+  }
+  componentDidMount(){ this.boot(); this.bootGlow(); }
+  componentDidUpdate(){ this.reveal(); }
+  bootGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero || !('IntersectionObserver' in window)) return;
+    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
+    this.glowIo = new IntersectionObserver((es)=>{
+      es.forEach((e)=>{
+        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      });
+    },{threshold:0});
+    this.glowIo.observe(hero);
+  }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting) this.show(e.target); });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    if(this.glowIo) this.glowIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+}
+</script>
+</body>
+</html>

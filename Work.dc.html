@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<script src="./nav-menu.js" defer></script>
+<style>
+/* hero: shapes fall in and stack into a layout, on a loop */
+.stackfall{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sf-stage{position:absolute;right:clamp(20px,4.5vw,64px);bottom:0;width:min(340px,34vw);height:min(300px,76%)}
+.sf-ground{position:absolute;left:-12%;right:-12%;bottom:0;height:1px;background:rgba(241,238,231,.22)}
+.sf{position:absolute;border-radius:3px;opacity:0;animation:sf-drop 9s cubic-bezier(.3,.8,.4,1) infinite;animation-delay:calc(var(--i) * .34s)}
+.sf-card{left:0;bottom:1px;width:100%;height:60%;background:rgba(241,238,231,.07);border:1px solid rgba(241,238,231,.16);border-radius:5px}
+.sf-bar{left:7%;bottom:50%;width:34%;height:9px;background:var(--marigold);opacity:.9}
+.sf-dot{left:7%;bottom:8%;width:34px;height:34px;border-radius:50%;background:rgba(140,163,150,.55)}
+.sf-line1{left:24%;bottom:22%;width:48%;height:7px;background:rgba(241,238,231,.34)}
+.sf-line2{left:24%;bottom:13%;width:32%;height:7px;background:rgba(241,238,231,.2)}
+.sf-tile{right:7%;bottom:44%;width:22%;height:22%;background:rgba(241,238,231,.13);border-radius:4px}
+.sf-block{left:7%;bottom:64%;width:52%;height:13%;background:rgba(241,238,231,.1);border-radius:4px}
+.sf-accent{right:7%;bottom:70%;width:12%;height:12%;border-radius:50%;border:2px solid rgba(232,163,23,.7);background:transparent}
+@keyframes sf-drop{
+  0%{opacity:0;transform:translateY(-190%) scaleY(1.06)}
+  4%{opacity:1}
+  11%{transform:translateY(0) scaleY(.94)}
+  14%{transform:translateY(0) scaleY(1)}
+  84%{opacity:1;transform:translateY(0)}
+  93%{opacity:0;transform:translateY(10px)}
+  100%{opacity:0;transform:translateY(-190%)}
+}
+@media(max-width:900px){.stackfall{display:none}}
+@media(prefers-reduced-motion:reduce){.sf{opacity:1;animation:none;transform:none}}
+</style>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html" aria-current="page">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="position:relative;overflow:hidden;isolation:isolate">
+  <div class="stackfall" aria-hidden="true">
+    <div class="sf-stage">
+      <span class="sf sf-card" style="--i:0"></span>
+      <span class="sf sf-bar" style="--i:1"></span>
+      <span class="sf sf-dot" style="--i:2"></span>
+      <span class="sf sf-line1" style="--i:3"></span>
+      <span class="sf sf-line2" style="--i:4"></span>
+      <span class="sf sf-tile" style="--i:5"></span>
+      <span class="sf sf-block" style="--i:6"></span>
+      <span class="sf sf-accent" style="--i:7"></span>
+      <span class="sf-ground"></span>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">work</p>
+    <h1 class="display rise">The work, and the <span class="lift">reasoning behind it.</span></h1>
+    <p class="hero-sub rise">Marketplaces, fintech and service platforms in African markets. Each case study ends with what I'd do differently &mdash; that section is the point of the format.</p>
+  </div>
+</header>
+
+<main id="main">
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Case studies</h2>
+      <p class="tag">2023 &mdash; now</p>
+    </div>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="Anywork.dc.html">./anywork</a>
+        <h3 class="work-lede"><a href="Anywork.dc.html">I designed both sides of a Nigerian artisan marketplace around a verification ladder workers climb, rather than a gate they pass.</a></h3>
+        <ul class="work-tags">
+          <li class="state">shipped</li><li>two-sided marketplace</li><li>mobile &amp; web</li><li>design system</li><li>0 &rarr; 1</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Lead product designer &mdash; client and worker apps, mobile and web</span></li>
+          <li><span class="k">with</span><span>PM, engineering, the founder</span></li>
+          <li><span class="k">when</span><span>2025 &mdash; present</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="Anywork.dc.html">
+        <img src="images/aw-welcome.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #3E9BC4, transparent 70%);filter:blur(38px);opacity:.13;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #3E9BC4, transparent 70%);filter:blur(44px);opacity:.075;pointer-events:none"></div>
+        <p class="idx">01</p>
+        <div class="cap"><strong>A ladder, not a gate</strong><span>Verification tiers, one booking flow, two apps</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="HelpAppAfrica.dc.html">./help-app-africa</a>
+        <h3 class="work-lede"><a href="HelpAppAfrica.dc.html">I rebuilt the three journeys carrying most of the traffic on a live services platform, without pausing the release cycle.</a></h3>
+        <ul class="work-tags">
+          <li class="state">shipped</li><li>redesign</li><li>consumer services</li><li>contract</li><li>UX audit</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Sole designer, embedded with product and engineering</span></li>
+          <li><span class="k">with</span><span>Product lead and a four-person engineering team</span></li>
+          <li><span class="k">when</span><span>Feb &mdash; Jul 2025</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="HelpAppAfrica.dc.html">
+        <img src="images/ha-lead-three-up.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="960" height="720" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #A02FD4, transparent 70%);filter:blur(38px);opacity:.13;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #A02FD4, transparent 70%);filter:blur(44px);opacity:.075;pointer-events:none"></div>
+        <p class="idx">02</p>
+        <div class="cap"><strong>Fix three, leave forty</strong><span>A staged redesign on a product that couldn't stop shipping</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="Nerdbug.dc.html">./nerdbug</a>
+        <h3 class="work-lede"><a href="Nerdbug.dc.html">I built the design system seven client products now share, so engineering stopped paying twice for the same button.</a></h3>
+        <ul class="work-tags">
+          <li class="state">in use</li><li>design systems</li><li>agency</li><li>multi-product</li><li>mentoring</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Design lead &mdash; architecture, governance, and the designers using it</span></li>
+          <li><span class="k">with</span><span>Two junior designers; studio teams in Atlanta and Lagos</span></li>
+          <li><span class="k">when</span><span>Jul 2025 &mdash; present</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="Nerdbug.dc.html">
+        <img src="images/nb-buttons.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1764" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <p class="idx">03</p>
+        <div class="cap"><strong>Twelve components, properly</strong><span>Tokens, governance, and getting a system adopted</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="NextVibe.dc.html">./nextvibe</a>
+        <h3 class="work-lede"><a href="NextVibe.dc.html">I designed an event memory product with no app download &mdash; which meant designing for someone who will use it exactly once, at a party, on borrowed wifi.</a></h3>
+        <ul class="work-tags">
+          <li class="state">shipped</li><li>consumer</li><li>events</li><li>no-download web</li><li>mobile-first</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Lead product designer, freelance &mdash; attendee, organiser and sponsor surfaces</span></li>
+          <li><span class="k">with</span><span>Founder, PM and the engineering team</span></li>
+          <li><span class="k">when</span><span>2024 &mdash; present</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="NextVibe.dc.html">
+        <img src="images/nv-vibe.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1440" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #D14B8F, transparent 70%);filter:blur(38px);opacity:.13;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #D14B8F, transparent 70%);filter:blur(44px);opacity:.075;pointer-events:none"></div>
+        <p class="idx">04</p>
+        <div class="cap"><strong>Ninety seconds, no download</strong><span>One shared album, three audiences, zero onboarding</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="Firmly.dc.html">./firmly</a>
+        <h3 class="work-lede"><a href="Firmly.dc.html">I designed a legal practice platform for Nigerian firms where the regulation is enforced by the interface, including the moments it tells a lawyer no.</a></h3>
+        <ul class="work-tags">
+          <li>in beta</li><li>legal tech</li><li>web app</li><li>permissions &amp; compliance</li><li>0 &rarr; 1</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Lead product designer &mdash; web app across eight user roles</span></li>
+          <li><span class="k">with</span><span>PM, backend and frontend engineering</span></li>
+          <li><span class="k">when</span><span>2025 &mdash; present</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="Firmly.dc.html">
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #2FD48A, transparent 70%);filter:blur(38px);opacity:.2;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #2FD48A, transparent 70%);filter:blur(44px);opacity:.12;pointer-events:none"></div>
+        <img src="images/fm-dashboard.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1365" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <p class="idx">05</p>
+        <div class="cap"><strong>The interface says no</strong><span>Conflict checks, eight roles, and proof after the fact</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="PayPro.dc.html">./paypro</a>
+        <h3 class="work-lede"><a href="PayPro.dc.html">I designed a cross-border payment app for African freelancers around the only number that matters: what actually lands in your account.</a></h3>
+        <ul class="work-tags">
+          <li>prototype</li><li>fintech</li><li>mobile app</li><li>two-sided</li><li>design handoff</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Product designer &mdash; freelancer and client sides</span></li>
+          <li><span class="k">with</span><span>Founder and engineering</span></li>
+          <li><span class="k">when</span><span>4-week engagement, wireframes to handoff</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="PayPro.dc.html">
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #6C5CE0, transparent 70%);filter:blur(38px);opacity:.13;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #6C5CE0, transparent 70%);filter:blur(44px);opacity:.075;pointer-events:none"></div>
+        <img src="images/pp-send.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1440" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <p class="idx">06</p>
+        <div class="cap"><strong>What actually lands</strong><span>Payout clarity, escrow and the number that turns out true</span></div>
+      </a>
+    </article>
+
+    <article class="work-item">
+      <div>
+        <a class="work-path" href="HomeMade.dc.html">./homemade</a>
+        <h3 class="work-lede"><a href="HomeMade.dc.html">I designed all five surfaces of a Nigerian marketplace, where one cart is secretly three orders and a package changes hands four times before it arrives.</a></h3>
+        <ul class="work-tags">
+          <li>in build</li><li>marketplace</li><li>logistics</li><li>five surfaces</li><li>retail &amp; wholesale</li>
+        </ul>
+        <ul class="work-facts">
+          <li><span class="k">role</span><span>Product designer &mdash; all five surfaces, app to admin portal</span></li>
+          <li><span class="k">with</span><span>PM, engineering, client stakeholders</span></li>
+          <li><span class="k">when</span><span>2025 &mdash; present</span></li>
+        </ul>
+      </div>
+      <a class="cover" href="HomeMade.dc.html">
+        <div aria-hidden="true" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #D9553C, transparent 70%);filter:blur(38px);opacity:.13;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, #D9553C, transparent 70%);filter:blur(44px);opacity:.075;pointer-events:none"></div>
+        <img src="images/hm-apps.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5" width="1920" height="1440" loading="lazy" decoding="async" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.92) 22%,rgba(14,42,34,.35) 62%,rgba(14,42,34,.55))"></div>
+        <p class="idx">07</p>
+        <div class="cap"><strong>One order, five truths</strong><span>A split cart, a custody chain and 36 states</span></div>
+      </a>
+    </article>
+
+    <div class="gap-note">
+      <p>Earlier work in fintech dashboards, e-commerce checkout and product discovery &mdash; written case studies coming. Happy to walk through any of it on a call.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head" style="padding-top:clamp(56px,7vw,88px)">
+      <h2>Earlier work</h2>
+      <p class="tag">no case study yet</p>
+    </div>
+    <ul class="timeline" style="--rule-ink:rgba(241,238,231,.16)">
+      <li style="border-color:var(--rule)"><span class="yr" style="color:var(--sage)">2024 &mdash; 2025</span><span class="ro">Scoutalist</span><span class="no" style="color:var(--chalk-dim)">Product designer, freelance. Flows, wireframes and UI for a discovery product.</span></li>
+      <li style="border-color:var(--rule)"><span class="yr" style="color:var(--sage)">2024</span><span class="ro">PinnacleBytes</span><span class="no" style="color:var(--chalk-dim)">Product design intern. UX research, competitive analysis, component work.</span></li>
+      <li style="border-color:var(--rule)"><span class="yr" style="color:var(--sage)">2023 &mdash; 2024</span><span class="ro">Minisquare Mart</span><span class="no" style="color:var(--chalk-dim)">Product design intern. E-commerce checkout and product discovery. Two calls from this work are in the <a href="Decisions.dc.html">ledger</a>.</span></li>
+      <li style="border-color:var(--rule)"><span class="yr" style="color:var(--sage)">2023</span><span class="ro">Forra Finance</span><span class="no" style="color:var(--chalk-dim)">Product design intern. Fintech dashboards and financial workflows.</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){ this.boot(); }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<style>
+@keyframes glow-bloom{from{opacity:.14;transform:scale(1)}to{opacity:.22;transform:scale(1.08)}}
+@keyframes glow-counter{from{opacity:.07;transform:translate(0,0)}to{opacity:.14;transform:translate(-4%,4%)}}
+@keyframes glow-arrive{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .glow-field{animation:none}
+  .glow-bloom{animation:none;opacity:.18;transform:scale(1.04)}
+  .glow-counter{animation:none;opacity:.105;transform:translate(-2%,2%)}
+}
+</style>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="--project-glow:#2FD48A;position:relative;overflow:hidden;isolation:isolate">
+  <div class="glow-field" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;animation:glow-arrive 1.6s ease-out both">
+    <div class="glow-bloom" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(60px);will-change:transform,opacity;animation:glow-bloom 34s ease-in-out infinite alternate"></div>
+    <div class="glow-counter" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(70px);will-change:transform,opacity;animation:glow-counter 47s ease-in-out infinite alternate"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">firmly &nbsp;&middot;&nbsp; 2025&ndash;present &nbsp;&middot;&nbsp; in beta</p>
+    <h1 class="display rise">I designed a legal practice platform for Nigerian firms where the regulation is enforced by the interface, including the moments it tells a lawyer no.</h1>
+    <p class="rise" style="margin:clamp(26px,4vw,40px) 0 0"><a class="ext tag" href="https://getstarted.firmlyapp.com/" target="_blank" rel="noopener" style="color:var(--marigold);text-decoration:none;border-bottom:1px solid rgba(232,163,23,.4);padding-bottom:3px">visit the live product</a></p>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Lead product designer</dd></div>
+      <div><dt class="tag">scope</dt><dd>Web app, 8 user roles</dd></div>
+      <div><dt class="tag">team</dt><dd>PM, backend and frontend engineering</dd></div>
+      <div><dt class="tag">timeline</dt><dd>2025 to present</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/fm-marketing.png" alt="The Firmly marketing site, splitting its entry between legal professionals and individuals or clients." style="width:100%;border-radius:4px" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The marketing site, which has to speak to firms and their clients at once.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>Software for people who are personally liable</h2>
+      <p>Firmly is practice management for Nigerian law firms: intake, conflict checks, matters, documents, billing, and the compliance obligations sitting under all of it. Clio, rebuilt for a legal system with its own court hierarchy, its own regulator, and its own rules about what a lawyer must be able to prove after the fact.</p>
+      <p>Most firms here still run on WhatsApp, Excel and paper. Asking them to move isn't a productivity pitch. A lawyer who misses a filing deadline or takes a client they're conflicted on doesn't have a bad quarter. They answer to the Nigerian Bar Association. Every decision had to survive one question: what happens to me if this is wrong?</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Regulation isn't a module you add</h2>
+      <p>The requirements arrived as a compliance list. Conflict checks under Rule 17 of the Rules of Professional Conduct. Practising certificate validity. NDPR data handling. Anti-money-laundering thresholds. Six-year retention. The obvious move is to build the product, then add a compliance section.</p>
+      <p>That fails for a specific reason. Compliance a lawyer can navigate around is compliance they will navigate around at 11pm before a filing, and the firm carries the consequence, not the software.</p>
+      <div class="pull">The rule isn't satisfied by a lawyer following it. It's satisfied by the firm being able to prove they did.</div>
+      <p>Underneath that sat a second problem of pure scale: eight roles, each with its own scope of visible records. Every screen in the product has eight correct versions, and only one of them is the one you happen to be designing.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/fm-clients.png" alt="The client management table, with a conflict status column reading No Conflict, Potential Conflict and Confirmed conflict per client." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Conflict status carried on every client row, so the check is visible before anyone opens a matter.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Four calls that shaped the platform</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>The conflict check blocks. It doesn't warn.</h4>
+        <p>When a new client cross-references against an existing client, opposing party or witness, the matter goes to a terminal Rejected&ndash;Conflict state set by the system, with an audit entry no role can delete: not the partner, not the firm admin.</p>
+        <p>A warning banner would have been kinder and would have been ignored. The audit entry also does double duty: Rule 17 requires a written record of conflict checks, and this is that record, produced without anyone having to remember to write it.</p>
+        <div class="cost"><em>what it cost</em>The product tells firms they cannot take paying work, with no override. That's a hard thing to sell and it was the most argued decision in the spec. A conflict check with an override is a conflict check that didn't happen.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>An expired certificate restricts. It doesn't lock out.</h4>
+        <p>Nigerian lawyers need a valid Annual Practising Certificate, and expiry has to change what someone can do. The naive build locks them out, which turns a paperwork lapse into a client emergency, mid-matter, possibly mid-hearing.</p>
+        <p>I designed it as a countdown and a downgrade rather than a cliff. Alerts at 60, 30 and 7 days. Then read-only rather than a closed door: they keep their matters, their calendar, their documents. They just can't act.</p>
+        <div class="cost"><em>what it cost</em>A Restricted state that had to be designed and specified across every module: a lot of screens for a condition most users will never hit, and the state that took longest to get right in the system.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>Design for the adjournment, not the timeline</h4>
+        <p>Most case management software assumes a matter progresses. Nigerian practice doesn't work that way: a case goes Active, gets adjourned, gets a new date, goes Active again, and can loop like that for years.</p>
+        <p>Treating that as an exception buries the only information the lawyer actually needs, which is the next date, and what happened at the last one. I made the loop the primary structure: adjournment history as a first-class, immutable record on the matter, and the next hearing date as the most prominent thing on the screen.</p>
+        <div class="cost"><em>what it cost</em>The matter view is dominated by dates rather than substance, which looked wrong to stakeholders reviewing it against international legal software. It's right for the market it's built for.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 04</span>
+        <h4>Eight approval gates, one inbox</h4>
+        <p>Case acceptance, KYC, engagement letters, invoices, court filings, user activation, case closure, disbursements. Each needs a partner or admin to sign off. Left in place, that's eight surfaces a partner has to remember to check, and approvals become the bottleneck the whole firm complains about.</p>
+        <p>Everything pending routes to a single inbox with inline review, so a partner clears the queue in one place instead of hunting for it. Rejection always requires a written reason, because a rejection without one just restarts the work.</p>
+        <div class="cost"><em>what it cost</em>Pulling approvals out of their context means each inbox item has to carry enough of that context to decide on. That's a much heavier component than a list row, and a real engineering cost.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/fm-approval.png" alt="The invoice approval panel, showing invoice number, client, case reference, line items, total, and reject or approve actions." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">One approval gate, reviewed inline. Enough context in the panel to decide without leaving the queue.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <section aria-roledescription="carousel" aria-label="More Firmly screens" style="margin:0 0 clamp(52px,6vw,84px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;6</p>
+        <div style="display:flex;gap:10px">
+          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
+          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-cases.png" alt="Case management, with total, active, pending conflict and completed case counts, upcoming hearings, and cases pending closure approval." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Case management. Pending conflicts and upcoming hearings share the top of the screen.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-calendar.png" alt="The calendar and tasks month view, with court dates, client consultations and invoice payments colour coded." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Calendar and tasks, where the next hearing date lives.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-documents.png" alt="Case documents in a card grid, each with an approved, under review, locked or archived status and its case reference." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Documents carry their own state: approved, under review, locked, archived.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-analytics.png" alt="Reporting and analytics, with revenue forecast, case status distribution including a conflicted segment, and lawyer performance." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Reporting. Conflicted cases appear in the portfolio breakdown rather than being netted out.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-identity.png" alt="The Choose Your Identity onboarding screen, offering a law firm profile with multi-user access or a solo lawyer profile." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The first fork: firm or solo. It sets which of the eight roles the account starts from.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/fm-dashboard.webp" alt="The Firmly firm overview dashboard, with a verification banner, case and invoice metrics, billing summary and the conflict of interest queue." style="width:100%;height:100%;object-fit:cover" width="1920" height="1365" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Firm overview. The verification prompt and the conflict queue sit above the metrics, not behind a compliance tab.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go5 }}" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what shipped</span>
+      <h2>Live, in beta, with real firms</h2>
+      <p>The platform is live and onboarding partner firms. Adoption numbers belong to the client and aren't mine to publish, so here's the scope of what I designed.</p>
+      <ul class="outcomes">
+        <li><span class="n">8</span><span class="d">User roles, on a two-axis model where role sets what you can do and scope sets which records you can do it to.</span></li>
+        <li><span class="n">8</span><span class="d">Approval gates, each producing an immutable audit entry with approver identity, timestamp and reason.</span></li>
+        <li><span class="n">14</span><span class="d">Nigerian practice areas mapped to their courts and governing statutes.</span></li>
+        <li><span class="n">7</span><span class="d">Matter states in a controlled machine, with defined transitions and a defined owner for each.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I specified the full permission model before testing a screen with a real associate. It's coherent on paper and I still think the two-axis model is right, but the roles firms actually use don't map cleanly onto our eight. Small practices have one person doing four of them. That conversation belonged in week two, not in beta feedback.</p>
+      <p>I also under-designed the beginning. The spec is thorough about what a busy firm sees and thin about day one, when a firm has finished onboarding and faces a dashboard of empty widgets. That's the screen deciding whether they come back tomorrow, and it got the least attention.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="PayPro.dc.html">
+      <span class="tag">next project</span>
+      <strong>PayPro, what actually lands in your account</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made, so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.i = 0;
+    this.n = 6;
+    this.track = React.createRef();
+    this.dots = React.createRef();
+    this.counter = React.createRef();
+  }
+  slide(k){
+    this.i = (k + this.n) % this.n;
+    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
+    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
+    if(this.dots.current){
+      Array.prototype.forEach.call(this.dots.current.children, (b, j)=>{
+        var bar = b.firstElementChild;
+        if(bar) bar.style.background = j === this.i ? 'var(--deep)' : 'var(--rule-ink)';
+        b.setAttribute('aria-current', j === this.i ? 'true' : 'false');
+      });
+    }
+  }
+  renderVals(){
+    return {
+      track: this.track,
+      dots: this.dots,
+      counter: this.counter,
+      prev: () => this.slide(this.i - 1),
+      next: () => this.slide(this.i + 1),
+      go0: () => this.slide(0),
+      go1: () => this.slide(1),
+      go2: () => this.slide(2),
+      go3: () => this.slide(3),
+      go4: () => this.slide(4),
+      go5: () => this.slide(5)
+    };
+  }
+  componentDidMount(){ this.boot(); this.bootGlow(); }
+  componentDidUpdate(){ this.reveal(); }
+  bootGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero || !('IntersectionObserver' in window)) return;
+    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
+    this.glowIo = new IntersectionObserver((es)=>{
+      es.forEach((e)=>{
+        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      });
+    },{threshold:0});
+    this.glowIo.observe(hero);
+  }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting) this.show(e.target); });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    if(this.glowIo) this.glowIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+}
+</script>
+</body>
+</html>

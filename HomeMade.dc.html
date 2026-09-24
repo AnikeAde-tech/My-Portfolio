@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<style>
+@keyframes glow-bloom{from{opacity:.10;transform:scale(1)}to{opacity:.16;transform:scale(1.08)}}
+@keyframes glow-counter{from{opacity:.05;transform:translate(0,0)}to{opacity:.10;transform:translate(-4%,4%)}}
+@keyframes glow-arrive{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .glow-field{animation:none}
+  .glow-bloom{animation:none;opacity:.13;transform:scale(1.04)}
+  .glow-counter{animation:none;opacity:.075;transform:translate(-2%,2%)}
+}
+</style>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="--project-glow:#D9553C;position:relative;overflow:hidden;isolation:isolate">
+  <div class="glow-field" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;animation:glow-arrive 1.6s ease-out both">
+    <div class="glow-bloom" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(60px);will-change:transform,opacity;animation:glow-bloom 34s ease-in-out infinite alternate"></div>
+    <div class="glow-counter" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(70px);will-change:transform,opacity;animation:glow-counter 47s ease-in-out infinite alternate"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">homemade &nbsp;&middot;&nbsp; 2025&ndash;present &nbsp;&middot;&nbsp; in build</p>
+    <h1 class="display rise">I designed all five surfaces of a Nigerian marketplace, where one cart is secretly three orders and a package changes hands four times before it arrives.</h1>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Product designer</dd></div>
+      <div><dt class="tag">scope</dt><dd>Buyer &amp; seller app, vendor portal, rider app, admin portal, website</dd></div>
+      <div><dt class="tag">team</dt><dd>PM, engineering, client stakeholders</dd></div>
+      <div><dt class="tag">timeline</dt><dd>2025 to present</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/hm-apps.webp" alt="Two HomeMade phone screens side by side: the seller home for Ama's Craft showing earnings and recent orders, and the buyer home showing categories and hot deals." style="width:100%;border-radius:4px" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">One app, two jobs &mdash; the role chosen at signup decides every screen after it.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>Five surfaces, five people, one order</h2>
+      <p>HomeMade is a marketplace for Nigerian-made goods, adire, crafts, local manufacturing, sold retail and wholesale across all 36 states. Five user groups touch a single order: the buyer, the seller, the dispatch rider, the platform admin, and third-party logistics partners.</p>
+      <p>I designed all five surfaces. A unified mobile app where buyers and sellers pick their role at signup, a vendor web portal for catalogue and inventory, a standalone rider app, an admin operations portal, and the marketing site. Our PM defined the scope in a signed-off specification; my job was five products that stay in agreement with each other in real time.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Everyone is looking at the same order and seeing something different</h2>
+      <p>A buyer fills a cart with items from three sellers and thinks she has bought one thing. The system knows it's three sub-orders, three payments, three packing jobs, three riders and three delivery timelines. She'll get three sets of updates for a purchase she made once.</p>
+      <p>Underneath that, the same order looks different again to everyone else. The seller sees a packing job. The rider sees a pickup and a drop-off. Admin sees an exception waiting to happen.</p>
+      <div class="pull">The buyer wants to know when. The seller wants to know it left. The rider wants to know what's next. Admin needs to know who to call.</div>
+      <p>One order, one truth, five presentations, and none of them can contradict another, because the moment they do, someone is on the phone to support.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/hm-rider.png" alt="Three HomeMade rider app screens: the home view with today's earnings and an active delivery, a new delivery request with pickup and drop-off, and the enroute map with an eight minute ETA." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The same order, seen by the rider &mdash; a pickup, a drop-off and one large next action.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Four calls across five products</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>Let the buyer keep her mental model, and absorb the split</h4>
+        <p>The honest system view is three separate orders. Showing that at checkout means three payment confirmations, three receipts and three tracking screens for one shopping trip, which feels like a bug.</p>
+        <p>I kept the cart and checkout singular, one summary, one payment, one confirmation, and let the split surface only where it becomes real: at delivery, where three packages genuinely arrive at different times. Order tracking is grouped under the purchase, not scattered across it.</p>
+        <div class="cost"><em>what it cost</em>A harder refund and cancellation story, because partial states now exist inside something the buyer experiences as one order. Every one of those partial states had to be designed, and they're the least elegant screens in the product.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>Show the wholesale price you haven't earned yet</h4>
+        <p>Wholesale pricing runs on minimum order quantity. Buy below it and you pay retail; the discounted tier only applies once the cart clears the threshold.</p>
+        <p>The cautious design hides the wholesale price until it's unlocked, avoiding any suggestion of a price the buyer can't have. I did the opposite, the tier and the gap to it are visible from the product page onward: this is &#8358;4,500 each, and &#8358;3,200 each at twenty units. For Tunde, who runs a boutique in Abuja and is buying to resell, that gap is the entire purchase decision, and hiding it makes the platform look expensive to exactly the buyer it wants most.</p>
+        <div class="cost"><em>what it cost</em>A busier product page, and a retail buyer who now sees a cheaper price she isn't eligible for. That's a real irritation, and it was the right trade, the wholesale buyer is worth many times the retail one and was leaving before he got to the cart.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>Design interstate delivery as custody, not progress</h4>
+        <p>A local delivery is one rider between two strangers. Interstate is worse: the seller's rider takes the package to a motor park, it travels by waybill, a partner rider in the destination state collects it, and that person delivers it. Four sets of hands, most of whom have never met.</p>
+        <p>The default pattern is a progress bar, five stages, percentage complete. That answers &ldquo;how far along&rdquo; when everyone is actually asking &ldquo;who has my package right now.&rdquo; I built it as an explicit chain of custody where each state names the person holding the item. When something stalls, admin sees a name and a number rather than a stuck bar.</p>
+        <div class="cost"><em>what it cost</em>Five discrete confirmations is real work for a rider who is already busy, and a missed confirmation now strands an order visibly instead of quietly. That's the right failure, but it generates support tickets a vaguer design would have hidden.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 04</span>
+        <h4>Build seller onboarding for someone who doesn't trust it</h4>
+        <p>The seller we're actually recruiting is Ama: a handmade crafts business in Lagos, limited digital experience, and existing suspicion of online marketplaces. Onboarding asks her for CAC registration, documents, and an admin approval wait.</p>
+        <p>That's a long, bureaucratic ask from a platform she has no reason to believe in yet. I designed it as a resumable multi-step flow with persistent verification status, where she is, what's outstanding, and what happens next, so an incomplete application looks like progress rather than rejection. She can list products while approval is pending; they just don't go live.</p>
+        <div class="cost"><em>what it cost</em>A more complex state model on both the seller and admin side, and a population of half-onboarded sellers with unpublished catalogues that admin has to chase. Worth it, the alternative is a form that Ama abandons at step two and never returns to.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/hm-product-pricing.png" alt="The HomeMade vendor portal product page for Handwoven Adire Fabric, showing retail price, wholesale price and a ten unit minimum order side by side." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Retail and wholesale on the same row, with the minimum order that unlocks the lower price.</figcaption>
+    </figure>
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/hm-track.png" alt="The HomeMade buyer's Track Order screen, showing In Transit status, the named dispatcher with a call button, and a tracking history of order placed, processing and out for delivery." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Custody, not progress &mdash; each state names the person holding the package, with a way to reach them.</figcaption>
+    </figure>
+
+    <section aria-roledescription="carousel" aria-label="More HomeMade screens" style="margin:0 0 clamp(52px,6vw,84px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;6</p>
+        <div style="display:flex;gap:10px">
+          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
+          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-admin.png" alt="The HomeMade admin portal dashboard, showing revenue, active orders, recent activity and a pending actions queue." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Admin &mdash; pending actions carry a count, because they are the work.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-vendor.png" alt="The HomeMade vendor portal dashboard for Ama's Crafts, showing products, orders, customers, revenue and an order summary breakdown." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Vendor portal &mdash; the surface that absorbed the work a phone couldn't carry.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-rider-angled.png" alt="Three HomeMade rider app screens shown at an angle: home, a new delivery request, and the enroute map." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Rider app &mdash; built to be left and returned to, mid-job.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-onboarding.png" alt="The HomeMade mobile onboarding screen: Shop Smart, Shop Local Everyday, with create an account and login." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Onboarding &mdash; the last screen before a role is chosen.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-marketing.png" alt="The HomeMade marketing site hero: Connect. Shop. Thrive. From Local to Global, with buyer and seller photography." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Marketing site &mdash; the first promise the product has to keep.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:#FBF3E8;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/hm-track-modes.png" alt="The HomeMade Track Order screen shown in light and dark mode side by side." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Light and dark &mdash; specified together, not retrofitted.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go5 }}" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what shipped</span>
+      <h2>Scope, while it's being built</h2>
+      <p>The platform is in development. I'd rather show what I designed than quote numbers for something nobody has used yet.</p>
+      <ul class="outcomes">
+        <li><span class="n">5</span><span class="d">Surfaces designed end to end: buyer and seller app, vendor portal, rider app, admin portal, marketing site.</span></li>
+        <li><span class="n">5</span><span class="d">User groups seeing the same order simultaneously, each needing a different answer from it.</span></li>
+        <li><span class="n">36</span><span class="d">States covered, with interstate routed through the motor park and waybill network that already exists.</span></li>
+        <li><span class="n">AA</span><span class="d">WCAG 2.1 conformance specified across every surface, including keyboard navigation on the admin portal and scalable type on mobile.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I treated the partner rider in the destination state as a system state rather than a person. They're the least visible participant in the chain, they have no relationship with the platform, and nothing I designed gives them a reason to care. If interstate delivery underperforms, that's the first place I'd look.</p>
+      <p>I also under-served the seller inside the unified app. One app with a role chosen at signup is right for acquisition, but running a store from a phone is a genuinely different job from browsing one, and the seller experience ended up shaped by decisions made for the buyer. The vendor web portal absorbed the work that should have been split between them.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="Anywork.dc.html">
+      <span class="tag">next project</span>
+      <strong>A ladder, not a gate</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.i = 0;
+    this.n = 6;
+    this.track = React.createRef();
+    this.dots = React.createRef();
+    this.counter = React.createRef();
+  }
+  slide(n){
+    this.i = (n + this.n) % this.n;
+    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
+    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
+    if(this.dots.current){
+      Array.prototype.forEach.call(this.dots.current.children, (b, k)=>{
+        var bar = b.firstChild;
+        if(bar) bar.style.background = (k === this.i) ? 'var(--deep)' : 'var(--rule-ink)';
+      });
+    }
+  }
+  componentDidMount(){ this.boot(); this.bootGlow(); }
+  componentDidUpdate(){ this.reveal(); }
+  bootGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero || !('IntersectionObserver' in window)) return;
+    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
+    this.glowIo = new IntersectionObserver((es)=>{
+      es.forEach((e)=>{
+        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      });
+    },{threshold:0});
+    this.glowIo.observe(hero);
+  }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting) this.show(e.target); });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    if(this.glowIo) this.glowIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){
+    return {
+      track: this.track,
+      dots: this.dots,
+      counter: this.counter,
+      prev: () => this.slide(this.i - 1),
+      next: () => this.slide(this.i + 1),
+      go0: () => this.slide(0),
+      go1: () => this.slide(1),
+      go2: () => this.slide(2),
+      go3: () => this.slide(3),
+      go4: () => this.slide(4),
+      go5: () => this.slide(5)
+    };
+  }
+}
+</script>
+</body>
+</html>

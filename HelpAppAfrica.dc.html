@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm">
+  <div class="wrap">
+    <p class="tag hero-eyebrow rise">help app africa &nbsp;&middot;&nbsp; 2025 &nbsp;&middot;&nbsp; shipped</p>
+    <h1 class="display rise">I rebuilt the three journeys carrying most of the traffic on a live services platform, without pausing the release cycle.</h1>
+    <p class="rise" style="margin:clamp(26px,4vw,40px) 0 0"><a class="ext tag" href="https://apps.apple.com/ng/app/help-app-africa/id6737198514" target="_blank" rel="noopener" style="color:var(--marigold);text-decoration:none;border-bottom:1px solid rgba(232,163,23,.4);padding-bottom:3px">visit the live product</a></p>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Sole designer, embedded</dd></div>
+      <div><dt class="tag">team</dt><dd>Product lead, 4 engineers</dd></div>
+      <div><dt class="tag">timeline</dt><dd>Feb &mdash; Jul 2025</dd></div>
+      <div><dt class="tag">engagement</dt><dd>Contract</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 auto clamp(44px,5.5vw,72px);max-width:960px">
+      <img src="images/ha-lead-three-up.webp" alt="Three Help App screens side by side: the client home with wallet and services, the purple splash with the Help logo, and the provider home with booking requests." style="width:100%" width="960" height="720" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Two apps behind one brand &mdash; client on the left, provider on the right, after the redesign.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>A live product that couldn't stop to be fixed</h2>
+      <p>Help App Africa connects people with local service providers. By the time I came in on a five-month contract, the product had been shipping for long enough to accumulate the usual debt: features layered on features, three different ways to do the same thing, and a team that knew it was bad but had no map of <em>how</em> bad.</p>
+      <p>The brief was &ldquo;redesign the core platform.&rdquo; The constraint was that the release train couldn't stop and the contract was five months, not eighteen.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Everything was broken, which is the same as nothing being prioritised</h2>
+      <p>I started with a UX audit &mdash; every screen, every state, scored against task completion rather than aesthetics. It produced a list of about forty problems, which is a useless artefact on its own. A list of forty problems tells a team to panic.</p>
+      <p>So I overlaid traffic. Where were people actually going, and where were they failing? Three journeys accounted for the overwhelming majority of sessions and nearly all of the failures. The other thirty-odd problems were real and almost entirely irrelevant.</p>
+      <div class="pull">&ldquo;An audit that doesn't rank its own findings has just moved the hard decision onto someone else's desk.&rdquo;</div>
+    </div>
+
+</div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/ha-admin-dashboard.png" alt="The Help App admin dashboard: registered users, clients, providers and bookings across the top, then payment success rate, booking conversion, popular services, average response time, net promoter score and ticket resolution time." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The admin dashboard &mdash; the surface that told us which journeys carried the traffic.</figcaption>
+    </figure>
+    <div class="ha-pair" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin:0 0 clamp(44px,5.5vw,72px)">
+      <figure style="margin:0">
+        <img src="images/ha-client-home.png" alt="The client home screen: greeting, available balance with virtual account details, a row of services, service provider cards and recent bookings." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+        <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Client home &mdash; balance, services and providers in one scroll.</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <img src="images/ha-provider-home.png" alt="The provider home screen: available balance, quick actions for business, reviews, schedule and earnings, a business setup checklist, and new booking requests with accept and view details." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+        <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Provider home &mdash; setup progress above the booking requests it unlocks.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap-narrow">
+
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Two calls that made five months enough</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>Fix three journeys. Leave the rest ugly.</h4>
+        <p>The instinct in the room was a full redesign &mdash; consistent, complete, satisfying. It would have shipped in month nine of a five-month contract.</p>
+        <p>I argued for depth on the three high-traffic journeys and an explicit, written decision to leave everything else alone. Not &ldquo;we'll get to it&rdquo; &mdash; a stated boundary, so nobody had to relitigate it every sprint.</p>
+        <div class="cost"><em>what it cost</em>A visibly inconsistent product for two quarters, and a recurring conversation with stakeholders about why other screens still looked old. I'd defend it: the alternative was a beautiful redesign that arrived after I'd left.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>Ship behind the existing visual language, then restyle</h4>
+        <p>Changing structure and styling at once makes it impossible to tell which change moved the metric &mdash; and doubles the engineering review.</p>
+        <p>We shipped the new flows in the old skin first, measured, then applied the new styling as a separate release.</p>
+        <div class="cost"><em>what it cost</em>Two release cycles instead of one, and an interim state that looked like nothing had changed. But we knew which half of the work was doing the lifting.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/ha-login-dashboard.png" alt="The Help App admin login beside the dashboard it opens onto, both shown on tablets." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Sign-in to dashboard &mdash; the shortest path an operator takes, redesigned end to end.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what happened</span>
+      <h2>The numbers, and the caveats</h2>
+      <ul class="outcomes">
+        <li><span class="n">+28%</span><span class="d">Task completion across the three redesigned journeys.</span></li>
+        <li><span class="n">+35%</span><span class="d">CSAT, measured by the existing in-app survey &mdash; small sample, directionally clear.</span></li>
+        <li><span class="n">+30%</span><span class="d">Feature adoption, concentrated in the two features we moved out of a buried menu.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I should have written the &ldquo;not doing this&rdquo; list as a shared artefact in week one instead of week five. Until it existed, every stand-up re-opened the same scope argument, and I spent goodwill defending a decision that was already made.</p>
+      <p>I also under-invested in handover. The contract ended with three journeys rebuilt and no documented rationale for the team inheriting it &mdash; which means some of those decisions have probably been quietly undone by now.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="Nerdbug.dc.html">
+      <span class="tag">next project</span>
+      <strong>Twelve components, properly &mdash; a system across seven products</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){ this.boot(); }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

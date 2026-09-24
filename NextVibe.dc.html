@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<style>
+@keyframes glow-bloom{from{opacity:.10;transform:scale(1)}to{opacity:.16;transform:scale(1.08)}}
+@keyframes glow-counter{from{opacity:.05;transform:translate(0,0)}to{opacity:.10;transform:translate(-4%,4%)}}
+@keyframes glow-arrive{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .glow-field{animation:none}
+  .glow-bloom{animation:none;opacity:.13;transform:scale(1.04)}
+  .glow-counter{animation:none;opacity:.075;transform:translate(-2%,2%)}
+}
+</style>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="--project-glow:#D14B8F;position:relative;overflow:hidden;isolation:isolate">
+  <div class="glow-field" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;animation:glow-arrive 1.6s ease-out both">
+    <div class="glow-bloom" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(60px);will-change:transform,opacity;animation:glow-bloom 34s ease-in-out infinite alternate"></div>
+    <div class="glow-counter" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(70px);will-change:transform,opacity;animation:glow-counter 47s ease-in-out infinite alternate"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">nextvibe &nbsp;&middot;&nbsp; 2024&ndash;present &nbsp;&middot;&nbsp; shipped</p>
+    <h1 class="display rise">I designed an event memory product with no app download, which meant designing for someone who will use it exactly once, at a party, on borrowed wifi.</h1>
+    <p class="rise" style="margin:clamp(26px,4vw,40px) 0 0"><a class="ext tag" href="https://mynextvibe.com/" target="_blank" rel="noopener" style="color:var(--marigold);text-decoration:none;border-bottom:1px solid rgba(232,163,23,.4);padding-bottom:3px">visit the live product</a></p>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Lead product designer, freelance</dd></div>
+      <div><dt class="tag">scope</dt><dd>Attendee, organiser and sponsor surfaces</dd></div>
+      <div><dt class="tag">team</dt><dd>Founder, PM, engineering</dd></div>
+      <div><dt class="tag">timeline</dt><dd>2024 to present</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/nv-hero.png" alt="The NextVibe marketing site hero reading Get Sold out With Nextvibe, above four event photographs." style="width:100%;border-radius:4px" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The first promise the product has to keep, before anyone has scanned anything.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>Everyone's photos, nobody's album</h2>
+      <p>Every event produces hundreds of photographs and scatters them across two hundred camera rolls. The good ones &mdash; the shot of you dancing that you never saw, the one where your grandmother is laughing &mdash; sit on a phone belonging to someone whose surname you don't know.</p>
+      <p>NextVibe collects them. Guests scan a QR code and upload into one shared album. Organisers get the content and the engagement data. Brands sponsor moments instead of banners. It runs across weddings, birthdays, festivals and corporate events, and it serves three groups who want very different things from the same screens.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Every user is a first-time user, forever</h2>
+      <p>The founding constraint was no app download. Guests scan a code and they're in.</p>
+      <p>That decision is right &mdash; nobody installs software at a wedding &mdash; and it removes every tool a designer normally leans on. No onboarding sequence, because there's no second session to spread it over. No account, so no persistent identity, so no obvious way to answer which of these six hundred photos are mine. No push notifications to bring anyone back. No tutorial, because everyone arrives mid-party and leaves ninety seconds later.</p>
+      <div class="pull">I was designing for someone standing up, in bad light, holding a drink, who will never see this screen again.</div>
+      <p>Everything had to work on first contact or not at all.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/nv-vibe.webp" alt="Three phone screens showing the Choose Your Vibe step, where a user identifies as event attendee, event organiser or brand sponsor." style="width:100%;border-radius:4px" width="1920" height="1440" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Three audiences, one screen &mdash; the choice that decides which product you meet next.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Four calls that made ninety seconds enough</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>The QR landing is the entire product, not the entrance to it</h4>
+        <p>Conventional structure puts a landing page in front and the real interface behind it. With no download and no account, that costs you the only ninety seconds you get.</p>
+        <p>I collapsed the whole first-time experience into the screen the QR code opens: what this is, whose event, and the upload action, immediately available. No splash, no explanation, no &ldquo;get started.&rdquo; Someone who scans and uploads without reading anything is the success case, not the edge case.</p>
+        <div class="cost"><em>what it cost</em>Almost no room to explain the rest of the product &mdash; the games, the tags, the postcards &mdash; so discovery of everything beyond upload is weak. Attendees who'd have loved the full thing mostly never find out it exists.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>The game is the capture mechanic, not a feature beside it</h4>
+        <p>Left alone, guests photograph their own table and nothing else. The album ends up as four hundred selfies and no record of the event.</p>
+        <p>Photo challenges, trivia and scavenger hunts exist as engagement features, but I designed them as the thing that actually populates the album &mdash; prompts that send people to photograph the cake, the band, the person they haven't spoken to yet. The leaderboard gives them a reason to keep going.</p>
+        <div class="cost"><em>what it cost</em>Gamification is wrong for some events. A leaderboard at a wedding can read as tacky, so the mechanic had to be optional and tonally adjustable by event type &mdash; which meant designing it twice, loud and quiet.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>Tag from what the system already knows</h4>
+        <p>VibeTags make photos searchable, which requires structure &mdash; and structure normally requires someone to label things. Nobody at a party is going to fill in metadata.</p>
+        <p>I designed tagging to come from context the platform already holds: which event, which stage, which set time, which segment of the evening. The guest uploads; the tags attach themselves. At a festival that means photos organised by artist without a single person choosing a category.</p>
+        <div class="cost"><em>what it cost</em>The tags are only as good as the organiser's setup, so the work moved rather than disappearing. A badly configured event produces a badly organised album, and the person who suffers is the guest, not the organiser who caused it.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 04</span>
+        <h4>Sponsorship attaches to a moment, or it doesn't ship</h4>
+        <p>Brands pay for events, and the usual mechanism is an interstitial or a watermark &mdash; which is exactly the thing that makes a memory feel like an advert.</p>
+        <p>I kept sponsorship to surfaces where a brand can add rather than interrupt: a challenge someone chooses to play, a postcard frame, a stage tag. Nothing sits between a guest and their photos.</p>
+        <div class="cost"><em>what it cost</em>Far harder to sell than guaranteed impressions, and it gives brands less control than they're used to asking for. It's the constraint most likely to be argued away commercially, and it's the one I'd fight hardest for.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/nv-ticketing.png" alt="Three phone screens: Book Ticket with ticket tiers, Gift a Friend, and the payment method selection." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Booking, gifting and payment &mdash; the one flow where friction is allowed to exist.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <section aria-roledescription="carousel" aria-label="More NextVibe screens" style="margin:0 0 clamp(52px,6vw,84px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;6</p>
+        <div style="display:flex;gap:10px">
+          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
+          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-attendee.png" alt="Two phone screens: the attendee homepage with featured and nearby events, and an event detail page." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Attendee home and event detail &mdash; discovery before the ninety seconds start.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-create-event.png" alt="Three phone screens from the organiser's create-event flow, ending in a choose gamification type sheet." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The organiser's setup &mdash; where gamification is chosen, and where the tags come from.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-analytics.png" alt="The NextVibe leaderboard screen showing the top three players and a ranked list." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The leaderboard &mdash; the reason someone photographs the band and not their own table.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-buy-ticket.png" alt="The Book Ticket screen with pre-sale sold out, VIP selected, and a buy-as-gift option." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Ticket tiers, with sold-out states shown rather than hidden.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-booking-details.png" alt="The booking details screen with ticket ID, attendee name, location, and a subtotal, fees, tax and total breakdown." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Fees and tax broken out before the total &mdash; no surprises at the last step.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/nv-marketing.png" alt="The NextVibe marketing site shown on a tablet." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The same marketing surface at tablet width.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go5 }}" aria-label="Go to screen 6" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what shipped</span>
+      <h2>Live, across four event types</h2>
+      <p>The product is live and running real events. The numbers I have are organiser-side and not mine to publish, so here's the scope instead.</p>
+      <ul class="outcomes">
+        <li><span class="n">3</span><span class="d">Distinct audiences designed for in one product: attendees, organisers and sponsoring brands.</span></li>
+        <li><span class="n">0</span><span class="d">App downloads required. The entire guest experience runs in a mobile browser.</span></li>
+        <li><span class="n">4+</span><span class="d">Event types the same product has to fit: weddings, birthdays, festivals and corporate events, each with its own tone.</span></li>
+        <li><span class="n">1</span><span class="d">Ninety-second window, which was the real design budget for every guest-facing screen.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I optimised so hard for the first ninety seconds that I under-designed the return. The best moment in this product is opening the full album a few days later, when the event is over and someone finds the photo they didn't know existed &mdash; and that experience got a fraction of the attention the upload flow did.</p>
+      <p>I also should have pushed harder on the identity problem instead of designing around it. &ldquo;Which of these are mine&rdquo; is the question every guest actually has, and no-download made it inconvenient enough that we let it stay unsolved longer than we should have.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="Firmly.dc.html">
+      <span class="tag">next project</span>
+      <strong>Firmly &mdash; modernising the Nigerian legal ecosystem</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.i = 0;
+    this.n = 6;
+    this.track = React.createRef();
+    this.dots = React.createRef();
+    this.counter = React.createRef();
+  }
+  slide(k){
+    this.i = (k + this.n) % this.n;
+    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
+    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
+    if(this.dots.current){
+      Array.prototype.forEach.call(this.dots.current.children, (b, j)=>{
+        var bar = b.firstElementChild;
+        if(bar) bar.style.background = j === this.i ? 'var(--deep)' : 'var(--rule-ink)';
+        b.setAttribute('aria-current', j === this.i ? 'true' : 'false');
+      });
+    }
+  }
+  componentDidMount(){ this.boot(); this.bootGlow(); }
+  bootGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero || !('IntersectionObserver' in window)) return;
+    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
+    this.glowIo = new IntersectionObserver((es)=>{
+      es.forEach((e)=>{
+        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      });
+    },{threshold:0});
+    this.glowIo.observe(hero);
+  }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{ if(e.isIntersecting) this.show(e.target); });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    if(this.glowIo) this.glowIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){
+    return {
+      track: this.track,
+      dots: this.dots,
+      counter: this.counter,
+      prev: () => this.slide(this.i - 1),
+      next: () => this.slide(this.i + 1),
+      go0: () => this.slide(0),
+      go1: () => this.slide(1),
+      go2: () => this.slide(2),
+      go3: () => this.slide(3),
+      go4: () => this.slide(4),
+      go5: () => this.slide(5)
+    };
+  }
+}
+</script>
+</body>
+</html>

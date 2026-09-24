@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<script src="./nav-menu.js" defer></script>
+<style>
+/* hero: shapes fall and stack into a woman working at her desk, on a loop */
+.deskfall{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.df-stage{position:absolute;right:clamp(20px,4.5vw,64px);bottom:0;width:360px;height:290px}
+.df-ground{position:absolute;left:-10%;right:-10%;bottom:0;height:1px;background:rgba(241,238,231,.22)}
+.df{position:absolute;display:block;opacity:0;animation:df-drop 12s cubic-bezier(.3,.8,.4,1) infinite;animation-delay:calc(var(--i) * .2s)}
+.df-hand{animation:df-drop 12s cubic-bezier(.3,.8,.4,1) infinite,df-type .32s ease-in-out infinite alternate;animation-delay:calc(var(--i) * .2s),0s}
+@keyframes df-drop{
+  0%{opacity:0;transform:translateY(-320px)}
+  2%{opacity:1}
+  5%{transform:translateY(0) scaleY(.9)}
+  6.5%{transform:translateY(0) scaleY(1)}
+  86%{opacity:1;transform:translateY(0)}
+  93%{opacity:0;transform:translateY(8px)}
+  100%{opacity:0;transform:translateY(-320px)}
+}
+@keyframes df-type{from{translate:0 0}to{translate:0 -3px}}
+@media(max-width:1199px){.deskfall{display:none}}
+@media(prefers-reduced-motion:reduce){.df,.df-hand{opacity:1;animation:none;transform:none}}
+</style>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html" aria-current="page">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="position:relative;overflow:hidden;isolation:isolate">
+  <div class="deskfall" aria-hidden="true">
+    <div class="df-stage">
+      <span class="df" style="--i:0;left:66px;bottom:0;width:66px;height:6px;border-radius:3px;background:rgba(241,238,231,.22)"></span>
+      <span class="df" style="--i:1;left:95px;bottom:6px;width:7px;height:88px;background:rgba(241,238,231,.2)"></span>
+      <span class="df" style="--i:2;left:58px;bottom:94px;width:86px;height:10px;border-radius:5px;background:rgba(241,238,231,.24)"></span>
+      <span class="df" style="--i:3;left:52px;bottom:98px;width:10px;height:94px;border-radius:5px;background:rgba(241,238,231,.2);rotate:-7deg"></span>
+      <span class="df" style="--i:4;left:184px;bottom:0;width:8px;height:150px;background:rgba(241,238,231,.26)"></span>
+      <span class="df" style="--i:5;left:336px;bottom:0;width:8px;height:150px;background:rgba(241,238,231,.26)"></span>
+      <span class="df" style="--i:6;left:172px;bottom:150px;width:184px;height:10px;border-radius:2px;background:rgba(241,238,231,.4)"></span>
+      <span class="df" style="--i:7;left:228px;bottom:160px;width:74px;height:5px;border-radius:2px;background:rgba(241,238,231,.62)"></span>
+      <span class="df" style="--i:8;left:296px;bottom:163px;width:6px;height:54px;border-radius:3px;background:var(--marigold);box-shadow:-10px 0 26px rgba(232,163,23,.35);rotate:-13deg"></span>
+      <span class="df" style="--i:9;left:194px;bottom:160px;width:15px;height:18px;border-radius:2px 2px 4px 4px;border:2px solid rgba(232,163,23,.8)"></span>
+      <span class="df" style="--i:10;left:160px;bottom:8px;width:20px;height:104px;border-radius:10px;background:#8a5334"></span>
+      <span class="df" style="--i:11;left:160px;bottom:0;width:36px;height:10px;border-radius:5px;background:#2a211c"></span>
+      <span class="df" style="--i:12;left:86px;bottom:104px;width:94px;height:28px;border-radius:14px;background:rgba(140,163,150,.85)"></span>
+      <span class="df" style="--i:13;left:78px;bottom:124px;width:46px;height:94px;border-radius:22px 22px 14px 14px;background:rgba(241,238,231,.88);rotate:7deg"></span>
+      <span class="df" style="--i:14;left:108px;bottom:156px;width:14px;height:50px;border-radius:7px;background:#8a5334;transform-origin:50% 0;rotate:-42deg"></span>
+      <span class="df" style="--i:15;left:136px;bottom:160px;width:94px;height:12px;border-radius:6px;background:#8a5334;rotate:-3deg"></span>
+      <span class="df df-hand" style="--i:16;left:226px;bottom:163px;width:15px;height:12px;border-radius:6px;background:#9b603f"></span>
+      <span class="df" style="--i:17;left:92px;bottom:226px;width:48px;height:48px;border-radius:50%;background:#2a211c"></span>
+      <span class="df" style="--i:18;left:82px;bottom:252px;width:24px;height:24px;border-radius:50%;background:#2a211c"></span>
+      <span class="df" style="--i:19;left:110px;bottom:218px;width:40px;height:44px;border-radius:50%;background:#8a5334"></span>
+      <span class="df-ground"></span>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">the ledger</p>
+    <h1 class="display rise">Decisions I'd <span class="lift">defend.</span></h1>
+    <p class="hero-sub rise">Every portfolio lists outcomes. Almost none list what they cost. These are calls I made, the trade-off I accepted, and whether I'd make the same one again.</p>
+  </div>
+</header>
+
+<main id="main">
+<section class="section dark" style="padding-top:clamp(40px,5vw,72px)">
+  <div class="wrap">
+    <div class="row">
+      <p class="row-where tag">anywork &middot; onboarding</p>
+      <p class="row-call">Verify identity before the first job, not after.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>A longer signup and a measurable share of users who never finished it. We took the smaller, slower funnel because a marketplace that loses trust once doesn't get it back.</p>
+    </div>
+    <div class="row">
+      <p class="row-where tag">help app africa &middot; redesign</p>
+      <p class="row-call">Fix the three journeys that carried the traffic. Leave the rest ugly.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>A visibly inconsistent product for two quarters, and an awkward conversation about why the marketing site still looked old. A full redesign would have landed in month nine instead of month two.</p>
+    </div>
+    <div class="row">
+      <p class="row-where tag">minisquare mart &middot; checkout</p>
+      <p class="row-call">Show the total, including delivery, before the address form.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>Abandonment moved earlier in the funnel and looked worse on the top-of-flow chart. Completion still rose, because everyone who continued had already accepted the price.</p>
+    </div>
+    <div class="row">
+      <p class="row-where tag">nerdbug &middot; design system</p>
+      <p class="row-call">Ship twelve components properly instead of forty roughly.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>Designers kept working off-system for months on anything we hadn't covered. But the twelve that existed were trusted &mdash; and trust is what makes a system get adopted at all.</p>
+    </div>
+    <div class="row">
+      <p class="row-where tag">forra finance &middot; dashboard</p>
+      <p class="row-call">Show the pending balance and the available balance as two separate numbers.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>A denser screen and a support burden explaining the difference. Worth it &mdash; a single blended number is a promise the product can't always keep, and one broken promise about money ends the relationship.</p>
+    </div>
+    <div class="row">
+      <p class="row-where tag">nextvibe &middot; mobile</p>
+      <p class="row-call">Design for the 4-inch screen first and let the desktop layout inherit.</p>
+      <p class="row-cost"><span class="cost-label">what it cost</span>The desktop experience was under-used real estate for a while, and stakeholders reviewing on laptops saw the weaker version first. But that's not where the users were.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <h2>Why this page exists</h2>
+      <p>I've sat in interviews where every question was a variation of &ldquo;walk me through your process.&rdquo; The honest answer is that process is the easy part &mdash; it's written down, it's teachable, and everyone claims the same one.</p>
+      <p>What's harder to fake is judgement under constraint: knowing which corner to cut when the deadline is real, which stakeholder to disappoint, and which metric will look worse before it looks better. That's what this page is for.</p>
+      <p>If you want to interrogate any of these, I'd enjoy that conversation more than a portfolio walkthrough.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){ this.boot(); }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

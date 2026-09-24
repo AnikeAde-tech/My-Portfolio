@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<style>
+@keyframes glow-bloom{from{opacity:.10;transform:scale(1)}to{opacity:.16;transform:scale(1.08)}}
+@keyframes glow-counter{from{opacity:.05;transform:translate(0,0)}to{opacity:.10;transform:translate(-4%,4%)}}
+@keyframes glow-arrive{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .glow-field{animation:none}
+  .glow-bloom{animation:none;opacity:.13;transform:scale(1.04)}
+  .glow-counter{animation:none;opacity:.075;transform:translate(-2%,2%)}
+}
+</style>
+<script src="./nav-menu.js" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="--project-glow:#3E9BC4;position:relative;overflow:hidden;isolation:isolate">
+  <div class="glow-field" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;animation:glow-arrive 1.6s ease-out both">
+    <div class="glow-bloom" style="position:absolute;right:-14%;bottom:-26%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(60px);will-change:transform,opacity;animation:glow-bloom 34s ease-in-out infinite alternate"></div>
+    <div class="glow-counter" style="position:absolute;left:-12%;top:33%;width:45%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--project-glow), transparent 70%);filter:blur(70px);will-change:transform,opacity;animation:glow-counter 47s ease-in-out infinite alternate"></div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">anywork &nbsp;&middot;&nbsp; 2025&ndash;present &nbsp;&middot;&nbsp; shipped</p>
+    <h1 class="display rise">I designed both sides of a Nigerian artisan marketplace around a verification ladder workers climb, rather than a gate they pass.</h1>
+    <p class="rise" style="margin:clamp(26px,4vw,40px) 0 0"><a class="ext tag" href="https://www.anywork.com.ng/" target="_blank" rel="noopener" style="color:var(--marigold);text-decoration:none;border-bottom:1px solid rgba(232,163,23,.4);padding-bottom:3px">visit the live product</a></p>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Lead product designer</dd></div>
+      <div><dt class="tag">scope</dt><dd>Client &amp; worker apps, mobile &amp; web</dd></div>
+      <div><dt class="tag">team</dt><dd>PM, engineering, founder</dd></div>
+      <div><dt class="tag">timeline</dt><dd>2025 to present</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/aw-welcome.webp" alt="Three phone screens showing the Anywork welcome step, where a new user chooses between I'm a Client and I'm a worker." style="width:100%;border-radius:4px" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Two apps, one entry point &mdash; the role choice that splits every screen after it.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>The informal economy, with receipts</h2>
+      <p>Most household work in Nigeria is arranged by word of mouth. You call the plumber your neighbour used. If he doesn't show, or the price changes halfway through, or the work is bad, there's no record of what was agreed and nobody to take it to.</p>
+      <p>Anywork aggregates that market &mdash; cleaning, laundry, pest control, plumbing, carpentry, electrical, HVAC, painting and appliance repair &mdash; and puts a platform between two strangers. Two apps, two opposed sets of incentives: clients want certainty and low prices, workers want volume and fair pay for scope they can't see until they arrive.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>A specification that solved the business and created the design</h2>
+      <p>I came in with a product requirements document that was thorough and well-reasoned. It defined a three-tier verification ladder, two entirely separate booking models, seven service categories each needing different information, two user types, and both mobile and web.</p>
+      <p>All of it justified. All of it, built literally, four products wearing one logo.</p>
+      <div class="pull">The spec was right about what the business needed. It said nothing about how any of it should feel like one thing.</div>
+      <p>That was the brief I actually worked on: absorb the complexity into a coherent product, and design a system that could carry it across both apps without either side feeling like a stripped-down version of the other.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/aw-client-web.webp" alt="The Anywork client dashboard on web, showing hot bundles, top rated artisans and artisans near you." style="width:100%;border-radius:4px" width="1920" height="1440" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The client surface, tuned for evidence: rating, reviews, location and price before anything else.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Four calls that made it one product</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>Make the bottom of the ladder look safe, not suspicious</h4>
+        <p>Verification runs in three tiers. Level one is phone and OTP. Level two adds facial verification, earning a <em>verified</em> badge and priority in matching. Level three adds a guarantor and physical address check, earning <em>top rated</em>, lower fees and access to higher-paying work.</p>
+        <p>The trap is obvious once you see it: if two tiers carry badges, the third carries an absence &mdash; and an absent badge reads as a warning. That strands every new artisan on a platform they can't get a first job on, which kills supply before the product has any.</p>
+        <p>I designed level one as a stated, positive status with its own visual weight, showing what had been checked rather than leaving a gap where a badge would go. Higher tiers add signal instead of correcting a deficiency.</p>
+        <div class="cost"><em>what it cost</em>A weaker incentive to upgrade. Making level one comfortable reduces the pressure to climb, and the tiers are how the platform funds its own trust. That tension is real and I don't think it's fully resolved.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>One booking form that changes shape, not seven forms</h4>
+        <p>Each service needs different information. HVAC needs gas type, capacity and last service date. Painting needs wall condition and a colour reference. Plumbing needs issue type and affected room. Seven categories, seven field sets.</p>
+        <p>This isn't about tidiness. A worker bids on scope they can't see, and a bid made on bad information becomes a payment dispute three days later. The booking form is where disputes are prevented &mdash; so it has to extract real detail without feeling like an insurance claim.</p>
+        <p>I built it as a single progressive flow with a shared skeleton and a service-specific middle: same entry, same image upload, same summary, different questions in between. A client who books a plumber and later a painter is in the same product both times.</p>
+        <div class="cost"><em>what it cost</em>Considerably more specification and QA than seven standalone forms. Adding a service category later means designing into a constraint rather than from scratch.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>Quick Book and bidding as one decision, not two products</h4>
+        <p>Two booking models exist for good reason. Some work is a commodity at a knowable price &mdash; book it, pay the listed amount. Some can't be priced without assessment, so the client posts a budget and workers bid.</p>
+        <p>Presented as two modes, users have to understand a distinction that only makes sense from inside the business. I designed the choice out of the interface where possible: the service determines the path, and the client meets whichever model applies as the natural next step rather than a fork they have to reason about.</p>
+        <div class="cost"><em>what it cost</em>Less user control, and harder recovery when the automatic path is wrong for a particular job. It also made browse-before-signup harder, since the models diverge exactly where an anonymous user hits the wall.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 04</span>
+        <h4>One design system, two apps that want opposite things</h4>
+        <p>The client app is about reassurance: who is this person, what will it cost, what happens if it goes wrong. The worker app is about throughput: how many requests, how much, how far, accept or decline.</p>
+        <p>I built a single system across mobile and web serving both, with shared foundations and role-specific density &mdash; the worker's job list tighter and faster, the client's provider cards slower and more evidential. Same components, different tuning.</p>
+        <div class="cost"><em>what it cost</em>Every component effectively designed twice, at two densities, with constant temptation to fork into two systems. Holding one is more work up front and much less by the fourth screen.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/aw-booking.webp" alt="Step two of five in the Anywork booking flow: choose your provider, with available providers listed and an option to auto-assign." style="width:100%;border-radius:4px" width="1920" height="4368" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The shared booking skeleton &mdash; same five steps whichever service fills the middle.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <section aria-roledescription="carousel" aria-label="More Anywork screens" style="margin:0 0 clamp(52px,6vw,84px)">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;border-bottom:1px solid var(--rule-ink);padding-bottom:14px;margin-bottom:clamp(22px,2.6vw,32px)">
+        <p class="tag" style="color:rgba(20,19,16,.62);margin:0">more screens &mdash; <span ref="{{ counter }}">1</span>&nbsp;/&nbsp;5</p>
+        <div style="display:flex;gap:10px">
+          <button type="button" onClick="{{ prev }}" aria-label="Previous screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&larr;</button>
+          <button type="button" onClick="{{ next }}" aria-label="Next screen" style="width:44px;height:44px;border:1px solid var(--rule-ink);background:transparent;border-radius:999px;color:var(--ink);font-family:var(--mono);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s" style-hover="background:var(--deep);color:var(--chalk);border-color:var(--deep)">&rarr;</button>
+        </div>
+      </div>
+      <div style="overflow:hidden">
+        <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/aw-client-mobile.png" alt="Anywork client mobile screens: browse artisans, view a provider profile and track a booking." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Client app on mobile &mdash; the same provider evidence at phone density.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/aw-service-modal.png" alt="The Anywork service detail modal, showing what a category covers before a client commits to booking." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Service detail &mdash; scope made explicit before a price is agreed.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/aw-booking-landing.png" alt="The Anywork booking landing screen where a client picks a service category to begin." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Entry to the booking flow &mdash; the point where the service picks the path.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/aw-admin.png" alt="The Anywork admin dashboard used to oversee bookings, artisans and verification status." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Admin &mdash; where verification tiers are reviewed and disputes land.</figcaption>
+          </figure>
+          <figure style="flex:0 0 100%;margin:0;padding-right:2px">
+            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="images/aw-marketing.png" alt="Anywork marketing site hero introducing the artisan marketplace." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Marketing site &mdash; the first promise the product has to keep.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div ref="{{ dots }}" style="display:flex;gap:8px;margin-top:clamp(20px,2.4vw,28px)">
+        <button type="button" onClick="{{ go0 }}" aria-label="Go to screen 1" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--deep)"></span></button>
+        <button type="button" onClick="{{ go1 }}" aria-label="Go to screen 2" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go2 }}" aria-label="Go to screen 3" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go3 }}" aria-label="Go to screen 4" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+        <button type="button" onClick="{{ go4 }}" aria-label="Go to screen 5" style="flex:1;height:44px;padding:0;background:transparent;border:0;cursor:pointer;display:flex;align-items:center"><span style="display:block;width:100%;height:2px;background:var(--rule-ink)"></span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what shipped</span>
+      <h2>Scope, not adoption numbers</h2>
+      <p>This was a complete design engagement, start to finish. I'd rather show what exists than quote adoption figures for a product I don't measure.</p>
+      <ul class="outcomes">
+        <li><span class="n">2</span><span class="d">Full applications designed end to end, client and worker, across mobile and web.</span></li>
+        <li><span class="n">7</span><span class="d">Service categories, each with its own booking field set built on one shared flow.</span></li>
+        <li><span class="n">3</span><span class="d">Verification tiers designed as a progression, with the incentive structure visible at every level.</span></li>
+        <li><span class="n">1</span><span class="d">Design system covering both apps and both platforms.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I designed the verification ladder before speaking to artisans about what they'd actually be willing to hand over. Facial verification and a guarantor are significant asks in a market where people are cautious about giving a platform their details, and I specified the incentives for climbing before understanding the reasons not to.</p>
+      <p>I also treated the dispute path as a support workflow rather than a design surface. It's the moment the whole trust promise is tested, and it's the least designed part of the product.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="NextVibe.dc.html">
+      <span class="tag">next project</span>
+      <strong>Ninety seconds, no download &mdash; an event memory product</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    this.i = 0;
+    this.track = React.createRef();
+    this.dots = React.createRef();
+    this.counter = React.createRef();
+  }
+  slide(n){
+    this.i = (n + 5) % 5;
+    if(this.track.current) this.track.current.style.transform = 'translateX(' + (this.i * -100) + '%)';
+    if(this.counter.current) this.counter.current.textContent = String(this.i + 1);
+    if(this.dots.current){
+      Array.prototype.forEach.call(this.dots.current.children, (b, k)=>{
+        var bar = b.firstElementChild;
+        if(bar) bar.style.background = k === this.i ? 'var(--deep)' : 'var(--rule-ink)';
+        b.setAttribute('aria-current', k === this.i ? 'true' : 'false');
+      });
+    }
+  }
+  componentDidMount(){ this.boot(); this.bootGlow(); }
+  bootGlow(){
+    var hero = document.querySelector('.hero');
+    if(!hero || !('IntersectionObserver' in window)) return;
+    var layers = hero.querySelectorAll('.glow-bloom, .glow-counter');
+    this.glowIo = new IntersectionObserver((es)=>{
+      es.forEach((e)=>{
+        layers.forEach((l)=>{ l.style.animationPlayState = e.isIntersecting ? 'running' : 'paused'; });
+      });
+    },{threshold:0});
+    this.glowIo.observe(hero);
+  }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting) this.show(e.target);
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    if(this.glowIo) this.glowIo.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){
+    return {
+      track: this.track,
+      dots: this.dots,
+      counter: this.counter,
+      prev: () => this.slide(this.i - 1),
+      next: () => this.slide(this.i + 1),
+      go0: () => this.slide(0),
+      go1: () => this.slide(1),
+      go2: () => this.slide(2),
+      go3: () => this.slide(3),
+      go4: () => this.slide(4)
+    };
+  }
+}
+</script>
+</body>
+</html>

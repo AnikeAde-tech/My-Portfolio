@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm">
+  <div class="wrap">
+    <p class="tag hero-eyebrow rise">nerdbug &nbsp;&middot;&nbsp; 2025&ndash;present &nbsp;&middot;&nbsp; in use</p>
+    <h1 class="display rise">I built the design system seven client products now share, so engineering stopped paying twice for the same button.</h1>
+    <p class="rise" style="margin:clamp(26px,4vw,40px) 0 0"><a class="ext tag" href="https://nerdbug.io/" target="_blank" rel="noopener" style="color:var(--marigold);text-decoration:none;border-bottom:1px solid rgba(232,163,23,.4);padding-bottom:3px">visit the live product</a></p>
+  </div>
+</header>
+<div class="dark">
+  <div class="wrap">
+    <dl class="cs-meta">
+      <div><dt class="tag">role</dt><dd>Design lead</dd></div>
+      <div><dt class="tag">team</dt><dd>2 junior designers, studio teams</dd></div>
+      <div><dt class="tag">timeline</dt><dd>Jul 2025 &mdash; present</dd></div>
+      <div><dt class="tag">scope</dt><dd>Multi-product</dd></div>
+    </dl>
+  </div>
+</div>
+
+<main id="main">
+<section class="cs-body">
+  <div class="wrap">
+    <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/nb-buttons.webp" alt="The Nerdbug button sheet: block, large and small sizes across primary, secondary, outline and transparent styles, each with default, hover and disabled states, shown in light and dark themes side by side." style="width:100%" width="1920" height="1764" loading="eager" fetchpriority="high" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">One component, every state and both themes &mdash; the sheet engineering builds from.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <span class="cs-kicker">01 &mdash; the context</span>
+      <h2>An agency paying twice for the same button</h2>
+      <p>Nerdbug builds software for clients out of Atlanta and Lagos. Every engagement started from a blank Figma file, which meant every engagement rebuilt the same date picker, the same table, the same empty state &mdash; slightly differently each time.</p>
+      <p>The cost wasn't obvious because it never appeared as a line item. It showed up as rework: engineers rebuilding components they'd built before, designers answering questions that had been answered before, and QA finding the same accessibility failures on every project.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">02 &mdash; the problem</span>
+      <h2>Design systems fail for social reasons, not technical ones</h2>
+      <p>I'd seen the standard failure before: someone builds an exhaustive library, publishes it, and nobody uses it. The components are technically fine and nobody trusts them &mdash; because the first time a designer needs a variant that doesn't exist, they detach, and once you've detached once you never go back.</p>
+      <div class="pull">&ldquo;A design system isn't adopted because it's complete. It's adopted because the parts that exist are reliable enough to stop checking.&rdquo;</div>
+      <p>So the design problem wasn't coverage. It was credibility.</p>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">03 &mdash; what I decided</span>
+      <h2>Three calls about scope and governance</h2>
+
+      <div class="decision-card">
+        <span class="tag">decision 01</span>
+        <h4>Twelve components, properly. Not forty, roughly.</h4>
+        <p>I audited three recent client projects and counted which components actually appeared. Twelve covered most of every build. I scoped to those and specified them exhaustively &mdash; every state, every breakpoint, every focus and error condition, with accessibility built in rather than bolted on.</p>
+        <div class="cost"><em>what it cost</em>Designers worked off-system for months on anything outside the twelve, and I had to keep saying no to reasonable requests for a thirteenth. But the twelve were trusted, and that's what got the system used at all.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 02</span>
+        <h4>Tokens named for intent, not appearance</h4>
+        <p><code>surface-raised</code>, not <code>grey-100</code>. Client work means the palette changes every engagement; a system named after its colours has to be rewritten each time, and one named after its intentions doesn't.</p>
+        <div class="cost"><em>what it cost</em>A steeper learning curve for junior designers, who find a literal colour name easier to reach for. I wrote the documentation around this and it's still the thing I explain most often.</div>
+      </div>
+
+      <div class="decision-card">
+        <span class="tag">decision 03</span>
+        <h4>A written route for adding to the system, on day one</h4>
+        <p>Most systems get a contribution process after the first fight about an unapproved component. I wrote it before launch: how to propose, who decides, and how long it takes.</p>
+        <div class="cost"><em>what it cost</em>Process overhead on a small team that would rather just build. It's the least popular thing I introduced and the reason the system still holds.</div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <img src="images/nb-popovers.png" alt="The Nerdbug popover sheet: confirmation, error, input and media variants on phone frames, each shown in light and dark themes." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Popovers specified as a set &mdash; four jobs, both themes, so nobody invents a fifth.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
+
+    <div class="cs-block">
+      <span class="cs-kicker">04 &mdash; what happened</span>
+      <h2>The numbers, and the caveats</h2>
+      <ul class="outcomes">
+        <li><span class="n">&minus;35%</span><span class="d">Development rework, from the engineering lead's estimate rather than a tracked metric &mdash; I'd treat it as directional.</span></li>
+        <li><span class="n">&minus;30%</span><span class="d">Design iteration cycles before stakeholder approval.</span></li>
+        <li><span class="n">7</span><span class="d">Client products now building on the system.</span></li>
+      </ul>
+    </div>
+
+    <div class="cs-block">
+      <span class="cs-kicker">05 &mdash; in hindsight</span>
+      <h2>What I'd do differently</h2>
+      <p>I built for designers first and engineers second. The Figma library was excellent months before the code side caught up, which meant handoff still involved translation &mdash; exactly the cost the system existed to remove. I'd pair with an engineer from day one now.</p>
+      <p>I'd also start the mentoring earlier. I taught the system after building it; the two junior designers would have adopted it faster if they'd helped decide what went in.</p>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<section class="nextup">
+  <div class="wrap">
+    <a href="NextVibe.dc.html">
+      <span class="tag">next project</span>
+      <strong>&ldquo;I love that you found it. I hate that you could.&rdquo;</strong>
+    </a>
+  </div>
+</section>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){ this.boot(); }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  componentWillUnmount(){
+    if(this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

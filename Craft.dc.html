@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>@view-transition{navigation:auto}</style>
+<script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<script src="./motion.js?v=2" defer></script>
+<script src="./nav-menu.js" defer></script>
+<style>
+/* hero: a deck of small screens that deals itself, card by card, on a loop */
+.cdeck{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.cd-stage{position:absolute;right:clamp(40px,7vw,120px);top:50%;width:210px;height:280px;transform:translateY(-44%)}
+.cd-card{position:absolute;inset:0;border-radius:8px;overflow:hidden;background:var(--deep-2);border:1px solid rgba(241,238,231,.18);box-shadow:0 24px 50px rgba(0,0,0,.38);animation:cd-deal 15s cubic-bezier(.55,.1,.25,1) infinite;animation-delay:calc(var(--i) * -3s)}
+.cd-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.cd-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,34,.35),transparent 45%)}
+.cd-tag{position:absolute;left:12px;bottom:10px;z-index:1;font-family:var(--mono);font-size:11px;color:var(--chalk)}
+.cd-pin{position:absolute;right:-8px;top:-8px;z-index:6;width:14px;height:14px;border-radius:50%;background:var(--marigold);box-shadow:0 0 0 5px rgba(232,163,23,.18);animation:cd-pin 3s ease-in-out infinite}
+@keyframes cd-deal{
+  0%,17%  {transform:translate(54px,-40px) rotate(9deg) scale(.82);opacity:.35;z-index:1}
+  20%,37% {transform:translate(36px,-27px) rotate(6deg) scale(.88);opacity:.6;z-index:2}
+  40%,57% {transform:translate(18px,-13px) rotate(3deg) scale(.94);opacity:.85;z-index:3}
+  60%,77% {transform:translate(0,0) rotate(-2deg) scale(1);opacity:1;z-index:4}
+  86%     {transform:translate(-80px,60px) rotate(-14deg) scale(.94);opacity:0;z-index:5}
+  87%,100%{transform:translate(70px,-52px) rotate(11deg) scale(.78);opacity:0;z-index:0}
+}
+@keyframes cd-pin{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+@media(max-width:1379px){.cdeck{display:none}}
+@media(min-width:1380px){.hero-sm .wrap h1{max-width:18ch}}
+@media(prefers-reduced-motion:reduce){.cd-card{animation:none;opacity:1}.cd-card:not(:last-of-type){display:none}.cd-pin{animation:none}}
+</style>
+</helmet>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="nav-in">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a class="nav-name" href="Home.dc.html">Victoria&nbsp;Olorunsola</a>
+      <a class="tag" href="Story.dc.html#contact" style="display:inline-flex;align-items:center;text-decoration:none"><span class="nav-dot"></span>open to work</a>
+    </div>
+    <div class="nav-links tag">
+      <a href="Home.dc.html">home</a>
+      <a href="Work.dc.html">work</a>
+      <a href="Decisions.dc.html">decisions</a>
+      <a href="Craft.dc.html" aria-current="page">craft</a>
+      <a href="Story.dc.html">story</a>
+      <a class="ext" href="victoria-olorunsola-cv.pdf" target="_blank" rel="noopener">résumé</a>
+    </div>
+  </div>
+</nav>
+<header class="hero hero-sm" style="position:relative;overflow:hidden;isolation:isolate">
+  <div class="cdeck" aria-hidden="true">
+    <div class="cd-stage">
+      <div class="cd-card" style="--i:0"><img src="images/craft/c02.png" alt="" loading="eager" fetchpriority="high" decoding="async" /><span class="cd-tag">send money</span></div>
+      <div class="cd-card" style="--i:1"><img src="images/craft/c07.png" alt="" loading="lazy" decoding="async" /><span class="cd-tag">onboarding</span></div>
+      <div class="cd-card" style="--i:2"><img src="images/craft/c22.png" alt="" loading="lazy" decoding="async" /><span class="cd-tag">member home</span></div>
+      <div class="cd-card" style="--i:3"><img src="images/craft/c18.png" alt="" loading="lazy" decoding="async" /><span class="cd-tag">404</span></div>
+      <div class="cd-card" style="--i:4"><img src="images/craft/c05.png" alt="" loading="lazy" decoding="async" /><span class="cd-tag">wallet</span></div>
+      <span class="cd-pin"></span>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <p class="tag hero-eyebrow rise">craft</p>
+    <h1 class="display rise">The small screens that never make it into a <span class="lift">case study.</span></h1>
+    <p class="hero-sub rise">Components, motion studies, empty states and the interface details I care about more than I can justify in a project write-up.</p>
+  </div>
+</header>
+
+<main id="main">
+<section class="section">
+  <div class="wrap">
+    <div class="craft-grid" style="row-gap:clamp(32px,3.5vw,48px)">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c01.png" alt="vitalswap: Landing hero" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Landing hero</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">01 &middot; vitalswap</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c14.png" alt="fsdh group: Corporate site" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Corporate site</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">02 &middot; fsdh group</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c04.png" alt="focal: Add product, admin" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Add product, admin</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">03 &middot; focal</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c02.png" alt="vitalswap: Send money" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Send money</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">04 &middot; vitalswap</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c07.png" alt="pet app: Onboarding" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Onboarding</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">05 &middot; pet app</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c08s.png" alt="firmly: Choose a user type" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Choose a user type</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">06 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c03.png" alt="fixmate: Splash and home" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Splash and home</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">07 &middot; fixmate</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c19.png" alt="pal pensions: Landing hero" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Landing hero</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">08 &middot; pal pensions</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c05.png" alt="vitalswap: Wallet home" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Wallet home</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">09 &middot; vitalswap</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c20.png" alt="firmly: Onboarding" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Onboarding</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">10 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c15.png" alt="fsdh merchant bank: Landing hero" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Landing hero</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">11 &middot; fsdh merchant bank</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c17.png" alt="pet app: Home, welcome, pet profile" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Home, welcome, pet profile</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">12 &middot; pet app</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c12.png" alt="fixmate: Onboarding flow" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Onboarding flow</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">13 &middot; fixmate</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c16.png" alt="vitalswap: Features section" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Features section</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">14 &middot; vitalswap</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c11s.png" alt="firmly: Marketing site" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Marketing site</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">15 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c06.png" alt="fixmate: Home and providers" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Home and providers</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">16 &middot; fixmate</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c18.png" alt="error states: 404, said kindly" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">404, said kindly</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">17 &middot; error states</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c13.png" alt="fixmate: Booking flow" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Booking flow</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">18 &middot; fixmate</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c21.png" alt="fsdh group: Full site" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Full site</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">19 &middot; fsdh group</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c22.png" alt="member platform: Member home" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Member home</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">20 &middot; member platform</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:#FFFFFF"><img src="images/craft/c25.png" alt="firmly: Appointment confirmed" style="display:block;width:100%;height:100%;object-fit:contain;padding:6%;box-sizing:border-box;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Appointment confirmed</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">21 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c27.jpeg" alt="trydive: Job board site" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Job board site</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">22 &middot; trydive</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:#FFFFFF"><img src="images/craft/c23.png" alt="member platform: Feature overview" style="display:block;width:100%;height:100%;object-fit:contain;padding:6%;box-sizing:border-box;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Feature overview</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">23 &middot; member platform</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c24.png" alt="firmly: Splash and dashboards" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Splash and dashboards</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">24 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c26.jpeg" alt="agency site: Marketing site" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Marketing site</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">25 &middot; agency site</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c28.png" alt="vitalswap: Send, home, confirm" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Send, home, confirm</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">26 &middot; vitalswap</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c29.png" alt="firmly: Firm dashboard" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Firm dashboard</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">27 &middot; firmly</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <button type="button" class="craft-open" aria-label="Open preview" style="all:unset;box-sizing:border-box;display:block;cursor:zoom-in;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--deep)"><img src="images/craft/c30.png" alt="firmly: Case management" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)" loading="lazy" decoding="async" /></button>
+        <figcaption style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:var(--display);font-weight:600;letter-spacing:-.01em;font-size:17px">Case management</span><span class="tag" style="color:rgba(20,19,16,.55);white-space:nowrap">28 &middot; firmly</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap-narrow">
+    <div class="cs-block">
+      <h2>Why a page for this</h2>
+      <p>Case studies are about judgement. They're the right format for explaining why a product went one way instead of another, and they're a bad format for showing whether you can actually draw.</p>
+      <p>This page is for the second thing. It's the interface work at close range &mdash; the states, the spacing, the transitions, the four versions of an error message before one of them was kind enough to ship.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about the <em>hard part</em> of your product.</h2>
+    <div class="links">
+      <a class="link" href="mailto:olorunsolavictoria902@gmail.com">
+        <span class="tag">email</span>
+        <span class="v">olorunsolavictoria902@gmail.com</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/victoria-olorunsola-97907527b" target="_blank" rel="noopener">
+        <span class="tag">linkedin</span>
+        <span class="v">victoria-olorunsola</span>
+      </a>
+      <a class="link" href="https://www.behance.net/victorioloruns" target="_blank" rel="noopener">
+        <span class="tag">behance</span>
+        <span class="v">victorioloruns</span>
+      </a>
+      <a class="link" href="tel:+2348146676412">
+        <span class="tag">phone</span>
+        <span class="v">+234 814 667 6412</span>
+      </a>
+    </div>
+    <p class="signoff">thanks for scrolling this far. most of what I know about design I learned from watching people abandon something I made &mdash; so if you've got a product where the drop-off doesn't make sense yet, <em>that's the conversation I want.</em></p>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+        <span>&copy; Victoria Olorunsola 2026</span><span>designed &amp; built in Lagos</span><span>open to remote, worldwide</span><span>set in Bricolage Grotesque &amp; Newsreader</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){ this.boot(); this.bootPreview(); }
+  componentDidUpdate(){ this.reveal(); }
+  boot(){
+    document.body.classList.add('loaded');
+    this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(this.reduce || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((entries)=>{
+      entries.forEach((e)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this.io.unobserve(e.target);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.06});
+    this.onScroll = () => this.check();
+    window.addEventListener('scroll', this.onScroll, {passive:true});
+    window.addEventListener('resize', this.onScroll);
+    this.reveal();
+    [120, 500, 1200].forEach((t)=>setTimeout(()=>this.reveal(), t));
+  }
+  show(el){
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if(this.io) this.io.unobserve(el);
+  }
+  check(){
+    var h = window.innerHeight || 0;
+    document.querySelectorAll('[data-reveal-bound]').forEach((el)=>{
+      if(el.style.opacity === '1') return;
+      var r = el.getBoundingClientRect();
+      if(r.top < h * 0.92) this.show(el);
+    });
+  }
+  reveal(){
+    if(!this.io) return;
+    var sel = '.work-item, .gap-note, .row, .cell, .teaser, .cs-block, .shot, .about-body p, .facts, .timeline li, .craft-tile, .signoff, .outcomes li, .decision-card';
+    document.querySelectorAll(sel).forEach((el)=>{
+      if(el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)';
+      this.io.observe(el);
+    });
+    this.check();
+    requestAnimationFrame(()=>this.check());
+  }
+  bootPreview(){
+    var grid = document.querySelector('.craft-grid');
+    if(!grid){ setTimeout(()=>this.bootPreview(), 300); return; }
+    var figs = Array.prototype.slice.call(grid.querySelectorAll('figure'));
+    var items = figs.map(function(f){
+      var img = f.querySelector('img'), spans = f.querySelectorAll('figcaption span');
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt'), title: spans[0] ? spans[0].textContent : '', meta: spans[1] ? spans[1].textContent : '' };
+    });
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ov = document.createElement('div');
+    ov.setAttribute('role','dialog'); ov.setAttribute('aria-modal','true'); ov.setAttribute('aria-label','Image preview');
+    ov.style.cssText = 'position:fixed;inset:0;z-index:300;background:rgba(9,28,22,.94);color:var(--chalk);display:flex;flex-direction:column;padding:clamp(14px,2.4vw,28px) var(--gut);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s';
+    ov.innerHTML =
+      '<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px">' +
+        '<span class="tag" data-k="count" style="color:var(--sage)"></span>' +
+        '<button type="button" data-k="close" aria-label="Close preview" style="min-width:44px;min-height:44px;background:transparent;border:0;color:var(--chalk);font-family:var(--mono);font-size:13px;cursor:pointer">close &times;</button>' +
+      '</div>' +
+      '<div style="flex:1;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:clamp(8px,2vw,24px)">' +
+        '<button type="button" data-k="prev" aria-label="Previous image" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(241,238,231,.3);background:transparent;color:var(--chalk);font-size:18px;cursor:pointer">&larr;</button>' +
+        '<div style="height:100%;min-height:0;display:flex;align-items:center;justify-content:center"><img data-k="img" alt="" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:scale(.97);transition:transform .35s cubic-bezier(.2,.7,.3,1),opacity .25s ease" /></div>' +
+        '<button type="button" data-k="next" aria-label="Next image" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(241,238,231,.3);background:transparent;color:var(--chalk);font-size:18px;cursor:pointer">&rarr;</button>' +
+      '</div>' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:16px;flex-wrap:wrap">' +
+        '<strong data-k="title" style="font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:clamp(20px,2vw,28px)"></strong>' +
+        '<span class="tag" data-k="meta" style="color:var(--chalk-dim)"></span>' +
+      '</div>';
+    document.body.appendChild(ov);
+    var q = function(k){ return ov.querySelector('[data-k="'+k+'"]'); };
+    var img = q('img'), idx = 0, last = null, open = false;
+    var show = function(i){
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      img.style.opacity = '0';
+      var pre = new Image();
+      pre.onload = pre.onerror = function(){ img.src = it.src; img.alt = it.alt; img.style.opacity = '1'; };
+      pre.src = it.src;
+      q('title').textContent = it.title;
+      q('meta').textContent = it.meta;
+      q('count').textContent = String(idx + 1).padStart(2,'0') + ' / ' + String(items.length).padStart(2,'0');
+    };
+    var onKey = function(e){
+      if(e.key === 'Escape'){ e.preventDefault(); close(); }
+      else if(e.key === 'ArrowRight'){ show(idx + 1); }
+      else if(e.key === 'ArrowLeft'){ show(idx - 1); }
+      else if(e.key === 'Tab'){
+        var f = Array.prototype.slice.call(ov.querySelectorAll('button'));
+        var first = f[0], lastB = f[f.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); lastB.focus(); }
+        else if(!e.shiftKey && document.activeElement === lastB){ e.preventDefault(); first.focus(); }
+      }
+    };
+    var openAt = function(i){
+      last = document.activeElement; open = true;
+      show(i);
+      ov.style.visibility = 'visible'; ov.style.opacity = '1';
+      if(!reduce) requestAnimationFrame(function(){ img.style.transform = 'scale(1)'; });
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', onKey, true);
+      q('close').focus();
+    };
+    var close = function(){
+      if(!open) return; open = false;
+      ov.style.opacity = '0'; ov.style.visibility = 'hidden';
+      img.style.transform = 'scale(.97)';
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey, true);
+      if(last && last.focus) last.focus();
+    };
+    figs.forEach(function(f, i){
+      var b = f.querySelector('.craft-open');
+      if(!b) return;
+      b.addEventListener('click', function(){ openAt(i); });
+      var im = b.querySelector('img');
+      b.addEventListener('mouseenter', function(){ if(!reduce) im.style.transform = 'scale(1.03)'; });
+      b.addEventListener('mouseleave', function(){ im.style.transform = ''; });
+    });
+    q('close').addEventListener('click', close);
+    q('prev').addEventListener('click', function(){ show(idx - 1); });
+    q('next').addEventListener('click', function(){ show(idx + 1); });
+    ov.addEventListener('click', function(e){ if(e.target === ov || e.target === img.parentElement) close(); });
+    var sx = null;
+    ov.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, { passive: true });
+    ov.addEventListener('touchend', function(e){
+      if(sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if(Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
+    this.previewEl = ov;
+  }
+  componentWillUnmount(){
+    if(this.previewEl) this.previewEl.remove();
+    if(this.io) this.io.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
