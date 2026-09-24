@@ -287,6 +287,9 @@ a{color:inherit}
 .craft-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px)}
 @media(max-width:1023px){.craft-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){.craft-grid{grid-template-columns:minmax(0,1fr)}}
+/* masonry (craft page script sets each tile's row span; the tile gap becomes part of the span) */
+.craft-grid.is-masonry{grid-auto-rows:4px;row-gap:0!important}
+.craft-grid.is-masonry>figure{align-self:start}
 .craft-tile{background:var(--deep);border-radius:4px;aspect-ratio:4/5;padding:24px;display:flex;flex-direction:column;justify-content:space-between;color:var(--chalk);position:relative;overflow:hidden;text-decoration:none;transition:transform .45s cubic-bezier(.2,.7,.3,1)}
 .craft-tile:hover,.craft-tile:focus-visible{transform:translateY(-5px)}
 .craft-tile::after{content:"";position:absolute;left:-20%;top:-25%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 60% 60%,rgba(232,163,23,.2),transparent 70%)}

@@ -1,5 +1,5 @@
 // Craft page: the full-screen image preview for the grid tiles.
-// Ported unchanged from the page's old logic class.
+// Opens the data-full (lightbox) file when a tile has one, else the tile image.
 (function () {
   function bootPreview(){
     var grid = document.querySelector('.craft-grid');
@@ -7,7 +7,7 @@
     var figs = Array.prototype.slice.call(grid.querySelectorAll('figure'));
     var items = figs.map(function(f){
       var img = f.querySelector('img'), spans = f.querySelectorAll('figcaption span');
-      return { src: img.getAttribute('src'), alt: img.getAttribute('alt'), title: spans[0] ? spans[0].textContent : '', meta: spans[1] ? spans[1].textContent : '' };
+      return { src: img.getAttribute('data-full') || img.getAttribute('src'), alt: img.getAttribute('alt'), title: spans[0] ? spans[0].textContent : '', meta: spans[1] ? spans[1].textContent : '' };
     });
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ov = document.createElement('div');
