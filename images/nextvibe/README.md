@@ -1,29 +1,20 @@
 # NextVibe images
 
-Drop these files into this folder with exactly these names. Pages already point here;
-until a file exists its slot shows the styled placeholder, never a broken image.
+All WebP, at most 1600px wide, original aspect ratio kept. Every frame on the
+site is 16:10 and screens are fitted inside it (never cropped), so any shape
+works; keep `width`/`height` in `nextvibe.html` matching the file.
 
-## Required
-
-| File | Size | Used for | Should show (matches the page's alt text) |
+| File | Size | Where | Shows |
 | --- | --- | --- | --- |
-| `cover.webp` | 1600×1000 | Work card (homepage + work index) and the case study lead image | The NextVibe marketing site hero reading Get Sold out With Nextvibe, above four event photographs. |
-| `shot-1.webp` | 1600×1000 | Figure after block 02 | Three phone screens showing the Choose Your Vibe step, where a user identifies as event attendee, event organiser or brand sponsor. |
-| `shot-2.webp` | 1600×1000 | Figure after block 03 | Three phone screens: Book Ticket with ticket tiers, Gift a Friend, and the payment method selection. |
+| `attendee-event.webp` | 1600×1200 | Lead image | Attendee home and the event page with check-in |
+| `leaderboard.webp` | 393×852 | After block 02 | Game leaderboard |
+| `create-event.webp` | 1600×1200 | After block 03 | Organiser's Create Event flow, ending in the gamification choice |
+| `choose-vibe.webp` | 1600×1200 | Carousel 1 | Onboarding: attendee, organiser or sponsor |
+| `ticketing.webp` | 1600×1200 | Carousel 2 | Book ticket, gift a friend, payment method |
+| `book-ticket.webp` | 869×2000 | Carousel 3 | Book ticket, single screen |
+| `booking-details.webp` | 858×2000 | Carousel 4 | Booking details and totals |
+| `marketing.webp` | 1600×1200 | Carousel 5, work card | Marketing homepage in a device frame |
+| `marketing-hero.webp` | 1600×1126 | Carousel 6 | Marketing homepage hero, flat |
 
-## Optional
-
-More screens the page already has slots for (carousel frames and extra figures).
-Same size, 1600×1000 (16:10); anything missing stays a placeholder.
-
-| File | Should show |
-| --- | --- |
-| `attendee.webp` | Two phone screens: the attendee homepage with featured and nearby events, and an event detail page. |
-| `create-event.webp` | Three phone screens from the organiser's create-event flow, ending in a choose gamification type sheet. |
-| `analytics.webp` | The NextVibe leaderboard screen showing the top three players and a ranked list. |
-| `buy-ticket.webp` | The Book Ticket screen with pre-sale sold out, VIP selected, and a buy-as-gift option. |
-| `booking-details.webp` | The booking details screen with ticket ID, attendee name, location, and a subtotal, fees, tax and total breakdown. |
-| `marketing.webp` | The NextVibe marketing site shown on a tablet. |
-
-Export as WebP at 1600×1000 (16:10). The images are cropped to 16:10 with `object-fit: cover`,
-so keep the important part of the screen away from the edges.
+To replace one, keep the filename and update its `width`/`height` if the
+aspect ratio changes.
