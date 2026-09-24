@@ -185,8 +185,8 @@
   // PDF links: open in an in-page viewer. The file is fetched with the page's
   // own access and drawn with pdf.js, so nothing depends on the browser being
   // allowed to open a new tab or its built-in PDF viewer.
-  const PDFJS = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.min.mjs';
-  const PDFJS_WORKER = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.worker.min.mjs';
+  const PDFJS = '/vendor/pdfjs-4.0.379/pdf.min.js';
+  const PDFJS_WORKER = '/vendor/pdfjs-4.0.379/pdf.worker.min.js';
   let viewer = null, lastFocus = null;
 
   function closeViewer() {

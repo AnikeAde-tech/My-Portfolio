@@ -6,11 +6,10 @@
 // The file's own root transform (0.01 scale, 90° X) is left untouched; the
 // model is measured after loading and fitted by a wrapper group.
 (function () {
-  // Pinned, pre-bundled ES modules from jsDelivr. The loader's 'three' import is
-  // rewritten server-side to the same THREE_SRC URL, so the browser resolves no
-  // bare specifiers and three.js is only fetched once.
-  const THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.160.0/+esm';
-  const GLTF_SRC = 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js/+esm';
+  // three.js r160, pinned in /vendor (no CDN). The loader imports the same
+  // module file, so three.js is only fetched and evaluated once.
+  const THREE_SRC = '/vendor/three-0.160.0/three.module.min.js';
+  const GLTF_SRC = '/vendor/three-0.160.0/GLTFLoader.js';
   const idle = (fn) => ('requestIdleCallback' in window)
     ? requestIdleCallback(fn, { timeout: 1500 })
     : setTimeout(fn, 200);
