@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@view-transition{navigation:auto}</style>
 <script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="/site.js" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -72,7 +73,7 @@
 <section class="cs-body">
   <div class="wrap">
     <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/aw-welcome.webp" alt="Three phone screens showing the Anywork welcome step, where a new user chooses between I'm a Client and I'm a worker." style="width:100%;border-radius:4px" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="ph ph-bleed"><img src="/public/images/anywork/cover.webp" alt="Three phone screens showing the Anywork welcome step, where a new user chooses between I'm a Client and I'm a worker." width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Two apps, one entry point &mdash; the role choice that splits every screen after it.</figcaption>
     </figure>
   </div>
@@ -96,7 +97,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/aw-client-web.webp" alt="The Anywork client dashboard on web, showing hot bundles, top rated artisans and artisans near you." style="width:100%;border-radius:4px" width="1920" height="1440" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/anywork/shot-1.webp" alt="The Anywork client dashboard on web, showing hot bundles, top rated artisans and artisans near you." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The client surface, tuned for evidence: rating, reviews, location and price before anything else.</figcaption>
     </figure>
   </div>
@@ -144,7 +145,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/aw-booking.webp" alt="Step two of five in the Anywork booking flow: choose your provider, with available providers listed and an option to auto-assign." style="width:100%;border-radius:4px" width="1920" height="4368" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/anywork/shot-2.webp" alt="Step two of five in the Anywork booking flow: choose your provider, with available providers listed and an option to auto-assign." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The shared booking skeleton &mdash; same five steps whichever service fills the middle.</figcaption>
     </figure>
   </div>
@@ -161,32 +162,32 @@
       <div style="overflow:hidden">
         <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/aw-client-mobile.png" alt="Anywork client mobile screens: browse artisans, view a provider profile and track a booking." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/anywork/client-mobile.webp" alt="Anywork client mobile screens: browse artisans, view a provider profile and track a booking." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Client app on mobile &mdash; the same provider evidence at phone density.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/aw-service-modal.png" alt="The Anywork service detail modal, showing what a category covers before a client commits to booking." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/anywork/service-modal.webp" alt="The Anywork service detail modal, showing what a category covers before a client commits to booking." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Service detail &mdash; scope made explicit before a price is agreed.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/aw-booking-landing.png" alt="The Anywork booking landing screen where a client picks a service category to begin." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/anywork/booking-landing.webp" alt="The Anywork booking landing screen where a client picks a service category to begin." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Entry to the booking flow &mdash; the point where the service picks the path.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/aw-admin.png" alt="The Anywork admin dashboard used to oversee bookings, artisans and verification status." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/anywork/admin.webp" alt="The Anywork admin dashboard used to oversee bookings, artisans and verification status." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Admin &mdash; where verification tiers are reviewed and disputes land.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/aw-marketing.png" alt="Anywork marketing site hero introducing the artisan marketplace." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/anywork/marketing.webp" alt="Anywork marketing site hero introducing the artisan marketplace." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Marketing site &mdash; the first promise the product has to keep.</figcaption>
           </figure>

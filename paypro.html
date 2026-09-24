@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@view-transition{navigation:auto}</style>
 <script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="/site.js" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -71,7 +72,7 @@
 <section class="cs-body">
   <div class="wrap">
     <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/pp-send.webp" alt="Three phone screens from the send flow: recipient details, an amount screen showing a two hundred pound send with the fee and the amount the recipient will receive, and fingerprint confirmation." style="width:100%;border-radius:4px" width="1920" height="1440" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="ph ph-bleed"><img src="/public/images/paypro/cover.webp" alt="Three phone screens from the send flow: recipient details, an amount screen showing a two hundred pound send with the fee and the amount the recipient will receive, and fingerprint confirmation." width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The amount entered, the fee, and what the recipient actually receives, on the same screen at the same moment.</figcaption>
     </figure>
   </div>
@@ -95,7 +96,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/pp-card.png" alt="Three card screens: physical card with its benefits, an empty no-cards state, and an active virtual card with top up, details, freeze and settings." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/paypro/shot-1.webp" alt="Three card screens: physical card with its benefits, an empty no-cards state, and an active virtual card with top up, details, freeze and settings." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Cards, including the empty state, designed alongside the populated one rather than after it.</figcaption>
     </figure>
   </div>
@@ -141,7 +142,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/pp-invoice.png" alt="Three phone screens from the invoicing flow: an invoice list with paid, waiting, overdue and draft states, the create invoice form, and a finished invoice ready to share." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/paypro/shot-2.webp" alt="Three phone screens from the invoicing flow: an invoice list with paid, waiting, overdue and draft states, the create invoice form, and a finished invoice ready to share." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Invoice states carried in the list. Overdue is visible to the freelancer without them having to be the one who raises it.</figcaption>
     </figure>
   </div>
@@ -158,38 +159,38 @@
       <div style="overflow:hidden">
         <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-home.png" alt="The home screen showing a naira balance, add, send, request and more actions, quick send contacts and recent transactions." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/home.webp" alt="The home screen showing a naira balance, add, send, request and more actions, quick send contacts and recent transactions." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Home. Balance, the four things you can do with it, and what happened recently.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-hidden.png" alt="The same home screen with the balance masked behind asterisks and an eye icon to reveal it." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/hidden.webp" alt="The same home screen with the balance masked behind asterisks and an eye icon to reveal it." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Balance hidden. A small thing that matters when you check your money in public.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-accounts.png" alt="The home screen with an account selector sheet open, listing naira, US dollar, pound and Canadian dollar balances." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/accounts.webp" alt="The home screen with an account selector sheet open, listing naira, US dollar, pound and Canadian dollar balances." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Four currencies held separately. The freelancer earns in one and lives in another, so the app never blends them into a single figure.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-onboard-1.png" alt="Onboarding screen one: Get Paid Globally, Anytime, Anywhere." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/onboard-1.webp" alt="Onboarding screen one: Get Paid Globally, Anytime, Anywhere." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Onboarding, first of four. The promise stated plainly, with a language switch already present.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-onboard-2.png" alt="Onboarding screen two: Protected Transaction, your transactions are always protected." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/onboard-2.webp" alt="Onboarding screen two: Protected Transaction, your transactions are always protected." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The one place a shield earns its keep: onboarding, where the claim is made and then never repeated in the product.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/pp-onboard-3.png" alt="Onboarding screen three: Instant Payment Request, effortless billing for faster payment." style="width:100%;height:100%;object-fit:contain" loading="lazy" decoding="async" />
+            <div class="ph" style="background:#EFE9FB;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/paypro/onboard-3.webp" alt="Onboarding screen three: Instant Payment Request, effortless billing for faster payment." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Billing introduced as a way to get paid faster, not as an accounting feature.</figcaption>
           </figure>

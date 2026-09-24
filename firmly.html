@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@view-transition{navigation:auto}</style>
 <script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="/site.js" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -72,7 +73,7 @@
 <section class="cs-body">
   <div class="wrap">
     <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/fm-marketing.png" alt="The Firmly marketing site, splitting its entry between legal professionals and individuals or clients." style="width:100%;border-radius:4px" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="ph ph-bleed"><img src="/public/images/firmly/cover.webp" alt="The Firmly marketing site, splitting its entry between legal professionals and individuals or clients." width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The marketing site, which has to speak to firms and their clients at once.</figcaption>
     </figure>
   </div>
@@ -96,7 +97,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/fm-clients.png" alt="The client management table, with a conflict status column reading No Conflict, Potential Conflict and Confirmed conflict per client." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/firmly/shot-1.webp" alt="The client management table, with a conflict status column reading No Conflict, Potential Conflict and Confirmed conflict per client." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Conflict status carried on every client row, so the check is visible before anyone opens a matter.</figcaption>
     </figure>
   </div>
@@ -142,7 +143,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/fm-approval.png" alt="The invoice approval panel, showing invoice number, client, case reference, line items, total, and reject or approve actions." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/firmly/shot-2.webp" alt="The invoice approval panel, showing invoice number, client, case reference, line items, total, and reject or approve actions." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">One approval gate, reviewed inline. Enough context in the panel to decide without leaving the queue.</figcaption>
     </figure>
   </div>
@@ -159,38 +160,38 @@
       <div style="overflow:hidden">
         <div ref="{{ track }}" style="display:flex;transition:transform .6s cubic-bezier(.2,.7,.3,1)">
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-cases.png" alt="Case management, with total, active, pending conflict and completed case counts, upcoming hearings, and cases pending closure approval." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/cases.webp" alt="Case management, with total, active, pending conflict and completed case counts, upcoming hearings, and cases pending closure approval." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Case management. Pending conflicts and upcoming hearings share the top of the screen.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-calendar.png" alt="The calendar and tasks month view, with court dates, client consultations and invoice payments colour coded." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/calendar.webp" alt="The calendar and tasks month view, with court dates, client consultations and invoice payments colour coded." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Calendar and tasks, where the next hearing date lives.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-documents.png" alt="Case documents in a card grid, each with an approved, under review, locked or archived status and its case reference." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/documents.webp" alt="Case documents in a card grid, each with an approved, under review, locked or archived status and its case reference." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Documents carry their own state: approved, under review, locked, archived.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-analytics.png" alt="Reporting and analytics, with revenue forecast, case status distribution including a conflicted segment, and lawyer performance." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/analytics.webp" alt="Reporting and analytics, with revenue forecast, case status distribution including a conflicted segment, and lawyer performance." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Reporting. Conflicted cases appear in the portfolio breakdown rather than being netted out.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-identity.png" alt="The Choose Your Identity onboarding screen, offering a law firm profile with multi-user access or a solo lawyer profile." style="width:100%;height:100%;object-fit:cover" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/identity.webp" alt="The Choose Your Identity onboarding screen, offering a law firm profile with multi-user access or a solo lawyer profile." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The first fork: firm or solo. It sets which of the eight roles the account starts from.</figcaption>
           </figure>
           <figure style="flex:0 0 100%;margin:0;padding-right:2px">
-            <div style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
-              <img src="images/fm-dashboard.webp" alt="The Firmly firm overview dashboard, with a verification banner, case and invoice metrics, billing summary and the conflict of interest queue." style="width:100%;height:100%;object-fit:cover" width="1920" height="1365" loading="lazy" decoding="async" />
+            <div class="ph ph-dark" style="background:var(--deep-2);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px">
+              <img src="/public/images/firmly/dashboard.webp" alt="The Firmly firm overview dashboard, with a verification banner, case and invoice metrics, billing summary and the conflict of interest queue." width="1600" height="1000" loading="lazy" decoding="async" data-ph />
             </div>
             <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Firm overview. The verification prompt and the conflict queue sit above the metrics, not behind a compliance tab.</figcaption>
           </figure>

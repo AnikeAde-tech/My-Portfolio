@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>@view-transition{navigation:auto}</style>
 <script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<script src="/site.js" defer></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -57,7 +58,7 @@
 <section class="cs-body">
   <div class="wrap">
     <figure class="shot-full shot-bleed" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/nb-buttons.webp" alt="The Nerdbug button sheet: block, large and small sizes across primary, secondary, outline and transparent styles, each with default, hover and disabled states, shown in light and dark themes side by side." style="width:100%" width="1920" height="1764" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="ph ph-bleed"><img src="/public/images/nerdbug/cover.webp" alt="The Nerdbug button sheet: block, large and small sizes across primary, secondary, outline and transparent styles, each with default, hover and disabled states, shown in light and dark themes side by side." width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">One component, every state and both themes &mdash; the sheet engineering builds from.</figcaption>
     </figure>
   </div>
@@ -77,6 +78,16 @@
       <p>So the design problem wasn't coverage. It was credibility.</p>
     </div>
 
+  </div>
+
+  <div class="wrap">
+    <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
+      <div class="ph"><img src="/public/images/nerdbug/shot-1.webp" alt="A component audit board: screens from three recent client projects with every repeated component (buttons, date pickers, tables, empty states) circled and tallied." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
+      <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">The audit that set the scope &mdash; what three real builds actually used, counted.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap-narrow">
     <div class="cs-block">
       <span class="cs-kicker">03 &mdash; what I decided</span>
       <h2>Three calls about scope and governance</h2>
@@ -108,7 +119,7 @@
 
   <div class="wrap">
     <figure class="shot-full" style="margin:0 0 clamp(44px,5.5vw,72px)">
-      <img src="images/nb-popovers.png" alt="The Nerdbug popover sheet: confirmation, error, input and media variants on phone frames, each shown in light and dark themes." style="width:100%;border-radius:4px" loading="lazy" decoding="async" />
+      <div class="ph"><img src="/public/images/nerdbug/shot-2.webp" alt="The Nerdbug popover sheet: confirmation, error, input and media variants on phone frames, each shown in light and dark themes." width="1600" height="1000" loading="lazy" decoding="async" data-ph /></div>
       <figcaption class="tag" style="color:rgba(20,19,16,.62);margin-top:14px">Popovers specified as a set &mdash; four jobs, both themes, so nobody invents a fifth.</figcaption>
     </figure>
   </div>
