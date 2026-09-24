@@ -38,13 +38,16 @@
       const fromList = !from || from === 'home' || from === 'work';
       const hero = document.querySelector('.hero');
       if (!hero || !fromList || !document.querySelector('.cs-body, .cs-meta')) return;
-      hero.style.viewTransitionName = 'cover-' + here;
-      hero.style.viewTransitionClass = 'cover';
+      // named from <html> (motion.css), not inline on the hero: the hero here
+      // is still the static template, which the runtime re-reads as source
+      root.style.setProperty('--vt-hero', 'cover-' + here);
+      root.setAttribute('data-vt-hero', '');
       root.classList.add('vt-morph');
       const vt = e.viewTransition;
       ['ready', 'updateCallbackDone'].forEach((k) => { if (vt[k]) vt[k].catch(() => {}); });
       vt.finished.catch(() => {}).finally(() => {
-        hero.style.viewTransitionName = '';
+        root.removeAttribute('data-vt-hero');
+        root.style.removeProperty('--vt-hero');
         setTimeout(() => root.classList.remove('vt-morph'), 1000);
       });
     });
@@ -115,18 +118,20 @@
 
   const watch = (el) => { if (seen.has(el)) return false; seen.add(el); if (io) io.observe(el); return true; };
 
+  const live = (el) => !el.closest('x-dc');
+  const all = (sel) => Array.from(document.querySelectorAll(sel)).filter(live);
   const scan = () => {
     if (reduce) return;
-    document.querySelectorAll('.section-head, .cs-block h2, .contact h2, .ledger-intro + h2').forEach((el) => {
+    all('.section-head, .cs-block h2, .contact h2, .ledger-intro + h2').forEach((el) => {
       if (seen.has(el)) return;
       const h = el.matches('h2') ? el : el.querySelector('h2');
       if (h && !h.querySelector('.rv-word')) splitWords(h);
       watch(el);
     });
-    document.querySelectorAll('.cs-block h2, .contact h2').forEach((h) => { if (h.querySelector('.rv-word')) watch(h); });
+    all('.cs-block h2, .contact h2').forEach((h) => { if (h.querySelector('.rv-word')) watch(h); });
 
     const groups = new Map();
-    document.querySelectorAll('.decision-card').forEach((c) => {
+    all('.decision-card').forEach((c) => {
       if (seen.has(c)) return;
       c.classList.add('rv');
       const p = c.parentElement;
@@ -138,7 +143,7 @@
       watch(c);
     });
 
-    document.querySelectorAll('.outcomes li').forEach((li) => {
+    all('.outcomes li').forEach((li) => {
       if (seen.has(li)) return;
       li.classList.add('rv');
       const n = li.querySelector('.n');
@@ -146,9 +151,9 @@
       watch(li);
     });
 
-    document.querySelectorAll('.pull').forEach((q) => { if (!seen.has(q)) { q.classList.add('rv'); watch(q); } });
+    all('.pull').forEach((q) => { if (!seen.has(q)) { q.classList.add('rv'); watch(q); } });
 
-    document.querySelectorAll('.shot, .shot-bleed, .shot-full, .cs-body figure, .ha-pair').forEach((s) => {
+    all('.shot, .shot-bleed, .shot-full, .cs-body figure, .ha-pair').forEach((s) => {
       if (seen.has(s) || s.closest('.hero')) return;
       s.classList.add('img-rv');
       watch(s);
@@ -159,7 +164,7 @@
   let bar = null, barFill = null, ticking = false, lastY = window.scrollY;
   const frame = () => {
     ticking = false;
-    const nav = document.querySelector('.nav');
+    const nav = all('.nav')[0];
     const y = window.scrollY;
     if (nav) {
       const hero = document.querySelector('.hero');

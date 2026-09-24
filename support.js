@@ -165,7 +165,10 @@
     const dc = doc.querySelector("x-dc");
     const hostEl = doc.createElement("div");
     hostEl.id = "dc-root";
-    dc.replaceWith(hostEl);
+    // Site patch: the raw <x-dc> template stays visible (it is the page's
+    // styled first paint). Mount React just before it and drop the template
+    // in the same task once React has committed, so no frame is ever blank.
+    dc.parentNode.insertBefore(hostEl, dc);
     if (!parsed.preview) {
       const s = doc.createElement("style");
       s.textContent = FULL_PAGE_CSS;
@@ -193,9 +196,24 @@
       return h(Root, { ...defaults, ...entry.propOverrides || {} });
     }
     const ReactDOM = getReactDOM();
-    if (ReactDOM.createRoot)
-      ReactDOM.createRoot(hostEl).render(h(StandaloneRoot));
-    else ReactDOM.render(h(StandaloneRoot), hostEl);
+    const mount = () => {
+      if (ReactDOM.createRoot) ReactDOM.createRoot(hostEl).render(h(StandaloneRoot));
+      else ReactDOM.render(h(StandaloneRoot), hostEl);
+    };
+    const swap = () => {
+      try {
+        if (ReactDOM.flushSync) ReactDOM.flushSync(mount);
+        else mount();
+      } finally {
+        dc.remove();
+      }
+    };
+    // Replacing the template's nav mid page-transition would abort the
+    // cross-document view transition (the named nav disappears), so if one
+    // is running, keep the static page on screen until it has finished.
+    const running = window.__vtFinished;
+    if (running && typeof running.then === "function") running.then(swap, swap);
+    else swap();
     return rootName;
   }
 
@@ -1903,7 +1921,7 @@
     if (document.readyState !== "loading") api.__dcBoot();
     else document.addEventListener("DOMContentLoaded", () => api.__dcBoot());
   }
-  hideRawTemplate();
+  // Site patch: don't hide the raw template; boot() swaps it out.
   loadReactUmd().then(init).catch((err) => {
     console.error("[dc] failed to load React or boot:", err);
     throw err;

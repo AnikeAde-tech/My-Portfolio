@@ -294,7 +294,7 @@ a{color:inherit}
 .craft-tile strong{position:relative;z-index:1;font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:20px;line-height:1.22}
 
 /* ---------- explicit surfaces: nothing inherits a background ---------- */
-html{background:var(--chalk)}
+html{background:var(--deep)}
 body{background:var(--chalk)}
 .section{background:var(--chalk)}
 .section.dark{background:var(--deep)}

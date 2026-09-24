@@ -7,6 +7,7 @@
 /* ---------- page transitions ---------- */
 @view-transition{navigation:auto}
 .nav{view-transition-name:site-nav}
+[data-vt-hero] .hero{view-transition-name:var(--vt-hero);view-transition-class:cover}
 ::view-transition-group(site-nav),::view-transition-old(site-nav),::view-transition-new(site-nav){animation:none}
 ::view-transition-old(root){animation:vt-out var(--dur-fast) var(--ease-in-out) both}
 ::view-transition-new(root){animation:vt-in var(--dur-page) var(--ease-out) both}

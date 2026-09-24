@@ -166,7 +166,8 @@
   if (MQ.addEventListener) MQ.addEventListener('change', onMQ); else MQ.addListener(onMQ);
 
   function ensure() {
-    const nav = document.querySelector('.nav');
+    // the live nav, not the static template's (the runtime re-reads that as source)
+    const nav = Array.from(document.querySelectorAll('.nav')).find((n) => !n.closest('x-dc'));
     const navIn = nav && nav.querySelector('.nav-in');
     if (!navIn || !nav.querySelector('.nav-links')) return;
     if (!menu) menu = buildMenu(nav);
