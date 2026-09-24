@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>@view-transition{navigation:auto}</style>
 <script>(function(){function q(e){var v=e.viewTransition;if(v){['ready','updateCallbackDone','finished'].forEach(function(k){v[k]&&v[k].catch(function(){})})}}addEventListener('pagereveal',q);addEventListener('pageswap',q)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
 <script src="/site.js" defer></script>
 <script src="/nav-menu.js" defer></script>
 <script src="./support.js"></script>
@@ -12,10 +15,6 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="preload" href="fonts/bricolage-grotesque-normal-0.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="fonts/newsreader-normal-4.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="fonts/ibm-plex-mono-normal-1.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="motion.css">
 <script src="./motion.js?v=3" defer></script>
@@ -311,7 +310,7 @@ class Component extends DCLogic {
         '<button type="button" data-k="next" aria-label="Next image" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(241,238,231,.3);background:transparent;color:var(--chalk);font-size:18px;cursor:pointer">&rarr;</button>' +
       '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:16px;flex-wrap:wrap">' +
-        '<strong data-k="title" style="font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:clamp(20px,2vw,28px)"></strong>' +
+        '<strong data-k="title" style="font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,2vw,28px)"></strong>' +
         '<span class="tag" data-k="meta" style="color:var(--chalk-dim)"></span>' +
       '</div>';
     document.body.appendChild(ov);
