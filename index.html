@@ -117,7 +117,7 @@ body.loaded .hl-line > span{transform:translateY(0)}
           <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:var(--marigold);flex:0 0 auto"></span>
           <span class="tag" style="color:var(--ink)">victoria</span>
           <span class="tag" aria-hidden="true" style="color:rgba(20,19,16,.38)">&middot;</span>
-          <span class="tag" ref="{{ bubbleTime }}" style="color:rgba(20,19,16,.45)">--:--</span>
+          <span class="tag" ref="{{ bubbleTime }}" data-lagos-clock style="color:rgba(20,19,16,.45)">--:--</span>
         </div>
         <div aria-hidden="true" style="height:1px;background:rgba(20,19,16,.14);margin:10px 0 11px"></div>
         <p ref="{{ bubbleText }}" style="margin:0;font-family:var(--body);font-weight:400;font-size:19px;line-height:1.42;color:var(--ink);min-height:27px"></p>
@@ -129,9 +129,9 @@ body.loaded .hl-line > span{transform:translateY(0)}
     </div>
   </div>
   <div class="wrap" style="position:relative;z-index:1">
-   <p class="tag hero-eyebrow rise">product designer &nbsp;&middot;&nbsp; lagos &nbsp;&middot;&nbsp; <span ref="{{ clock }}">--:--</span> WAT &nbsp;&middot;&nbsp; remote worldwide</p>
+   <p class="tag hero-eyebrow rise">product designer &nbsp;&middot;&nbsp; lagos &nbsp;&middot;&nbsp; <span ref="{{ clock }}" data-lagos-clock>--:--</span> WAT &nbsp;&middot;&nbsp; remote worldwide</p>
    <div class="hero-grid" ref="{{ ground }}">
-    <h1 class="display rise"><span class="hl-line"><span>Trust is the hardest</span></span><span class="hl-line"><span>thing to <span class="lift">design.</span></span></span></h1>
+    <h1 class="display rise"><span class="hl-line"><span>Trust is the hardest</span></span> <span class="hl-line"><span>thing to <span class="lift">design.</span></span></span></h1>
     <div class="hero-copy">
     <p class="hero-sub rise">Four years designing marketplaces, fintech and service platforms for people who have every reason to be sceptical of the app, the payment, and the stranger on the other side of it.</p>
     <div class="hero-meta rise">
@@ -755,15 +755,31 @@ class Component extends DCLogic {
   componentDidUpdate(){ this.reveal(); }
 
   bootClock(){
-    var el = this.clock;
-    var tick = function(){
-      if(!el.current) return;
-      try{
-        el.current.textContent = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Lagos',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
-      }catch(e){}
+    // Look the clock elements up on every paint rather than holding refs from
+    // mount: DC pages paint progressively, so on a slow network the spans may
+    // not exist yet when this runs (which left them on "--:--" in production).
+    var self = this;
+    var fmt = null;
+    try{ fmt = new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Lagos',hour:'2-digit',minute:'2-digit',hour12:false}); }catch(e){}
+    this.lagosNow = function(){
+      if(fmt) return fmt.format(new Date());
+      // no tz data: Lagos is UTC+1 all year
+      var d = new Date(Date.now() + 3600000);
+      return ('0' + d.getUTCHours()).slice(-2) + ':' + ('0' + d.getUTCMinutes()).slice(-2);
     };
-    tick();
-    this.clockTimer = setInterval(tick, 30000);
+    this.paintClock = function(){
+      var els = document.querySelectorAll('[data-lagos-clock]');
+      var t = self.lagosNow();
+      for(var i = 0; i < els.length; i++) if(els[i].textContent !== t) els[i].textContent = t;
+      return els.length;
+    };
+    var tries = 0;
+    var first = function(){
+      if(self.paintClock() >= 2 || ++tries > 100) return;
+      self.clockRetry = setTimeout(first, 100);
+    };
+    first();
+    this.clockTimer = setInterval(this.paintClock, 5000);
   }
 
   bootChat(){
@@ -774,10 +790,7 @@ class Component extends DCLogic {
     if(!bub || !txt || !btn || !chipSlot || !pathEl || !svg){ setTimeout(function(){ self.bootChat(); }, 250); return; }
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var lagos = function(){
-      try{ return new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Africa/Lagos'}).format(new Date()); }
-      catch(e){ return '--:--'; }
-    };
+    var lagos = function(){ return self.lagosNow ? self.lagosNow() : '--:--'; };
 
     var LINES = [
       { seg:[["Hi, I'm Victoria. ",0],["The work's just below.",1]], react:'wave',
@@ -911,7 +924,7 @@ class Component extends DCLogic {
       if(shown >= LINES.length){ if(lastShown === 1) return; line = LAST; n = LINES.length; lastShown = 1; }
       else { line = LINES[i % LINES.length]; n = (i % LINES.length) + 1; i++; }
       shown++;
-      if(timeEl) timeEl.textContent = lagos();
+      if(self.paintClock) self.paintClock();
       if(count) count.textContent = n + ' / ' + LINES.length;
 
       chipSlot.innerHTML = '';
@@ -966,7 +979,6 @@ class Component extends DCLogic {
     bub.addEventListener('pointerleave', hide);
 
     this.sizeBubble();
-    this.bubbleClock = setInterval(function(){ if(timeEl) timeEl.textContent = lagos(); }, 30000);
   }
 
   bootStack(){
@@ -1181,6 +1193,7 @@ class Component extends DCLogic {
   componentWillUnmount(){
     if(this.io) this.io.disconnect();
     if(this.clockTimer) clearInterval(this.clockTimer);
+    if(this.clockRetry) clearTimeout(this.clockRetry);
     if(this.bubbleClock) clearInterval(this.bubbleClock);
     if(this.onResize) window.removeEventListener('resize', this.onResize);
     if(this.onTResize) window.removeEventListener('resize', this.onTResize);
