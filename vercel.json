@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/Home.dc.html", "destination": "/", "permanent": true },
+    { "source": "/Work.dc.html", "destination": "/work", "permanent": true },
+    { "source": "/Anywork.dc.html", "destination": "/anywork", "permanent": true },
+    { "source": "/HelpAppAfrica.dc.html", "destination": "/help-app-africa", "permanent": true },
+    { "source": "/Nerdbug.dc.html", "destination": "/nerdbug", "permanent": true },
+    { "source": "/NextVibe.dc.html", "destination": "/nextvibe", "permanent": true },
+    { "source": "/Firmly.dc.html", "destination": "/firmly", "permanent": true },
+    { "source": "/PayPro.dc.html", "destination": "/paypro", "permanent": true },
+    { "source": "/HomeMade.dc.html", "destination": "/homemade", "permanent": true },
+    { "source": "/Decisions.dc.html", "destination": "/decisions", "permanent": true },
+    { "source": "/Craft.dc.html", "destination": "/craft", "permanent": true },
+    { "source": "/Story.dc.html", "destination": "/story", "permanent": true }
+  ]
+}

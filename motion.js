@@ -6,9 +6,13 @@
   const root = document.documentElement;
   if (!reduce) root.classList.add('mo');
 
+  // clean URLs: "/" is home, "/anywork" (or "/anywork.html") is anywork
   const slugOf = (href) => {
-    const m = (href || '').match(/([A-Za-z]+)\.dc\.html/);
-    return m ? m[1].toLowerCase() : null;
+    if (href == null) return null;
+    let p;
+    try { p = new URL(href, location.href).pathname; } catch (e) { return null; }
+    const seg = p.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '').toLowerCase();
+    return !seg || seg === 'index' ? 'home' : seg;
   };
   const here = slugOf(location.pathname);
 
