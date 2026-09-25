@@ -15,14 +15,11 @@ Vercel serves the repository root as-is (`vercel.json`: clean URLs, no trailing 
 
 ## How changes go live
 
-Vercel deploys `main`. Changes are pushed straight to `main`, and the push deploys.
+Vercel deploys `main`: every push to `main` is a production deploy, and pushes to other branches
+make preview deploys.
 
-If a push doesn't reach the live site (a new file 404s there although it's on `main`), check
-Vercel → Deployments for that commit. Direct pushes of Claude-authored commits have been skipped
-there before, while merges made on GitHub by the repo owner deployed. The fallback when that
-happens:
-
-1. The change is opened as a pull request into `main`.
-2. Merge it on GitHub with **Create a merge commit**, not squash or rebase. Those keep the
-   original author on the commit that lands on `main`. The merge commit is authored by you, and
-   its deploy includes everything before it on `main`.
+The Vercel account is on the Hobby plan, which allows 100 deployments in any 24 hours. Past that,
+pushes are rejected with "Resource is limited" and nothing goes live until the window clears;
+then redeploy the latest `main` from Vercel → Deployments, or push again. Two Vercel projects
+(`anikesportfolio`, which serves the live site, and `my-portfolio`) are connected to this
+repository, so every push deploys twice. Push finished changes in batches, not every step.
